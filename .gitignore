@@ -1,0 +1,256 @@
+# ===========================================
+# Node.js & JavaScript/TypeScript
+# ===========================================
+
+
+# Dependencies
+node_modules/
+*/node_modules/
+jspm_packages/
+
+# Build outputs
+dist/
+dist-frontend/
+build/
+out/
+.next/
+.nuxt/
+
+keyword_method_py/
+
+node-backend/
+py-backend/
+
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# Cache directories
+.cache/
+.parcel-cache/
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+.fusebox/
+
+# Optional npm cache
+.npm/
+.eslintcache
+
+# Yarn
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.yarn-integrity
+.pnp.*
+
+# Package files
+*.tgz
+*.tar.gz
+
+# ===========================================
+# Python
+# ===========================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+env/
+venv/
+myenv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+aeo-api/venv/
+.env*
+
+# Python distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+!ref-frontend/src/lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ===========================================
+# Databases & Storage
+# ===========================================
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+*.rdb
+
+# Redis persistence
+dump.rdb
+
+# Storage directories - ignore data files but keep directory structure
+storage/*
+!storage/.gitkeep
+proxy/storage/
+
+# DynamoDB Local
+.dynamodb/
+
+# ===========================================
+# Environment & Configuration
+# ===========================================
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.test
+
+# Config files with secrets (see Project Specific section)
+**/config/openai.json
+
+# ===========================================
+# Development Tools
+# ===========================================
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+fix*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ===========================================
+# Temporary & Cache Files
+# ===========================================
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Cache
+.cache/
+.parcel-cache/
+
+# ===========================================
+# Project Specific (Contentlytics)
+# ===========================================
+
+# Storage directory - ignore all data files but keep structure
+storage/*
+!storage/.gitkeep
+
+# Crawler/SDK generated files (request queues, session pool, key-value stores)
+node-backend/storage/
+**/key_value_stores/
+**/request_queues/
+
+# AEO API config with secrets
+aeo-api/config/openai.json
+
+# ===========================================
+# Serverless & Deployment
+# ===========================================
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# ===========================================
+# Testing & Coverage
+# ===========================================
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Test results
+test-results/
+junit.xml
+
+# ===========================================
+# Miscellaneous
+# ===========================================
+
+# Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Optional REPL history
+.node_repl_history
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# Grunt intermediate storage
+.grunt/
+
+# Bower dependency directory
+bower_components/
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons
+build/Release
+
+# Snowpack dependency directory
+web_modules/
+
+# vuepress build output
+.vuepress/dist
+
+admin-dashboard-design/
+
