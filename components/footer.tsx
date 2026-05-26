@@ -65,7 +65,7 @@ export function Footer() {
       title: "Legal",
       links: [
           { label: "Privacy Policy", href: "/privacy-policy" },
-        { label: "Terms of Service", href: "/terms" },
+        { label: "Terms of Service", href: "/terms-of-service" },
         { label: "Data Processing Agreement", href: "/dpa" },
         { label: "Cookie Policy", href: "/cookies" },
         { label: "Security", href: "/security" },
@@ -121,7 +121,7 @@ export function Footer() {
           <p className="text-[12px] text-[#9a9a9a]">© 2026 Colytics AI, Inc. All rights reserved.</p>
           <div className="flex gap-5 text-[12px] text-[#9a9a9a]">
               <Link href="/privacy-policy" className="hover:text-[#0a0a0a] transition-colors">Privacy</Link>
-            <Link href="/terms" className="hover:text-[#0a0a0a] transition-colors">Terms</Link>
+            <Link href="/terms-of-service" className="hover:text-[#0a0a0a] transition-colors">Terms</Link>
             <Link href="/security" className="hover:text-[#0a0a0a] transition-colors">Security</Link>
           </div>
         </div>

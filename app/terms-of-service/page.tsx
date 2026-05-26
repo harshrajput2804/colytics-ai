@@ -4,9 +4,9 @@ import { readFile } from "node:fs/promises"
 import path from "node:path"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Colytics AI",
+  title: "Terms of Service | Colytics AI",
   description:
-    "Privacy Policy for Colytics AI. Learn how ATTROCK Consultancy Private Limited collects, uses, and protects your personal data.",
+    "Terms of Service for Colytics AI. Read the legally binding agreement for using our AI visibility platform.",
 }
 
 function convertInlineMarkdown(text: string) {
@@ -89,13 +89,13 @@ function markdownToHtml(markdown: string) {
   return html.join("\n")
 }
 
-async function getPrivacyPolicyMarkdown() {
-  const filePath = path.resolve(process.cwd(), "..", "info_doc", "website-privacy-policy.md")
+async function getTermsOfServiceMarkdown() {
+  const filePath = path.resolve(process.cwd(), "..", "info_doc", "website-terms-of-service.md")
   return readFile(filePath, "utf-8")
 }
 
-export default async function PrivacyPolicyPage() {
-  const markdown = await getPrivacyPolicyMarkdown()
+export default async function TermsOfServicePage() {
+  const markdown = await getTermsOfServiceMarkdown()
   const html = markdownToHtml(markdown)
   const lastUpdated = markdown.match(/\*\*Last Updated:\*\*\s*(.+)/i)?.[1]?.trim() ?? "Not specified"
 
@@ -108,8 +108,8 @@ export default async function PrivacyPolicyPage() {
         <article dangerouslySetInnerHTML={{ __html: html }} />
         <footer className="mt-12 pt-8 border-t border-[#e8e8e8]">
           <nav className="flex flex-wrap gap-6 text-sm">
-            <a href="/terms-of-service" className="text-[#0a0a0a] underline underline-offset-4 hover:text-[#3a3a3a]">
-              Terms of Service
+            <a href="/privacy-policy" className="text-[#0a0a0a] underline underline-offset-4 hover:text-[#3a3a3a]">
+              Privacy Policy
             </a>
             <a href="/cookie-policy" className="text-[#0a0a0a] underline underline-offset-4 hover:text-[#3a3a3a]">
               Cookie Policy
