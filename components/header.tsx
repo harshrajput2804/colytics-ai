@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
+import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 function useDropdown() {
   const [open, setOpen] = useState(false)
@@ -219,9 +220,7 @@ export function Header() {
           <Button variant="ghost" size="sm" asChild>
             <Link href="/login">Login</Link>
           </Button>
-          <Button size="sm" className="rounded-full bg-foreground text-background hover:bg-foreground/90" asChild>
-            <Link href="/signup">Get Early Access</Link>
-          </Button>
+          <EarlyAccessTrigger />
         </div>
       </div>
     </header>

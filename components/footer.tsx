@@ -1,4 +1,6 @@
+"use client"
 import Link from "next/link"
+import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function Footer() {
   const columns = [
@@ -62,7 +64,7 @@ export function Footer() {
     {
       title: "Legal",
       links: [
-        { label: "Privacy Policy", href: "/privacy" },
+          { label: "Privacy Policy", href: "/privacy-policy" },
         { label: "Terms of Service", href: "/terms" },
         { label: "Data Processing Agreement", href: "/dpa" },
         { label: "Cookie Policy", href: "/cookies" },
@@ -86,14 +88,12 @@ export function Footer() {
               The AI citation intelligence platform for SEO teams competing in the age of AI search.
             </p>
           </div>
-          <div className="flex gap-3 items-start">
-            <Link href="/signup" className="inline-flex items-center h-9 px-5 rounded-full bg-[#0a0a0a] text-white text-[13px] font-medium hover:bg-[#1a1a1a] transition-colors">
-              Get Early Access
-            </Link>
-            <Link href="/pricing" className="inline-flex items-center h-9 px-5 rounded-full border border-[#e8e8e8] text-[#525252] text-[13px] font-medium hover:bg-[#f5f5f5] transition-colors">
-              View Pricing
-            </Link>
-          </div>
+            <div className="flex gap-3 items-start">
+              <EarlyAccessTrigger />
+              <Link href="/pricing" className="inline-flex items-center h-9 px-5 rounded-full border border-[#e8e8e8] text-[#525252] text-[13px] font-medium hover:bg-[#f5f5f5] transition-colors">
+                View Pricing
+              </Link>
+            </div>
         </div>
 
         {/* Link columns */}
@@ -120,7 +120,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-3 py-5 border-t border-[#e8e8e8]">
           <p className="text-[12px] text-[#9a9a9a]">© 2026 Colytics AI, Inc. All rights reserved.</p>
           <div className="flex gap-5 text-[12px] text-[#9a9a9a]">
-            <Link href="/privacy" className="hover:text-[#0a0a0a] transition-colors">Privacy</Link>
+              <Link href="/privacy-policy" className="hover:text-[#0a0a0a] transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-[#0a0a0a] transition-colors">Terms</Link>
             <Link href="/security" className="hover:text-[#0a0a0a] transition-colors">Security</Link>
           </div>

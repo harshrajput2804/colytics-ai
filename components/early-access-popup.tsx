@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from "react"
+import { createPortal } from "react-dom"
 
 type Props = {
   open: boolean
@@ -50,7 +51,6 @@ export function EarlyAccessPopup({ open, onClose }: Props) {
     if (!isValidEmail(email)) return setError("Please enter a valid email.")
     if (!consent) return setError("Please agree to receive communications.")
     setStep(2)
-    // focus on first OTP cell after render
     setTimeout(() => {
       const el = document.querySelector<HTMLInputElement>('.ea-otp-box')
       el?.focus()
@@ -62,7 +62,6 @@ export function EarlyAccessPopup({ open, onClose }: Props) {
     if (code.length !== 6) return setError("Please enter all 6 digits.")
     if (code === "000000") return setError("Invalid OTP. Please try again.")
 
-    // store demo record
     localStorage.setItem(
       "colytics_early_access",
       JSON.stringify({ name, email, verified: true, timestamp: new Date().toISOString() })
@@ -87,8 +86,8 @@ export function EarlyAccessPopup({ open, onClose }: Props) {
 
   if (!open) return null
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4" role="dialog" aria-modal="true">
+  const modal = (
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 px-4" role="dialog" aria-modal="true">
       <div
         className="bg-white rounded-[18px] w-full shadow-2xl overflow-hidden"
         style={{
@@ -198,6 +197,9 @@ export function EarlyAccessPopup({ open, onClose }: Props) {
       </div>
     </div>
   )
+
+  if (typeof document === "undefined") return null
+  return createPortal(modal, document.body)
 }
 
 export default EarlyAccessPopup
