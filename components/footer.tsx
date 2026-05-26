@@ -67,7 +67,7 @@ export function Footer() {
           { label: "Privacy Policy", href: "/privacy-policy" },
         { label: "Terms of Service", href: "/terms-of-service" },
         { label: "Data Processing Agreement", href: "/dpa" },
-        { label: "Cookie Policy", href: "/cookies" },
+        { label: "Cookie Policy", href: "/cookie-policy" },
         { label: "Security", href: "/security" },
         { label: "Compliance", href: "/compliance" },
       ],
