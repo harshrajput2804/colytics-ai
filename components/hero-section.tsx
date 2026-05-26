@@ -1,8 +1,11 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { DashboardMockup } from "@/components/dashboard-mockup"
+import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function HeroSection() {
+  
+
   return (
     <section className="relative w-full pt-32 pb-0 overflow-x-hidden bg-white">
       {/* Gradient background */}
@@ -58,15 +61,10 @@ export function HeroSection() {
 
           {/* CTAs */}
           <div className="mt-9 flex flex-wrap justify-center items-center gap-3">
-            <Button
-              className="h-11 px-6 rounded-full text-[14px] font-medium bg-[#0a0a0a] text-white hover:bg-[#1a1a1a] border-0"
-              asChild
-            >
-              <Link href="/signup">Claim Early Access</Link>
-            </Button>
+            <EarlyAccessTrigger />
             <Button
               variant="outline"
-              className="h-11 px-6 rounded-full text-[14px] font-medium border-border text-[#0a0a0a] hover:bg-[#f5f5f5] bg-white"
+              className="h-11 px-6 rounded-full text-[14px] font-medium border-border text-[#0a0a0a] hover:bg-[#f5f5f5] bg-white transition-transform duration-150 ease-in-out hover:-translate-y-1 hover:shadow-md"
               asChild
             >
               <Link href="#product">See How It Works</Link>
