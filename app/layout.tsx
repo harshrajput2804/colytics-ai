@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
+import { CookieConsentBanner } from "@/components/cookie-consent-banner"
 
 export const metadata: Metadata = {
   title: "Colytics AI — AI Citation Intelligence Platform | AI Search Visibility",
@@ -28,6 +29,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         {children}
+        <CookieConsentBanner />
       </body>
     </html>
   )
