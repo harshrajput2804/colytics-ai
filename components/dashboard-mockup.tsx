@@ -36,7 +36,7 @@ export function DashboardMockup() {
 
       <div className="flex bg-white" style={{ minHeight: 480 }}>
         {/* Sidebar */}
-        <div className="w-52 border-r border-[#e8e8e8] bg-[#fafafa] flex flex-col p-4 hidden md:flex">
+        <div className="w-52 border-r border-[#e8e8e8] bg-[#fafafa] hidden md:flex flex-col p-4">
           {/* Logo mark */}
           <div className="flex items-center gap-2 mb-7 px-1">
             <img src="/logo/colytics-logo-notext.svg" alt="Colytics" className="w-6 h-6" />
@@ -69,7 +69,7 @@ export function DashboardMockup() {
                     : "text-[#737373] hover:text-[#0a0a0a] hover:bg-white/60"
                 }`}
               >
-                <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
                 </svg>
                 {item.label}
@@ -172,8 +172,13 @@ export function DashboardMockup() {
                 {[
                   { model: "ChatGPT", you: 45, gap: -7, color: "#10a37f" },
                   { model: "Gemini", you: 38, gap: -3, color: "#4285f4" },
-                  { model: "Perplexity", you: 62, gap: 34, color: "#5046e5" },
                   { model: "Claude", you: 25, gap: -40, color: "#cc785c" },
+                  { model: "Perplexity", you: 62, gap: 34, color: "#5046e5" },
+                  { model: "Grok", you: 31, gap: 12, color: "#111827" },
+                  { model: "DeepSeek", you: 29, gap: 9, color: "#0f766e" },
+                  { model: "Copilot", you: 33, gap: 7, color: "#2563eb" },
+                  { model: "AI Overviews", you: 41, gap: 15, color: "#7c3aed" },
+                  { model: "Meta AI", you: 27, gap: 4, color: "#db2777" },
                 ].map((m) => (
                   <div key={m.model}>
                     <div className="flex items-center justify-between mb-1">

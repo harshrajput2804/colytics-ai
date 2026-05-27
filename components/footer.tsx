@@ -100,7 +100,7 @@ export function Footer() {
               <span className="font-semibold text-[14px] text-[#0a0a0a]">Colytics AI</span>
             </Link>
             <p className="text-[13px] text-[#9a9a9a] leading-relaxed">
-              The AI citation intelligence platform for SEO teams competing in the age of AI search.
+              The AI Visibility & AEO Intelligence Platform for teams competing in AI search.
             </p>
           </div>
             <div className="flex gap-3 items-start">

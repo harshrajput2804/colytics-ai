@@ -33,11 +33,11 @@ export function CtaSection() {
             <span className="w-1.5 h-1.5 rounded-full bg-[#1549f0]" />
             <span className="text-[11px] font-semibold uppercase tracking-widest text-white/40">Early Access Open</span>
           </div>
-          <h2 className="font-serif text-[48px] md:text-[64px] leading-[1.0] tracking-[-0.02em] text-white mb-6">
+          <h2 className="font-serif text-[48px] md:text-[64px] leading-none tracking-[-0.02em] text-white mb-6">
             Your competitors are already being cited.
           </h2>
           <p className="text-[16px] text-white/50 leading-relaxed mb-10">
-            Join 500 founding teams building for the AI search era. Founding-member pricing locked for life. First access to every new feature as it ships.
+            Join founding teams building for the AI visibility and AEO era. Founding-member pricing locked for life. First access to every new feature as it ships.
           </p>
 
           <div className="space-y-4">
@@ -46,9 +46,10 @@ export function CtaSection() {
               "Priority onboarding with direct product feedback channel",
               "First access to new AI visibility features as they ship",
               "Your input shapes the product roadmap",
+              "Built by a 12-year-old agency",
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                   <svg className="w-2.5 h-2.5 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>

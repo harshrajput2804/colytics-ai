@@ -8,7 +8,7 @@ export function HowItWorks() {
         <div className="max-w-2xl mb-16">
           <p className="section-label mb-5">How It Works</p>
           <h2 className="font-serif text-[42px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
-            Three steps to AI citation intelligence.
+            Three steps to AI visibility and AEO intelligence.
           </h2>
         </div>
 
@@ -17,7 +17,7 @@ export function HowItWorks() {
           <div className="order-2 md:order-1">
             <h3 className="font-serif text-2xl md:text-3xl mb-4">1. Connect Your Domain</h3>
             <p className="text-muted-foreground leading-relaxed">
-              Add your website URL. Add prompts and topics. Colytics begins crawling, analyzing content structure, and mapping your schema coverage.
+              Add your website URL, prompts, and topics. Colytics begins crawling, analyzing content structure, and mapping your schema coverage across 9 AI engines.
             </p>
           </div>
           <div className="order-1 md:order-2">
@@ -33,7 +33,7 @@ export function HowItWorks() {
           <div>
             <h3 className="font-serif text-2xl md:text-3xl mb-4">2. See Your Citation Gaps</h3>
             <p className="text-muted-foreground leading-relaxed">
-              Within minutes, see where competitors are cited and you are not. Understand the structural reasons behind every gap.
+              Within minutes, see where competitors are cited and you are not. Understand the structural reasons behind every gap in AI and Google answers.
             </p>
           </div>
         </div>
@@ -132,7 +132,7 @@ function RoadmapCard() {
 
         <div className="space-y-3">
           <div className="flex items-start gap-3 p-3 border rounded-lg bg-green-50">
-            <div className="w-5 h-5 rounded-full border border-green-500 flex-shrink-0 flex items-center justify-center">
+            <div className="w-5 h-5 rounded-full border border-green-500 shrink-0 flex items-center justify-center">
               <span className="text-green-500 text-xs">✓</span>
             </div>
             <div>
@@ -142,7 +142,7 @@ function RoadmapCard() {
           </div>
           
           <div className="flex items-start gap-3 p-3 border rounded-lg">
-            <div className="w-5 h-5 rounded-full border flex-shrink-0"></div>
+            <div className="w-5 h-5 rounded-full border shrink-0"></div>
             <div>
               <div className="text-sm font-medium">Structure pricing page data</div>
               <div className="text-xs text-muted-foreground">Expected Impact: Medium</div>
@@ -150,7 +150,7 @@ function RoadmapCard() {
           </div>
           
           <div className="flex items-start gap-3 p-3 border rounded-lg">
-            <div className="w-5 h-5 rounded-full border flex-shrink-0"></div>
+            <div className="w-5 h-5 rounded-full border shrink-0"></div>
             <div>
               <div className="text-sm font-medium">Increase entity density on /enterprise</div>
               <div className="text-xs text-muted-foreground">Expected Impact: Medium</div>

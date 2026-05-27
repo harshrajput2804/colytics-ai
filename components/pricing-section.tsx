@@ -18,13 +18,13 @@ export function PricingSection() {
     {
       key: "starter" as const,
       name: "Starter",
-      description: "For individual exploration and getting started with AI citation monitoring.",
+      description: "For individual exploration and getting started with AI visibility and AEO.",
       cta: "Start for free",
       features: [
         "1 project (website)",
         "Basic website auditing",
         "Limited crawl capacity",
-        "Citation monitoring (1 AI model)",
+        "Citation monitoring across core AI engines",
         "Community support",
       ],
       featured: false,
@@ -37,7 +37,7 @@ export function PricingSection() {
       features: [
         "Up to 5 projects",
         "Full citation gap analysis",
-        "All 4 AI models tracked",
+        "All 9 AI engines tracked",
         "AEO Readiness Score",
         "Schema & structured data audit",
         "Weekly citation reports",
@@ -104,13 +104,13 @@ export function PricingSection() {
           <div className="inline-flex relative bg-muted/30 p-1 rounded-full border">
             {/* Sliding Pill Background */}
             <div 
-              className={`absolute top-1 bottom-1 w-[130px] bg-white rounded-full shadow-sm transition-transform duration-300 ease-out ${
-                billingPeriod === "annually" ? "translate-x-0" : "translate-x-[100%]"
+              className={`absolute top-1 bottom-1 w-32.5 bg-white rounded-full shadow-sm transition-transform duration-300 ease-out ${
+                billingPeriod === "annually" ? "translate-x-0" : "translate-x-full"
               }`}
             />
             <button
               onClick={() => setBillingPeriod("annually")}
-              className={`relative z-10 w-[130px] py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
+              className={`relative z-10 w-32.5 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
                 billingPeriod === "annually" ? "text-foreground" : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -118,7 +118,7 @@ export function PricingSection() {
             </button>
             <button
               onClick={() => setBillingPeriod("monthly")}
-              className={`relative z-10 w-[130px] py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
+              className={`relative z-10 w-32.5 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
                 billingPeriod === "monthly" ? "text-foreground" : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -146,11 +146,11 @@ export function PricingSection() {
               )}
               
               <h3 className="text-lg font-medium mb-2">{plan.name}</h3>
-              <p className="text-sm mb-6 h-[60px] text-muted-foreground">
+              <p className="text-sm mb-6 h-15 text-muted-foreground">
                 {plan.description}
               </p>
               
-              <div className="mb-8 relative h-[48px] overflow-hidden shrink-0">
+              <div className="mb-8 relative h-12 overflow-hidden shrink-0">
                 <div 
                   className={`absolute inset-0 transition-all duration-500 ease-in-out flex items-center ${
                     billingPeriod === 'annually' ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'
@@ -160,7 +160,7 @@ export function PricingSection() {
                     {pricing[plan.key]["annually"] === 0 ? "Free" : `$${pricing[plan.key]["annually"]}`}
                   </span>
                   {pricing[plan.key]["annually"] > 0 && (
-                    <span className="text-sm text-muted-foreground ml-1 self-end mb-[3px]">/mo</span>
+                    <span className="text-sm text-muted-foreground ml-1 self-end mb-0.75">/mo</span>
                   )}
                 </div>
                 <div 
@@ -172,7 +172,7 @@ export function PricingSection() {
                     {pricing[plan.key]["monthly"] === 0 ? "Free" : `$${pricing[plan.key]["monthly"]}`}
                   </span>
                   {pricing[plan.key]["monthly"] > 0 && (
-                    <span className="text-sm text-muted-foreground ml-1 self-end mb-[3px]">/mo</span>
+                    <span className="text-sm text-muted-foreground ml-1 self-end mb-0.75">/mo</span>
                   )}
                 </div>
               </div>
@@ -187,7 +187,7 @@ export function PricingSection() {
               <div className="space-y-4">
                 {plan.features.map((feature, i) => (
                   <div key={i} className="flex items-start gap-3 text-sm">
-                    <Check className="w-4 h-4 flex-shrink-0 mt-0.5 text-green-500" />
+                    <Check className="w-4 h-4 shrink-0 mt-0.5 text-green-500" />
                     <span className="text-muted-foreground">{feature}</span>
                   </div>
                 ))}

@@ -4,11 +4,11 @@ import "./globals.css"
 import { CookieConsentBanner } from "@/components/cookie-consent-banner"
 
 export const metadata: Metadata = {
-  title: "Colytics AI — AI Citation Intelligence Platform | AI Search Visibility",
+  title: "Colytics AI — The AI Visibility & AEO Intelligence Platform",
   description:
-    "Colytics AI shows SEO teams why their brand is not being cited in AI answers from ChatGPT, Gemini, and Perplexity — and exactly what to fix. Claim early access.",
+    "Colytics AI shows why AI and Google ignore your brand—and fixes it. Get cited across 9 AI engines. Free during early access.",
   keywords:
-    "AI search visibility, AI citation tracking, AEO tool, answer engine optimization, GEO platform, LLM visibility, AI SEO",
+    "AI visibility, AEO, AI citation tracking, answer engine optimization, Google AI Overviews, AI search visibility, LLM visibility, AI SEO",
 }
 
 export default function RootLayout({

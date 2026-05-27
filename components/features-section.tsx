@@ -1,89 +1,110 @@
+import { CitationAnalysisMockup } from "@/components/citation-analysis-mockup"
+
 export function FeaturesSection() {
+
   return (
-    <section id="product" className="w-full px-6 py-20 md:py-28" style={{ backgroundColor: '#0E0E0F' }}>
-      <div className="mx-auto max-w-7xl">
-        <div className="max-w-4xl mb-12 md:mb-16">
-          <h2
-            className="text-4xl md:text-5xl lg:text-6xl leading-tight"
-            style={{ color: '#FDFDFD', fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.01em' }}
-          >
-            Monitoring Tells You IF. Colytics Tells You WHY — and What to Fix.
-          </h2>
-          <p className="mt-5 text-base md:text-lg leading-relaxed" style={{ color: '#CCD1D5', fontFamily: "'Helvetica', sans-serif" }}>
-            The first platform that combines AI citation intelligence with deep website diagnostics.
-          </p>
+    <>
+      <section id="product" className="pt-28 pb-16 px-6 bg-white border-t border-[#e8e8e8]">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-2xl">
+            <p className="section-label mb-5">SECTION 04 · WHAT COLYTICS AI IS</p>
+            <h2 className="font-serif text-[42px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a] max-w-2xl">
+              Not a monitor. An intelligence system.
+            </h2>
+            <p className="mt-5 text-[16px] text-[#737373] leading-relaxed max-w-2xl">
+              Colytics AI closes the loop between seeing what changed, understanding why it changed, and knowing what to do next.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                title: "It remembers",
+                body: "Running memory of audits, scores, and fixes so every new report builds on the last one.",
+              },
+              {
+                title: "It tracks",
+                body: "Mentions, share of voice, competitors, and model shifts across every AI engine.",
+              },
+              {
+                title: "It recommends",
+                body: "A ranked to-do list scored by Impact × Effort × Urgency.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-2xl border border-[#e8e8e8] bg-[#fafafa] p-6">
+                <p className="text-[14px] font-semibold text-[#0a0a0a]">{item.title}</p>
+                <p className="mt-2 text-[13px] leading-relaxed text-[#737373]">{item.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 overflow-hidden rounded-2xl border border-[#141414] bg-[#0a0a0a]">
+            <div className="grid grid-cols-1 divide-y divide-[#eadfcf] md:grid-cols-5 md:divide-x md:divide-y-0">
+              {[
+                { value: "9", label: "AI engines tracked" },
+                { value: "9", label: "core modules" },
+                { value: "10", label: "lifecycle stages" },
+                { value: "29", label: "AIVS™ parameters" },
+                { value: "1", label: "closed loop" },
+              ].map((stat) => (
+                <div
+                  key={stat.label}
+                  className="flex min-h-[150px] flex-col items-center justify-center bg-[#0a0a0a] px-6 py-8 text-center"
+                >
+                  <span className="text-[52px] leading-none font-semibold tracking-[-0.05em] text-white/75 md:text-[58px]">
+                    {stat.value}
+                  </span>
+                  <span className="mt-5 font-mono text-[14px] leading-none tracking-[0.02em] text-white/75 md:text-[15px]">
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-7 pt-7 border-t border-[#e8e8e8]">
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <p className="text-[15px] leading-relaxed text-[#737373] flex-1">
+                Give the team intelligence, not another dashboard.
+              </p>
+              <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0a0a0a] px-8 py-4 text-[14px] font-medium text-white transition-colors hover:bg-[#0a0a0a]/90 whitespace-nowrap">
+                Start free
+                <span className="text-[16px]">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pt-28 pb-16 px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-2xl mb-10">
+            <p className="section-label mb-4">SECTION 04B · SAMPLE REPORT</p>
+            <h3 className="font-serif text-[32px] md:text-[38px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
+              See a real report — before you sign up.
+            </h3>
+            <p className="mt-4 text-[15px] leading-relaxed text-[#737373]">
+              Preview shows the AIVS™ score, top citation gaps, and a ranked fix list. The full PDF stays gated behind email capture.
+            </p>
+          </div>
+
+          <div className="max-w-7xl mx-auto">
+          <CitationAnalysisMockup />
         </div>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          <article className="rounded-3xl border border-[#C9A227] bg-[#1B1D21] p-7 md:p-8 shadow-[0_0_0_1px_rgba(201,162,39,0.12)]">
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-[#C9A227]/30 bg-[#C9A227]/10 text-[#C9A227]">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 19V5m8 14V3m8 16V9" />
-              </svg>
+          <div className="mt-7 pt-7 border-t border-[#e8e8e8]">
+              <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
+                  The preview is free. The full report is the lead magnet.
+                </p>
+                <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0a0a0a] px-8 py-4 text-[14px] font-medium text-white transition-colors hover:bg-[#0a0a0a]/90 whitespace-nowrap">
+                  Get the sample report
+                  <span className="text-[16px]">→</span>
+                </button>
+              </div>
             </div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#C9A227]" style={{ fontFamily: "'Helvetica', sans-serif" }}>
-              THE LEAD
-            </p>
-            <h3 className="mt-4 text-2xl md:text-[28px] leading-tight text-[#FDFDFD]" style={{ fontFamily: "'Helvetica', sans-serif" }}>
-              AI Citation Intelligence
-            </h3>
-            <p className="mt-4 text-[15px] md:text-[16px] leading-relaxed text-[#CCD1D5]" style={{ fontFamily: "'Helvetica', sans-serif" }}>
-              What AI models are saying about your brand — and your competitors.
-            </p>
-            <ul className="mt-6 space-y-4 text-[14px] md:text-[15px] leading-relaxed text-[#CCD1D5]" style={{ fontFamily: "'Helvetica', sans-serif" }}>
-              <li><span className="text-[#C9A227]">•</span> Citation Gap Analysis: See exactly which prompts cite your competitors but not you, and understand the structural reasons why</li>
-              <li><span className="text-[#C9A227]">•</span> Prompt Coverage Map: Identify the questions your brand should own in AI answers — and where you are missing</li>
-              <li><span className="text-[#C9A227]">•</span> Share of Voice Tracking: Measure your citation presence vs competitors across ChatGPT, Gemini, Claude, and Perplexity</li>
-              <li><span className="text-[#C9A227]">•</span> Citation Drift Alerts: Get notified when your citations drop, a competitor gains, or model behavior changes</li>
-            </ul>
-          </article>
-
-          <article className="rounded-3xl border border-[#54595B] bg-[#0E0E0F] p-7 md:p-8 shadow-[0_0_0_1px_rgba(84,89,91,0.12)]">
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-[#54595B]/30 bg-white/5 text-[#8F9399]">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 7h16M4 12h16M4 17h10" />
-              </svg>
-            </div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#8F9399]" style={{ fontFamily: "'Helvetica', sans-serif" }}>
-              THE PROOF
-            </p>
-            <h3 className="mt-4 text-2xl md:text-[28px] leading-tight text-[#FDFDFD]" style={{ fontFamily: "'Helvetica', sans-serif" }}>
-              Website Intelligence Engine
-            </h3>
-            <p className="mt-4 text-[15px] md:text-[16px] leading-relaxed text-[#CCD1D5]" style={{ fontFamily: "'Helvetica', sans-serif" }}>
-              The diagnostic layer that makes citation intelligence actionable.
-            </p>
-            <ul className="mt-6 space-y-4 text-[14px] md:text-[15px] leading-relaxed text-[#CCD1D5]" style={{ fontFamily: "'Helvetica', sans-serif" }}>
-              <li><span className="text-[#8F9399]">•</span> AEO Readiness Score: A composite score measuring how extractable, structured, and citation-ready your content is for AI systems</li>
-              <li><span className="text-[#8F9399]">•</span> Content Structure Audit: Tables, FAQs, comparison blocks, entity density, fact density — the content patterns AI models prefer</li>
-              <li><span className="text-[#8F9399]">•</span> Schema & Structured Data Analysis: Detect missing schema, generate fix-ready JSON-LD, and track structured data coverage</li>
-              <li><span className="text-[#8F9399]">•</span> Technical Foundation Check: Crawlability, indexability, canonical correctness, robots directives — the infrastructure AI crawlers need</li>
-            </ul>
-          </article>
-
-          <article className="rounded-3xl border border-[#FDFDFD] bg-[#1B1D21] p-7 md:p-8 shadow-[0_0_0_1px_rgba(253,253,253,0.08)]">
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-[#FDFDFD]/30 bg-white/5 text-[#FDFDFD]">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5v14" />
-              </svg>
-            </div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#FDFDFD]/70" style={{ fontFamily: "'Helvetica', sans-serif" }}>
-              THE CLOSER
-            </p>
-            <h3 className="mt-4 text-2xl md:text-[28px] leading-tight text-[#FDFDFD]" style={{ fontFamily: "'Helvetica', sans-serif" }}>
-              Execution Roadmap
-            </h3>
-            <p className="mt-4 text-[15px] md:text-[16px] leading-relaxed text-[#CCD1D5]" style={{ fontFamily: "'Helvetica', sans-serif" }}>
-              Not another dashboard. A prioritized action list.
-            </p>
-            <ul className="mt-6 space-y-4 text-[14px] md:text-[15px] leading-relaxed text-[#CCD1D5]" style={{ fontFamily: "'Helvetica', sans-serif" }}>
-              <li><span className="text-[#FDFDFD]">•</span> Impact × Effort Prioritization: Every recommendation ranked by expected citation lift vs implementation cost</li>
-              <li><span className="text-[#FDFDFD]">•</span> Dev-Ready Fix Lists: Export actionable tickets your team or agency can execute immediately</li>
-              <li><span className="text-[#FDFDFD]">•</span> Weekly Progress Reports: Track citation gains tied directly to fixes shipped</li>
-            </ul>
-          </article>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

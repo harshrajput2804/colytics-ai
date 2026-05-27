@@ -671,7 +671,7 @@ export function CookieConsentBanner() {
     setTimeout(() => { panelOverlay.style.display = 'none'; }, 300);
     document.body.style.overflow = '';
   }
-  function showFloat() { floatBtn.style.display = ''; }
+  function showFloat() { floatBtn.style.display = 'none'; }
 
   // --- Public API ---
   window.ColyticsConsent = {

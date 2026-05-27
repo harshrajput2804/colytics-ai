@@ -29,13 +29,13 @@ function ProductMegaMenu() {
       >
         Product <ChevronDown className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
-      <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[720px] bg-white rounded-2xl border shadow-xl p-6 z-50 grid grid-cols-3 gap-8 transition-all duration-300 ease-out before:absolute before:-top-3 before:left-0 before:w-full before:h-3 ${open ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2 pointer-events-none"}`}>
+      <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-180 bg-white rounded-2xl border shadow-xl p-6 z-50 grid grid-cols-3 gap-8 transition-all duration-300 ease-out before:absolute before:-top-3 before:left-0 before:w-full before:h-3 ${open ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2 pointer-events-none"}`}>
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-4">Platform Overview</p>
             <div className="space-y-3">
               {[
                 { label: "What is Colytics AI?", sub: "Learn how Colytics unifies AI visibility + website intelligence.", href: "/" },
-                { label: "AI Search Visibility", sub: "Track brand citations inside ChatGPT, Gemini, Perplexity.", href: "/product/ai-search-visibility" },
+                { label: "AI Search Visibility", sub: "Track brand citations across 9 AI engines.", href: "/product/ai-search-visibility" },
                 { label: "Website Intelligence", sub: "Crawl, audit, and prioritize technical SEO + content fixes.", href: "/product/website-intelligence" },
                 { label: "Reporting & Automation", sub: "Weekly reports, alerts, API access, white-label exports.", href: "/product/reporting" },
               ].map((item) => (
@@ -80,7 +80,7 @@ function ProductMegaMenu() {
 function SolutionsDropdown() {
   const { open, setOpen, ref } = useDropdown()
   const items = [
-    { label: "AI Search Visibility Platform", sub: "Monitor brand mentions in ChatGPT & Perplexity", href: "/ai-search-visibility" },
+    { label: "AI Search Visibility Platform", sub: "Monitor brand mentions across 9 AI engines", href: "/ai-search-visibility" },
     { label: "AEO Software", sub: "Optimize content for Answer Engine Optimization", href: "/aeo-tool" },
     { label: "Website Audit Tool", sub: "Identify technical SEO issues at scale", href: "/website-audit-tool" },
     { label: "Technical SEO Audit Software", sub: "Deep crawl analysis and prioritized fixes", href: "/technical-seo-audit" },
@@ -142,7 +142,7 @@ function ResourcesMegaMenu() {
       <button onClick={() => setOpen(!open)} className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
         Resources <ChevronDown className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
-      <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[680px] bg-white rounded-2xl border shadow-xl p-6 z-50 grid grid-cols-3 gap-8 transition-all duration-300 ease-out before:absolute before:-top-3 before:left-0 before:w-full before:h-3 ${open ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2 pointer-events-none"}`}>
+      <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-170 bg-white rounded-2xl border shadow-xl p-6 z-50 grid grid-cols-3 gap-8 transition-all duration-300 ease-out before:absolute before:-top-3 before:left-0 before:w-full before:h-3 ${open ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2 pointer-events-none"}`}>
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-4">Educational Content</p>
             <div className="space-y-3">
@@ -204,8 +204,8 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border/40 transition-all">
       <div className="w-full flex items-center justify-between max-w-7xl mx-auto py-4 px-6">
-        <Link href="/" className="flex items-center flex-shrink-0">
-          <img src="/logo/colytics-logo-side.svg" alt="Colytics AI" className="h-[40px] w-auto -my-6" />
+        <Link href="/" className="flex items-center shrink-0">
+          <img src="/logo/colytics-logo-side.svg" alt="Colytics AI" className="h-10 w-auto -my-6" />
         </Link>
         <nav className="hidden md:flex items-center gap-7">
           <ProductMegaMenu />

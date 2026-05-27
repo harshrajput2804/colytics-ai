@@ -1,108 +1,86 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { DashboardMockup } from "@/components/dashboard-mockup"
+import { CitationAnalysisMockup } from "@/components/citation-analysis-mockup"
 import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function HeroSection() {
+  
+
   return (
-    <section className="relative w-full min-h-screen overflow-hidden" style={{ backgroundColor: '#0E0E0F' }}>
-      <div className="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-screen">
-          {/* Left Content - 5 cols */}
-          <div className="lg:col-span-5 flex flex-col justify-center space-y-6 md:space-y-8">
-            {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 w-fit">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-[#54595B] bg-[#1B1D21] text-[11px] font-medium text-[#CCD1D5]" style={{ fontFamily: "'Helvetica', sans-serif" }}>
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#1549f0]" />
-                AI Citation Intelligence Platform — Early Access Open
+    <section className="relative w-full pt-32 pb-0 overflow-x-hidden bg-white">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-linear-to-b from-[#e8f5e9]/30 via-[#e3f2fd]/30 to-[#f3e5f5]/20 pointer-events-none" />
+      
+      {/* Diagonal strips pattern */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-[0.02]" 
+        style={{ backgroundImage: 'repeating-linear-gradient(-45deg, #000, #000 1px, transparent 1px, transparent 6px)' }}
+      />
+      
+      {/* Bottom fade transition to merge smoothly with next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-linear-to-t from-background to-transparent pointer-events-none z-0" />
+
+      <div className="relative max-w-7xl mx-auto px-6">
+        {/* Eyebrow */}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-white text-[12px] font-medium text-muted-foreground">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#1549f0]" />
+            AI Visibility & AEO Intelligence Platform
+          </div>
+        </div>
+
+        {/* Main headline */}
+        <div className="text-center max-w-4xl mx-auto relative">
+          {/* Spotlight Glow (Premium silver/gray, made brighter/more visible) */}
+          <div className="absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 w-112.5 h-45 bg-sky-200/40 blur-[45px] rounded-full pointer-events-none -z-10" />
+          
+          <h1 className="font-serif text-[52px] md:text-[72px] lg:text-[84px] leading-none tracking-[-0.02em] text-[#0a0a0a] text-balance">
+            Get cited.
+            <br />
+            <span className="text-[#737373]">Everywhere your buyers ask.</span>
+          </h1>
+          <p className="mt-7 text-[17px] leading-relaxed text-[#525252] max-w-2xl mx-auto font-[350]">
+            One closed loop for AI visibility and AEO — audit, diagnose, fix, generate and track citations across every major AI model, built by a 12-year-old agency that lived the problem.
+          </p>
+
+          {/* Feature chips */}
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5 mt-8 max-w-170 mx-auto">
+            {[
+              { icon: <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="2.5" fill="currentColor" opacity="0.6"/><circle cx="6" cy="6" r="5" stroke="currentColor" strokeWidth="1" opacity="0.2"/></svg>, label: "Citation Gap Analysis" },
+              { icon: <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 9L5 5L7 7L10 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" opacity="0.7"/></svg>, label: "Share of Voice Tracking" },
+              { icon: <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1.5" y="3" width="9" height="1" rx="0.5" fill="currentColor" opacity="0.6"/><rect x="1.5" y="5.5" width="6" height="1" rx="0.5" fill="currentColor" opacity="0.4"/><rect x="1.5" y="8" width="7.5" height="1" rx="0.5" fill="currentColor" opacity="0.3"/></svg>, label: "9 AI Engines Tracked" },
+              { icon: <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1L7.5 4.5H11L8.25 6.75L9.25 10.5L6 8.25L2.75 10.5L3.75 6.75L1 4.5H4.5L6 1Z" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.6"/></svg>, label: "Prioritized AEO Roadmap" },
+            ].map((chip, i) => (
+              <div key={i} className="flex items-center gap-1.75 px-3 py-1.75 bg-white border border-border rounded-full shadow-sm text-[13px] text-foreground font-medium font-sans leading-none whitespace-nowrap">
+                <span className="flex items-center justify-center">{chip.icon}</span>
+                {chip.label}
               </div>
-            </div>
-
-            {/* Main headline */}
-            <div className="space-y-2">
-              <h1 
-                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight"
-                style={{ color: '#FDFDFD', fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.01em' }}
-              >
-                Your Competitors Are Getting Cited in AI Answers.
-              </h1>
-              <h1 
-                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight"
-                style={{ color: '#FDFDFD', fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.01em' }}
-              >
-                You Are Not.
-              </h1>
-            </div>
-
-            {/* Subheadline */}
-            <p 
-              className="text-sm md:text-base leading-relaxed"
-              style={{ color: '#CCD1D5', fontFamily: "'Helvetica', sans-serif" }}
-            >
-              Colytics AI is the citation intelligence platform that shows you exactly why your brand is invisible in ChatGPT, Gemini, and Perplexity — and gives your team a prioritized fix list to change that.
-            </p>
-
-            {/* Support Bullets */}
-            <ul className="space-y-2.5" style={{ fontFamily: "'Helvetica', sans-serif" }}>
-              <li className="flex items-start gap-3 text-sm md:text-base" style={{ color: '#CCD1D5' }}>
-                <span className="text-[#C9A227] font-bold mt-0.5 shrink-0">•</span>
-                <span>See which prompts trigger competitor citations — not yours</span>
-              </li>
-              <li className="flex items-start gap-3 text-sm md:text-base" style={{ color: '#CCD1D5' }}>
-                <span className="text-[#C9A227] font-bold mt-0.5 shrink-0">•</span>
-                <span>Diagnose the content, schema, and structural gaps causing invisibility</span>
-              </li>
-              <li className="flex items-start gap-3 text-sm md:text-base" style={{ color: '#CCD1D5' }}>
-                <span className="text-[#C9A227] font-bold mt-0.5 shrink-0">•</span>
-                <span>Get a prioritized execution roadmap, not just a dashboard</span>
-              </li>
-              <li className="flex items-start gap-3 text-sm md:text-base" style={{ color: '#CCD1D5' }}>
-                <span className="text-[#C9A227] font-bold mt-0.5 shrink-0">•</span>
-                <span>Track citation gains across AI models over time</span>
-              </li>
-            </ul>
-
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-3 pt-2">
-              <EarlyAccessTrigger />
-              <Button
-                variant="outline"
-                className="h-11 px-6 text-sm md:text-base font-bold"
-                style={{ 
-                  backgroundColor: 'transparent',
-                  color: '#FDFDFD',
-                  borderColor: '#54595B',
-                  fontFamily: "'Helvetica', sans-serif"
-                }}
-                asChild
-              >
-                <Link href="#product">See How It Works</Link>
-              </Button>
-            </div>
-
-            {/* Microcopy */}
-            <p 
-              className="text-xs md:text-sm pt-2"
-              style={{ color: '#8F9399', fontFamily: "'Helvetica', sans-serif" }}
-            >
-              Built for SEO teams managing 100–5,000 pages. No credit card required.
-            </p>
+            ))}
           </div>
 
-          {/* Right side - Product Screenshot - 7 cols */}
-          <div className="lg:col-span-7 flex items-center justify-center lg:justify-end">
-            <div className="w-full h-auto max-w-2xl">
-              <div 
-                className="rounded-2xl overflow-hidden shadow-2xl backdrop-blur-sm"
-                style={{
-                  boxShadow: '0 20px 60px rgba(201, 162, 39, 0.1), 0 0 60px rgba(201, 162, 39, 0.05)',
-                  border: '1px solid rgba(201, 162, 39, 0.1)'
-                }}
-              >
-                <DashboardMockup />
-              </div>
-            </div>
+          {/* CTAs */}
+          <div className="mt-9 flex flex-wrap justify-center items-center gap-3">
+            <EarlyAccessTrigger />
+            <Button
+              variant="outline"
+              className="h-11 px-6 rounded-full text-[14px] font-medium border-border text-[#0a0a0a] hover:bg-[#f5f5f5] bg-white transition-transform duration-150 ease-in-out hover:-translate-y-1 hover:shadow-md"
+              asChild
+            >
+              <Link href="#product">See how the loop works</Link>
+            </Button>
           </div>
+
+          {/* Trust signals */}
+          <div className="mt-7 flex flex-wrap justify-center items-center gap-3 text-[12px] text-[#9a9a9a]">
+            <span>Built by a 12-year-old agency</span>
+            <span className="w-px h-3 bg-border" />
+            <span>Free during early access</span>
+          </div>
+        </div>
+
+        {/* Dashboard mockup — flush to bottom */}
+        <div className="mt-16 relative">
+          <CitationAnalysisMockup />
         </div>
       </div>
     </section>

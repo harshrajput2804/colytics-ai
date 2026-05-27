@@ -13,61 +13,66 @@ export function ComparisonSection() {
   ]
 
   return (
-    <section className="py-20 px-6" style={{ backgroundColor: '#0E0E0F' }}>
+    <section className="py-28 px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
       <div className="max-w-5xl mx-auto">
-        <div className="max-w-2xl mb-12">
-          <p className="section-label mb-5 text-[#CCD1D5]">The Difference</p>
-          <h2 className="font-serif text-[36px] md:text-[44px] leading-[1.05] tracking-[-0.01em]" style={{ color: '#FDFDFD' }}>
-            The Difference Between Monitoring and Intelligence.
+        <div className="max-w-2xl mb-16">
+          <p className="section-label mb-5">The Difference</p>
+          <h2 className="font-serif text-[42px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
+            The scoreboard vs the playbook.
           </h2>
-          <p className="mt-4 text-[15px] text-[#CCD1D5] leading-relaxed">
-            AI visibility monitors show you the scoreboard. Colytics gives you the playbook.
+          <p className="mt-5 text-[16px] text-[#737373] leading-relaxed">
+            AI visibility monitors tell you whether you were cited. Colytics tells you why AI and Google ignored your brand — and exactly what to fix.
           </p>
         </div>
 
-        <div className="rounded-3xl overflow-hidden border border-white/6">
-          {/* header */}
-          <div className="grid grid-cols-[1fr_200px_200px] bg-[#0E0E0F] border-b border-white/6">
-            <div className="px-6 py-4 text-[12px] font-semibold uppercase tracking-widest text-[#8F9399]">Capability</div>
+        <div className="bg-white border border-[#e8e8e8] rounded-2xl overflow-hidden">
+          {/* Table header */}
+          <div className="grid grid-cols-[1fr_160px_160px] border-b border-[#e8e8e8] bg-[#fafafa]">
+            <div className="px-6 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#9a9a9a]">Capability</div>
             <div className="px-6 py-4 text-center">
-              <div className="text-[13px] font-semibold text-[#8F9399]">AI Visibility Monitors</div>
-              <div className="text-[11px] text-[#8F9399] mt-0.5">LLMRefs, Peec, Scrunch</div>
+              <div className="text-[12px] font-semibold text-[#525252]">AI Monitors</div>
+              <div className="text-[10px] text-[#9a9a9a] mt-0.5">LLMRefs, Peec, Scrunch</div>
             </div>
-            <div className="px-6 py-4 text-center bg-linear-to-r from-transparent to-transparent">
-              <div className="text-[13px] font-semibold text-[#FDFDFD]">Colytics AI</div>
+            <div className="px-6 py-4 text-center">
+              <div className="text-[12px] font-semibold text-[#0a0a0a]">Colytics AI</div>
+              <div className="inline-flex items-center gap-1 mt-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1549f0]" />
+                <span className="text-[10px] text-[#1549f0] font-medium">Full platform</span>
+              </div>
             </div>
           </div>
 
           {rows.map((row, i) => (
-            <div key={i} className={`grid grid-cols-[1fr_200px_200px] items-center border-b ${i === rows.length - 1 ? 'border-b-0' : 'border-white/6'}`}>
-              <div className="px-6 py-4 text-[14px] text-[#CCD1D5]">{row.capability}</div>
+            <div
+              key={i}
+              className={`grid grid-cols-[1fr_160px_160px] border-b border-[#f0f0f0] last:border-0 items-center ${
+                !row.monitors ? "bg-[#eff4ff]/20" : ""
+              }`}
+            >
+              <div className="px-6 py-4 text-[13px] text-[#525252]">{row.capability}</div>
               <div className="px-6 py-4 flex justify-center">
                 {row.monitors ? (
-                  <svg className="w-5 h-5 text-[#6b7280]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-4 h-4 text-[#737373]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
                 ) : (
-                  <svg className="w-5 h-5 text-[#374151] opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-4 h-4 text-[#d4d4d4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 )}
               </div>
               <div className="px-6 py-4 flex justify-center">
-                {row.colytics ? (
-                  <svg className="w-6 h-6 text-[#C9A227]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M20 6L9 17l-5-5" />
+                <div className="w-5 h-5 rounded-full bg-[#0a0a0a] flex items-center justify-center">
+                  <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
-                ) : (
-                  <svg className="w-5 h-5 text-[#374151] opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                )}
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        <p className="text-center mt-10 font-serif text-[18px] italic text-[#8F9399]">
+        <p className="text-center mt-10 font-serif text-[20px] italic text-[#9a9a9a]">
           "AI visibility monitors show you the scoreboard. Colytics gives you the playbook."
         </p>
       </div>

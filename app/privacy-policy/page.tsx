@@ -1,3 +1,4 @@
+import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
 import { readFile } from "node:fs/promises"
@@ -100,8 +101,9 @@ export default async function PrivacyPolicyPage() {
   const lastUpdated = markdown.match(/\*\*Last Updated:\*\*\s*(.+)/i)?.[1]?.trim() ?? "Not specified"
 
   return (
-    <main className="min-h-screen bg-white text-[#0a0a0a]">
-      <section className="max-w-4xl mx-auto px-6 py-16 md:py-20">
+    <main className="min-h-screen flex flex-col bg-white">
+      <Header />
+      <section className="flex-1 max-w-4xl mx-auto w-full px-6 py-16 md:py-20">
         <p className="text-sm text-[#6b6b6b] mb-8">
           <span className="font-medium text-[#0a0a0a]">Last Updated:</span> {lastUpdated}
         </p>
