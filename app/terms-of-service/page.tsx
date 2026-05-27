@@ -90,7 +90,7 @@ function markdownToHtml(markdown: string) {
 }
 
 async function getTermsOfServiceMarkdown() {
-  const filePath = path.resolve(process.cwd(), "..", "info_doc", "website-terms-of-service.md")
+  const filePath = path.resolve(process.cwd(), "info_doc", "website-terms-of-service.md")
   return readFile(filePath, "utf-8")
 }
 

@@ -90,7 +90,7 @@ function markdownToHtml(markdown: string) {
 }
 
 async function getPrivacyPolicyMarkdown() {
-  const filePath = path.resolve(process.cwd(), "..", "info_doc", "website-privacy-policy.md")
+  const filePath = path.resolve(process.cwd(), "info_doc", "website-privacy-policy.md")
   return readFile(filePath, "utf-8")
 }
 

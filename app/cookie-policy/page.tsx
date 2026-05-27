@@ -139,7 +139,7 @@ function markdownToHtml(markdown: string) {
 }
 
 async function getCookiePolicyMarkdown() {
-  const filePath = path.resolve(process.cwd(), "..", "info_doc", "website-cookie-policy.md")
+  const filePath = path.resolve(process.cwd(), "info_doc", "website-cookie-policy.md")
   return readFile(filePath, "utf-8")
 }
 
