@@ -110,13 +110,13 @@ export function EarlyAccessPopup({ open, onClose }: Props) {
           </button>
 
           <div className="flex-1 overflow-y-auto" style={{
-            scrollbarWidth: 'thin',
+            scrollbarWidth: 'none',
             scrollbarColor: 'rgba(0,0,0,0.2) transparent',
             msOverflowStyle: 'auto',
           }}>
             <style>{`
               div::-webkit-scrollbar {
-                width: 6px;
+                width: 0;
               }
               div::-webkit-scrollbar-track {
                 background: transparent;

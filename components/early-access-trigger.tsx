@@ -9,7 +9,7 @@ export default function EarlyAccessTrigger() {
   return (
     <>
       <Button
-        className="h-11 px-6 rounded-full text-[14px] font-medium bg-[#0a0a0a] text-white hover:bg-[#1a1a1a] border-0 transition-transform duration-150 ease-in-out hover:-translate-y-1 hover:shadow-lg"
+        className="h-11 px-6 rounded-full text-[14px] font-bold bg-white text-[#0E0E0F] hover:bg-[#f5f5f5] border-0 transition-transform duration-150 ease-in-out hover:-translate-y-1 hover:shadow-lg"
         onClick={() => setOpen(true)}
       >
         Claim Early Access
