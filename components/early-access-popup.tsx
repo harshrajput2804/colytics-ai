@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
+import { ComplianceSnippet } from "@/components/compliance-snippet"
 
 type Props = {
   open: boolean
@@ -87,9 +88,9 @@ export function EarlyAccessPopup({ open, onClose }: Props) {
   if (!open) return null
 
   const modal = (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 px-4" role="dialog" aria-modal="true">
+    <div className="fixed inset-0 z-9999 flex items-center justify-center bg-black/60 px-4" role="dialog" aria-modal="true">
       <div
-        className="bg-white rounded-[18px] w-full shadow-2xl overflow-hidden"
+        className="bg-white rounded-[18px] w-full shadow-2xl flex flex-col overflow-hidden"
         style={{
           maxWidth: 440,
           width: 'min(440px, 96vw)',
@@ -99,14 +100,33 @@ export function EarlyAccessPopup({ open, onClose }: Props) {
           transition: 'opacity 320ms ease, transform 320ms cubic-bezier(0.16,1,0.3,1)',
         }}
       >
-        <div className="relative" style={{ padding: '32px 40px', textAlign: 'left' }}>
+        <div className="relative flex flex-col flex-1 overflow-hidden">
           <button
-            className="absolute right-4 top-4 w-9 h-9 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-50"
+            className="absolute right-4 top-4 w-9 h-9 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-50 z-10"
             onClick={close}
             aria-label="Close"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
+
+          <div className="flex-1 overflow-y-auto" style={{
+            scrollbarWidth: 'thin',
+            scrollbarColor: 'rgba(0,0,0,0.2) transparent',
+            msOverflowStyle: 'auto',
+          }}>
+            <style>{`
+              div::-webkit-scrollbar {
+                width: 6px;
+              }
+              div::-webkit-scrollbar-track {
+                background: transparent;
+              }
+              div::-webkit-scrollbar-thumb {
+                background-color: rgba(0,0,0,0.2);
+                border-radius: 3px;
+              }
+            `}</style>
+            <div style={{ padding: '32px 40px', textAlign: 'left' }}>
 
           {step === 1 && (
             <div>
@@ -133,22 +153,7 @@ export function EarlyAccessPopup({ open, onClose }: Props) {
                 className="mt-1 mb-5 w-full rounded-lg border border-gray-200 px-4 placeholder:text-gray-400 text-gray-900 bg-white focus:outline-none focus:ring-0 focus:border-gray-300"
               />
 
-              <div className="mt-2">
-                <label className="flex items-start gap-4 px-5 py-4 bg-[#f8fafc] border border-[#d9dee6] rounded-[14px]">
-                  <input
-                    type="checkbox"
-                    className="w-5 h-5 mt-0.5 rounded-sm border-[1.5px] border-[#8e98a8] bg-white accent-black"
-                    checked={consent}
-                    onChange={e => setConsent(e.target.checked)}
-                  />
-                  <span className="text-[#475467]" style={{ fontSize: 13, lineHeight: 1.45 }}>
-                    I agree to receive product updates and marketing communications from Colytics AI.
-                  </span>
-                </label>
-                <div className="text-xs text-gray-500 mt-3" style={{ fontSize: 12, lineHeight: 1.3 }}>
-                  By signing up, you agree to our <a href="/privacy-policy" className="text-gray-700 underline">Privacy Policy</a> and <a href="/terms-of-service" className="text-gray-700 underline">Terms of Service</a>. You can unsubscribe at any time.
-                </div>
-              </div>
+              <ComplianceSnippet />
 
               {error && <div className="text-sm text-red-600 mt-3">{error}</div>}
 
@@ -193,6 +198,8 @@ export function EarlyAccessPopup({ open, onClose }: Props) {
               <button className="mt-6 w-full rounded-full bg-black text-white py-3 font-medium" onClick={close}>Got it</button>
             </div>
           )}
+            </div>
+          </div>
         </div>
       </div>
     </div>

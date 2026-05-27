@@ -3,6 +3,16 @@ import Link from "next/link"
 import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function Footer() {
+  function openCcpaOptOut() {
+    const floatButton = document.getElementById("cb-float") as HTMLButtonElement | null
+    floatButton?.click()
+
+    window.setTimeout(() => {
+      const ccpaOptOut = document.getElementById("cb-ccpa-optout") as HTMLAnchorElement | null
+      ccpaOptOut?.click()
+    }, 50)
+  }
+
   const columns = [
     {
       title: "Product",
@@ -64,12 +74,17 @@ export function Footer() {
     {
       title: "Legal",
       links: [
-          { label: "Privacy Policy", href: "/privacy-policy" },
+        { label: "Privacy Policy", href: "/privacy-policy" },
         { label: "Terms of Service", href: "/terms-of-service" },
-        { label: "Data Processing Agreement", href: "/dpa" },
         { label: "Cookie Policy", href: "/cookie-policy" },
-        { label: "Security", href: "/security" },
-        { label: "Compliance", href: "/compliance" },
+        {
+          label: "For California Residents: Do Not Sell or Share My Personal Information",
+          href: "#",
+          onClick: (event: React.MouseEvent<HTMLAnchorElement>) => {
+            event.preventDefault()
+            openCcpaOptOut()
+          },
+        },
       ],
     },
   ]
@@ -106,6 +121,7 @@ export function Footer() {
                   <Link
                     key={link.label}
                     href={link.href}
+                    onClick={link.onClick}
                     className="text-[12px] text-[#737373] hover:text-[#0a0a0a] transition-colors leading-snug"
                   >
                     {link.label}

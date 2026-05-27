@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { ComplianceSnippet } from "@/components/compliance-snippet"
 
 export function CtaSection() {
   const [email, setEmail] = useState("")
@@ -114,6 +115,11 @@ export function CtaSection() {
                     className="w-full px-4 py-3 text-[14px] border border-[#e8e8e8] rounded-xl bg-[#fafafa] focus:outline-none focus:ring-2 focus:ring-[#0a0a0a]/10 focus:border-[#0a0a0a] transition-colors resize-none placeholder:text-[#c0c0c0]"
                   />
                 </div>
+
+                <div style={{ marginTop: "16px" }}>
+                  <ComplianceSnippet />
+                </div>
+
                 <Button
                   type="submit"
                   className="w-full h-12 rounded-xl bg-[#0a0a0a] text-white hover:bg-[#1a1a1a] text-[14px] font-semibold border-0 mt-2"
