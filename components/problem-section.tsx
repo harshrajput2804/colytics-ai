@@ -1,3 +1,5 @@
+import EarlyAccessTrigger from "@/components/early-access-trigger"
+
 export function ProblemSection() {
   return (
     <section className="py-20 px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
@@ -72,16 +74,18 @@ export function ProblemSection() {
           </ul>
         </div>
         <div className="mt-7 pt-7 border-t border-[#e8e8e8]">
+          <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-between gap-8">
               <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
                 See the structural reason competitors win.
               </p>
-              <button className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap">
-                Diagnose my gaps
-                <span className="text-[16px]">→</span>
-              </button>
+              <EarlyAccessTrigger
+                label={"Diagnose my gaps →"}
+                className={"inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap"}
+              />
             </div>
           </div>
+        </div>
       </div>
       
     </section>

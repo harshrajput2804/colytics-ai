@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { CitationAnalysisMockup } from "@/components/citation-analysis-mockup"
+import { DashboardMockup } from "@/components/dashboard-mockup"
 import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function HeroSection() {
@@ -80,7 +80,7 @@ export function HeroSection() {
 
         {/* Dashboard mockup — flush to bottom */}
         <div className="mt-16 relative">
-          <CitationAnalysisMockup />
+          <DashboardMockup />
         </div>
       </div>
     </section>

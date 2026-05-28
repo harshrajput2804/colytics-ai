@@ -104,11 +104,12 @@ export function Footer() {
             </p>
           </div>
             <div className="flex gap-3 items-start">
-              <EarlyAccessTrigger />
+              <EarlyAccessTrigger label="Get early access →" />
               <Link href="/pricing" className="inline-flex items-center h-9 px-5 rounded-full border border-[#e8e8e8] text-[#525252] text-[13px] font-medium hover:bg-[#f5f5f5] transition-colors">
                 View Pricing
               </Link>
             </div>
+        
         </div>
 
         {/* Link columns */}

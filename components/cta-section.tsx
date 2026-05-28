@@ -36,35 +36,34 @@ export function CtaSection() {
           <h2 className="font-serif text-[48px] md:text-[64px] leading-none tracking-[-0.02em] text-white mb-6">
             Your competitors are already being cited.
           </h2>
-          <p className="text-[16px] text-white/50 leading-relaxed mb-10">
-            Join founding teams building for the AI visibility and AEO era. Founding-member pricing locked for life. First access to every new feature as it ships.
-          </p>
+          <div className="bg-white/5 border border-white/10 rounded-xl p-5 mb-10">
+            <p className="text-[16px] text-white/50 font-semibold mb-2">✓ Full Pro free for 60 days</p>
+            <p className="text-[14px] text-white/70 leading-relaxed">Then $49/mo, or stay on Free Forever with essential features. No credit card required.</p>
+          </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {[
-              "Founding-member pricing locked for life",
-              "Priority onboarding with direct product feedback channel",
-              "First access to new AI visibility features as they ship",
-              "Your input shapes the product roadmap",
-              "Built by a 12-year-old agency",
+              "Discover AI citations your competitors already have",
+              "See exactly which LLMs are citing your site",
+              "Optimize for AEO and claim your AI visibility",
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                  <svg className="w-2.5 h-2.5 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <div className="w-5 h-5 rounded-full bg-[#1549f0]/20 flex items-center justify-center shrink-0">
+                  <svg className="w-2.5 h-2.5 text-[#1549f0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
                 </div>
-                <span className="text-[13px] text-white/60">{item}</span>
+                <span className="text-[13px] text-white/70">{item}</span>
               </div>
             ))}
           </div>
 
           <div className="mt-10 pt-10 border-t border-white/10">
-            <p className="text-[11px] text-white/30 uppercase tracking-widest font-medium mb-4">Trust & Security</p>
+            <p className="text-[11px] text-white/30 uppercase tracking-widest font-medium mb-4">Enterprise Ready</p>
             <div className="flex flex-wrap gap-5 text-[12px] text-white/40">
-              <span>No credit card required</span>
-              <span>Data encrypted in transit & at rest</span>
-              <span>SOC 2 on roadmap</span>
+              <span>No credit card needed</span>
+              <span>Bank-level encryption</span>
+              <span>GDPR & CCPA compliant</span>
             </div>
           </div>
         </div>
@@ -73,8 +72,8 @@ export function CtaSection() {
         <div>
           {!submitted ? (
             <div className="bg-white rounded-2xl p-8">
-              <h3 className="text-[18px] font-semibold text-[#0a0a0a] mb-1">Claim your spot</h3>
-              <p className="text-[13px] text-[#737373] mb-7">Limited to the first 500 teams. Free during early access.</p>
+              <h3 className="text-[18px] font-semibold text-[#0a0a0a] mb-1">Get 60 days free</h3>
+              <p className="text-[13px] text-[#737373] mb-7">Start today. Cancel anytime. No credit card required.</p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -115,10 +114,6 @@ export function CtaSection() {
                     rows={3}
                     className="w-full px-4 py-3 text-[14px] border border-[#e8e8e8] rounded-xl bg-[#fafafa] focus:outline-none focus:ring-2 focus:ring-[#0a0a0a]/10 focus:border-[#0a0a0a] transition-colors resize-none placeholder:text-[#c0c0c0]"
                   />
-                </div>
-
-                <div style={{ marginTop: "16px" }}>
-                  <ComplianceSnippet />
                 </div>
 
                 <Button

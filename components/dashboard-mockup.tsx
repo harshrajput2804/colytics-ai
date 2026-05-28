@@ -3,15 +3,15 @@ import { Globe } from "lucide-react"
 export function DashboardMockup() {
   // Bar chart data for citation share
   const bars = [
-    { label: "Jan", you: 28, comp: 41 },
-    { label: "Feb", you: 31, comp: 43 },
-    { label: "Mar", you: 29, comp: 47 },
-    { label: "Apr", you: 35, comp: 48 },
-    { label: "May", you: 38, comp: 45 },
-    { label: "Jun", you: 44, comp: 46 },
-    { label: "Jul", you: 47, comp: 44 },
+    { label: "Jan", you: 50, comp: 71 },
+    { label: "Feb", you: 51, comp: 63 },
+    { label: "Mar", you: 49, comp: 67 },
+    { label: "Apr", you: 55, comp: 68 },
+    { label: "May", you: 58, comp: 75 },
+    { label: "Jun", you: 64, comp: 86 },
+    { label: "Jul", you: 67, comp: 54 },
   ]
-  const maxVal = 60
+  const maxVal = 90
 
   return (
     <div
@@ -129,7 +129,7 @@ export function DashboardMockup() {
           {/* Chart + Table row */}
           <div className="grid grid-cols-5 gap-4">
             {/* Bar chart */}
-            <div className="col-span-3 bg-white border border-[#e8e8e8] rounded-xl p-4">
+            <div className="col-span-3 bg-white border border-[#e8e8e8] rounded-xl p-4 flex h-full flex-col">
               <div className="flex items-center justify-between mb-4">
                 <div className="text-[12px] font-medium text-[#0a0a0a]">Citation Share vs Top Competitor</div>
                 <div className="flex items-center gap-3 text-[10px] text-[#9a9a9a]">
@@ -144,24 +144,35 @@ export function DashboardMockup() {
                 </div>
               </div>
               {/* Chart */}
-              <div className="flex items-end gap-2 h-28">
-                {bars.map((b) => (
-                  <div key={b.label} className="flex-1 flex items-end gap-0.5">
-                    <div
-                      className="flex-1 rounded-sm bg-[#0a0a0a]"
-                      style={{ height: `${(b.you / maxVal) * 100}%`, minHeight: 4 }}
-                    />
-                    <div
-                      className="flex-1 rounded-sm bg-[#e8e8e8]"
-                      style={{ height: `${(b.comp / maxVal) * 100}%`, minHeight: 4 }}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className="flex justify-around mt-1.5">
-                {bars.map((b) => (
-                  <span key={b.label} className="text-[9px] text-[#c0c0c0] flex-1 text-center">{b.label}</span>
-                ))}
+              <div className="relative mt-auto h-80 rounded-lg bg-linear-to-b from-white to-[#fcfcfc] px-1 pt-8 pb-4">
+                <div className="absolute inset-x-1 top-10 border-t border-dashed border-[#efefef]" />
+                <div className="absolute inset-x-1 top-[24%] border-t border-dashed border-[#f1f1f1]" />
+                <div className="absolute inset-x-1 top-[68%] border-t border-dashed border-[#f1f1f1]" />
+                <div className="absolute inset-x-1 bottom-6 border-t border-[#e8e8e8]" />
+                <div className="absolute right-2 top-2 text-[9px] text-[#c0c0c0] uppercase tracking-wide">Target 65%</div>
+                <div className="absolute inset-x-0 bottom-8 flex items-end gap-2 px-1">
+                  {bars.map((b) => (
+                    <div key={b.label} className="flex-1 flex flex-col items-stretch gap-1">
+                      <div className="flex items-end gap-1 h-36">
+                        <div className="flex-1 flex flex-col items-center justify-end gap-1">
+                          <span className="text-[9px] font-semibold text-[#0a0a0a]">{b.you}</span>
+                          <div
+                            className="w-full rounded-sm bg-[#0a0a0a] shadow-[0_0_0_1px_rgba(0,0,0,0.02)]"
+                            style={{ height: `${24 + b.you * 2.2}px`, minHeight: 24 }}
+                          />
+                        </div>
+                        <div className="flex-1 flex flex-col items-center justify-end gap-1">
+                          <span className="text-[9px] font-semibold text-[#9a9a9a]">{b.comp}</span>
+                          <div
+                            className="w-full rounded-sm bg-[#e8e8e8] shadow-[0_0_0_1px_rgba(0,0,0,0.01)]"
+                            style={{ height: `${22 + b.comp * 2}px`, minHeight: 22 }}
+                          />
+                        </div>
+                      </div>
+                      <div className="text-[9px] text-[#c0c0c0] text-center">{b.label}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 

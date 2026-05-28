@@ -1,4 +1,6 @@
 import { CitationAnalysisMockup } from "@/components/citation-analysis-mockup"
+import { AIVisibilityReportMockup } from "@/components/ai-visibility-report-mockup"
+import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function FeaturesSection() {
 
@@ -7,7 +9,7 @@ export function FeaturesSection() {
       <section id="product" className="pt-28 pb-16 px-6 bg-white border-t border-[#e8e8e8]">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-2xl">
-            <p className="section-label mb-5">SECTION 04 · WHAT COLYTICS AI IS</p>
+            <p className="section-label mb-5">WHAT COLYTICS AI IS</p>
             <h2 className="font-serif text-[42px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a] max-w-2xl">
               Not a monitor. An intelligence system.
             </h2>
@@ -67,10 +69,10 @@ export function FeaturesSection() {
               <p className="text-[15px] leading-relaxed text-[#737373] flex-1">
                 Give the team intelligence, not another dashboard.
               </p>
-              <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0a0a0a] px-8 py-4 text-[14px] font-medium text-white transition-colors hover:bg-[#0a0a0a]/90 whitespace-nowrap">
-                Start free
-                <span className="text-[16px]">→</span>
-              </button>
+              <EarlyAccessTrigger
+                label="Start free →"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0a0a0a] px-8 py-4 text-[14px] font-medium text-white transition-colors hover:bg-[#0a0a0a]/90 whitespace-nowrap"
+              />
             </div>
           </div>
         </div>
@@ -79,7 +81,7 @@ export function FeaturesSection() {
       <section className="pt-28 pb-16 px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-2xl mb-10">
-            <p className="section-label mb-4">SECTION 04B · SAMPLE REPORT</p>
+            <p className="section-label mb-4">SAMPLE REPORT</p>
             <h3 className="font-serif text-[32px] md:text-[38px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
               See a real report — before you sign up.
             </h3>
@@ -89,7 +91,7 @@ export function FeaturesSection() {
           </div>
 
           <div className="max-w-7xl mx-auto">
-          <CitationAnalysisMockup />
+          <AIVisibilityReportMockup />
         </div>
 
           <div className="mt-7 pt-7 border-t border-[#e8e8e8]">
@@ -97,10 +99,10 @@ export function FeaturesSection() {
                 <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
                   The preview is free. The full report is the lead magnet.
                 </p>
-                <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0a0a0a] px-8 py-4 text-[14px] font-medium text-white transition-colors hover:bg-[#0a0a0a]/90 whitespace-nowrap">
-                  Get the sample report
-                  <span className="text-[16px]">→</span>
-                </button>
+                <EarlyAccessTrigger
+                  label="Get the sample report →"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0a0a0a] px-8 py-4 text-[14px] font-medium text-white transition-colors hover:bg-[#0a0a0a]/90 whitespace-nowrap"
+                />
               </div>
             </div>
         </div>

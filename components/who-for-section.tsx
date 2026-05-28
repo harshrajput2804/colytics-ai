@@ -1,36 +1,39 @@
+import { ArrowRight } from "lucide-react"
+import EarlyAccessTrigger from "@/components/early-access-trigger"
+
 export function WhoForSection() {
   const personas = [
     {
-      title: "SEO Agencies",
+      title: "SEO & Growth Agencies",
       href: "/for-agencies",
       points: [
-        "Standardize AI visibility audits across every client account",
-        "Deliver differentiated strategy that goes beyond rankings",
-        "Generate white-label citation intelligence reports",
+        "Clients ask why they’re invisible in AI, and your current tools can’t answer — so you standardize AI audits fast.",
+        "Defend and differentiate retainer value with white-label reports and clear citation-gap analysis.",
+        "Expand content opportunities without adding headcount.",
       ],
-      quote: "Our agency added AI citation analysis to every client retainer. Three clients expanded scope in the first month.",
+      quote: "We finally had a clean way to show where clients were missing in AI search — and why the retainer deserved to stay.",
       attribution: "Agency Lead — Early Access",
     },
     {
-      title: "In-House SEO Teams",
+      title: "Brand & Marketing Teams",
       href: "/for-in-house-seo",
       points: [
-        "Show leadership exactly where AI visibility gaps exist",
-        "Prioritize backlog with citation-impact data, not guesswork",
-        "Monitor competitive citation movement weekly",
+        "The CMO keeps asking where you show up in ChatGPT, and rankings alone don’t answer it.",
+        "Prove revenue impact with GA4 attribution, citation-gap analysis, and benchmarks.",
+        "Build a backlog ranked by citation impact — enterprises don’t need a special plan.",
       ],
-      quote: "We finally had data to prove to our CMO that rankings alone were not enough.",
-      attribution: "In-House SEO Manager — Early Access",
+      quote: "For the first time, we had a way to explain AI visibility in a language leadership actually cared about.",
+      attribution: "Head of Digital — Early Access",
     },
     {
-      title: "Solopreneurs & Consultants",
+      title: "Consultants & Solopreneurs",
       href: "/for-solopreneurs",
       points: [
-        "Replace six tools with one unified platform",
-        "Focus on highest-impact fixes without analysis paralysis",
-        "Get clarity on what to write next and how to structure it",
+        "Six disconnected tools leave you drowning in what to fix first.",
+        "Use one platform with a ranked roadmap so you know what matters next.",
+        "Ship client-ready content without needing a writer.",
       ],
-      quote: "As a solo consultant, I replaced six tools with one. The edge I needed.",
+      quote: "It replaced the tool sprawl and gave me a much clearer next step for every client.",
       attribution: "Independent SEO Consultant — Early Access",
     },
   ]
@@ -41,10 +44,10 @@ export function WhoForSection() {
         <div className="max-w-2xl mb-16">
           <p className="section-label mb-5">Who It's For</p>
           <h2 className="font-serif text-[42px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
-            Built for teams that compete in AI search and AEO.
+            From solo consultants to enterprise brands.
           </h2>
           <p className="mt-5 text-[15px] text-[#737373]">
-            Currently optimized for websites with 100–5,000 pages. Enterprise-scale crawling on the roadmap.
+            Any size, 10,000+ pages, no cap.
           </p>
         </div>
 
@@ -66,6 +69,17 @@ export function WhoForSection() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="mx-auto mt-7 w-full max-w-7xl border-t border-[#e8e8e8] pt-7">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
+               Whatever your seat, there’s a fit.
+            </p>
+            <EarlyAccessTrigger
+              label="Find my fit"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap"
+            />
+          </div>
         </div>
       </div>
     </section>

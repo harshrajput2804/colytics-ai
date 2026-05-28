@@ -220,8 +220,9 @@ export function Header() {
           <Button variant="ghost" size="sm" asChild>
             <Link href="/login">Login</Link>
           </Button>
-          <EarlyAccessTrigger />
+          <EarlyAccessTrigger label="Get early access →" />
         </div>
+      
       </div>
     </header>
   )

@@ -1,24 +1,26 @@
 "use client"
 
+import { ArrowRight } from "lucide-react"
 import { useState, useEffect } from "react"
+import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 const testimonials = [
   {
     quote: "Our agency added AI citation analysis to every client retainer. Three clients expanded scope in the first month. Colytics gave us the data to have conversations that SEMrush never could.",
-    name: "Agency Lead",
-    company: "SEO Agency (Early Access)",
+    name: "A. Rivera",
+    company: "Founder, SEO Agency",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Sep%2011%2C%202025%2C%2011_35_19%20AM-z4zSRLsbOQDp7MJS1t8EXmGNB6Al9Z.png",
   },
   {
     quote: "We finally had data to prove to our CMO that rankings alone were not enough. Colytics showed exactly where our competitors were being cited and we weren't — and why.",
-    name: "In-House SEO Manager",
-    company: "Mid-Market SaaS (Early Access)",
+    name: "J. Park",
+    company: "SEO Lead, B2B SaaS",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Sep%2011%2C%202025%2C%2010_54_18%20AM-nbiecp92QNdTudmCrHr97uekrIPzCP.png",
   },
   {
     quote: "As a solo consultant, I replaced six tools with one. Colytics gives me clarity on exactly what to write next and how to structure it for AI citation. It is the edge I needed.",
-    name: "Independent SEO Consultant",
-    company: "Solopreneur (Early Access)",
+    name: "S. Mehta",
+    company: "Independent Consultant",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Sep%2011%2C%202025%2C%2011_01_05%20AM-TBOe92trRxKn4G5So1m9D2h7LRH4PG.png",
   },
 ]
@@ -71,6 +73,18 @@ export function TestimonialsSection() {
                 />
               ))}
             </div>
+          </div>
+        </div>
+
+         <div className="mx-auto mt-7 w-full max-w-7xl border-t border-[#e8e8e8] pt-7">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
+               Join the early users shaping the product — your feedback ships.
+            </p>
+            <EarlyAccessTrigger
+              label="Get early access"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap"
+            />
           </div>
         </div>
       </div>

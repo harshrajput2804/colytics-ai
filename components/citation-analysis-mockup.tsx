@@ -99,101 +99,93 @@ export function CitationAnalysisMockup() {
           {/* Page header */}
           <div className="flex items-start justify-between mb-6">
             <div>
-              <h2 className="text-[15px] font-semibold text-[#0a0a0a]">AI Visibility Scorecards</h2>
-              <p className="text-[12px] text-[#9a9a9a] mt-0.5">How well your page performs across all AI engine dimensions</p>
+              <h2 className="text-[15px] font-semibold text-[#0a0a0a]">Citation Analysis</h2>
+              <p className="text-[12px] text-[#9a9a9a] mt-0.5">Analyze your citations and their impact across AI search results</p>
             </div>
             <button className="px-3 py-1.5 bg-[#4f46e5] rounded-lg text-[11px] text-white font-medium cursor-pointer hover:bg-[#4338ca]">
-              Add AI
+              Analyze
             </button>
           </div>
 
-          {/* Top band: Overall gauge (left), Module bars (center), Metrics (right) */}
-          <div className="grid grid-cols-12 gap-4 mb-6 items-center">
-            {/* Overall gauge */}
-            <div className="col-span-12 md:col-span-3">
-              <div className="bg-white border border-[#e8e8e8] rounded-xl p-4 flex flex-col items-center justify-center">
-                <div className="relative w-28 h-28 mb-3">
-                  <svg className="w-full h-full" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="45" fill="none" stroke="#e8e8e8" strokeWidth="8" />
-                    <circle
-                      cx="50"
-                      cy="50"
-                      r="45"
-                      fill="none"
-                      stroke="#f59e0b"
-                      strokeWidth="8"
-                      strokeDasharray={`${45 * Math.PI * 2 * 0.57} ${45 * Math.PI * 2}`}
-                      strokeLinecap="round"
-                      transform="rotate(-90 50 50)"
-                    />
-                  </svg>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-[30px] font-bold text-[#0a0a0a]">57</span>
-                  </div>
-                </div>
-                <div className="text-[11px] text-[#9a9a9a] text-center">Overall Score</div>
-                <div className="text-[10px] text-[#dc2626] mt-1">Fair</div>
-              </div>
-            </div>
-
-            {/* Module bars centered */}
-            <div className="col-span-12 md:col-span-6">
-              <div className="bg-white border border-[#e8e8e8] rounded-xl p-4">
-                <div className="text-[12px] font-medium text-[#0a0a0a] mb-3">Module Score Overview</div>
-                <div className="flex items-end gap-3 h-28">
-                  {moduleScores.map((m) => (
-                    <div key={m.label} className="flex-1 flex flex-col items-center">
-                      <div
-                        className="w-full rounded-sm mb-2 transition-all"
-                        style={{
-                          background: m.color,
-                          height: `${(m.value / 100) * 100}%`,
-                          minHeight: 8,
-                        }}
-                      />
-                      <span className="text-[9px] text-[#9a9a9a] text-center leading-tight">{m.label}</span>
-                    </div>
-                  ))}
+          {/* KPI Row with Overall Score */}
+          <div className="grid grid-cols-4 gap-3 mb-6">
+            {/* Overall Score Card */}
+            <div className="bg-white border border-[#e8e8e8] rounded-xl p-4 flex flex-col items-center justify-center">
+              <div className="relative w-24 h-24 mb-3">
+                <svg className="w-full h-full" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="45" fill="none" stroke="#e8e8e8" strokeWidth="8" />
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    fill="none"
+                    stroke="#f59e0b"
+                    strokeWidth="8"
+                    strokeDasharray={`${45 * Math.PI * 2 * 0.57} ${45 * Math.PI * 2}`}
+                    strokeLinecap="round"
+                    transform="rotate(-90 50 50)"
+                  />
+                </svg>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-[28px] font-bold text-[#0a0a0a]">57</span>
                 </div>
               </div>
+              <div className="text-[11px] text-[#9a9a9a] text-center">Overall Score</div>
+              <div className="text-[10px] text-[#dc2626] mt-1">Fair</div>
             </div>
 
-            {/* Metrics stacked on right */}
-            <div className="col-span-12 md:col-span-3 space-y-3">
-              {[
-                { label: "CURRENT", value: "64.9", color: "#0a0a0a" },
-                { label: "PREDICTED", value: "90.4", color: "#10b981" },
-                { label: "POTENTIAL", value: "+25.5", color: "#3b82f6" },
-              ].map((metric) => (
-                <div key={metric.label} className="bg-white border border-[#e8e8e8] rounded-xl p-4">
-                  <div className="text-[10px] font-semibold text-[#9a9a9a] uppercase tracking-wide mb-2">{metric.label}</div>
-                  <div className="text-[24px] font-bold leading-none" style={{ color: metric.color }}>
-                    {metric.value}
-                  </div>
+            {/* Current, Predicted, Potential */}
+            {[
+              { label: "CURRENT", value: "64.9", color: "#0a0a0a" },
+              { label: "PREDICTED", value: "90.4", color: "#10b981" },
+              { label: "POTENTIAL", value: "+25.5", color: "#3b82f6" },
+            ].map((metric) => (
+              <div key={metric.label} className="bg-white border border-[#e8e8e8] rounded-xl p-4">
+                <div className="text-[10px] font-semibold text-[#9a9a9a] uppercase tracking-wide mb-2">{metric.label}</div>
+                <div className="text-[24px] font-bold leading-none mb-2" style={{ color: metric.color }}>
+                  {metric.value}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
 
-          {/* Lower content: AEO checker + table preview */}
-          <div className="grid grid-cols-12 gap-4">
-            {/* AEO Checker */}
-            <div className="col-span-12 md:col-span-4 bg-white border border-[#e8e8e8] rounded-xl p-4">
-              <div className="text-[12px] font-medium text-[#0a0a0a] mb-3">AEO Checker</div>
-              <div className="space-y-2">
-                {aeoBreakdown.map((a) => (
-                  <div key={a.category} className="flex items-center justify-between">
-                    <div className="text-[11px]">{a.category}</div>
-                    <div className="text-[11px] font-semibold">{a.score}%</div>
+          {/* Charts Grid */}
+          <div className="grid grid-cols-5 gap-4">
+            {/* Module Score Overview */}
+            <div className="col-span-3 bg-white border border-[#e8e8e8] rounded-xl p-4">
+              <div className="text-[12px] font-medium text-[#0a0a0a] mb-4">Module Score Overview</div>
+              <div className="flex items-end gap-3 h-32">
+                {moduleScores.map((m) => (
+                  <div key={m.label} className="flex-1 flex flex-col items-center">
+                    <div
+                      className="w-full rounded-sm mb-2 transition-all"
+                      style={{
+                        background: m.color,
+                        height: `${(m.value / 100) * 100}%`,
+                        minHeight: 8,
+                      }}
+                    />
+                    <span className="text-[9px] text-[#9a9a9a] text-center leading-tight">{m.label}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Table preview area */}
-            <div className="col-span-12 md:col-span-8 bg-white border border-[#e8e8e8] rounded-xl p-4">
-              <div className="text-[12px] font-medium text-[#0a0a0a] mb-3">Top Opportunities</div>
-              <div className="h-40 bg-[#fafafa] rounded-md p-3 text-[12px] text-[#6b6b6b]">Table preview area</div>
+            {/* Current Metrics */}
+            <div className="col-span-2 space-y-2">
+              {aeoBreakdown.map((a) => (
+                <div key={a.category} className="bg-white border border-[#e8e8e8] rounded-lg p-2.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-medium text-[#0a0a0a]">{a.category}</span>
+                    <span className="text-[11px] font-semibold text-[#0a0a0a]">{a.score}%</span>
+                  </div>
+                  <div className="text-[9px] mt-1" style={{
+                    color: a.status === "Good" ? "#16a34a" : a.status === "Poor" ? "#dc2626" : "#f59e0b"
+                  }}>
+                    {a.status}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

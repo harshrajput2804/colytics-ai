@@ -1,3 +1,5 @@
+import EarlyAccessTrigger from "@/components/early-access-trigger"
+
 export function StatsSection() {
   return (
     <section className="py-20 bg-white border-t border-[#e8e8e8]">
@@ -69,10 +71,10 @@ export function StatsSection() {
             <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
               The answer layer is being written now, with or without your brand.
             </p>
-            <button className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap">
-              Get on the map
-              <span className="text-[16px]">→</span>
-            </button>
+            <EarlyAccessTrigger
+              label={"Get on the map →"}
+              className={"inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap"}
+            />
           </div>
         </div>
       </div>
