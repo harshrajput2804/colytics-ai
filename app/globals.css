@@ -62,12 +62,16 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground font-sans;
     font-feature-settings: "kern" 1, "liga" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
 }
 
 /* Enterprise design utilities */
@@ -86,3 +90,15 @@
   text-transform: uppercase;
   color: var(--muted-foreground);
 }
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+/* Keep only the simple scrollbar-hide utility; TOC scrolling works via flex-1 min-h-0 */

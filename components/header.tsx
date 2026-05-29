@@ -212,7 +212,16 @@ export function Header() {
           <SolutionsDropdown />
           <UseCasesDropdown />
           <ResourcesMegaMenu />
-          <Link href="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <Link
+            href="/#pricing"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            onClick={(e) => {
+              if (typeof window !== "undefined" && window.location.pathname === "/") {
+                e.preventDefault()
+                document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })
+              }
+            }}
+          >
             Pricing
           </Link>
         </nav>

@@ -4,7 +4,7 @@ import { useState } from "react"
 export function RoiMockup() {
   const [websites, setWebsites] = useState<number>(1)
   const [hourlyRate, setHourlyRate] = useState<number>(75)
-  const [currentToolSpend, setCurrentToolSpend] = useState<number>(370)
+  const [currentToolSpend, setCurrentToolSpend] = useState<number>(375)
   const [compareAgainst, setCompareAgainst] = useState<string>("Multiple tools")
   const [plan, setPlan] = useState<string>("Pro - $49/mo")
 
@@ -159,19 +159,22 @@ export function RoiMockup() {
                     <th className="pb-3 font-medium">Manual</th>
                     <th className="pb-3 font-medium">Multiple Tools</th>
                     <th className="pb-3 font-medium">Colytics AI</th>
-                    <th className="pb-3 font-medium text-right">You Save</th>
+                    <th className="pb-3 font-medium text-right">Save vs Manual</th>
+                    <th className="pb-3 font-medium text-right">Save vs Tools</th>
                   </tr>
                 </thead>
                 <tbody>
                   {rows.map((row) => {
-                    const save = row[1] - row[3]
+                    const saveManual = row[1] - row[3]
+                    const saveTools = row[2] - row[3]
                     return (
                       <tr key={row[0]} className="border-b border-gray-200 align-top">
                         <td className="py-2.5 pr-4 text-gray-800">{row[0]}</td>
                         <td className="py-2.5 text-gray-700">{row[1].toFixed(1)}</td>
                         <td className="py-2.5 text-gray-700">{row[2].toFixed(1)}</td>
                         <td className="py-2.5 text-gray-700">{row[3].toFixed(2)}</td>
-                        <td className="py-2.5 text-right font-medium text-gray-900">{save.toFixed(save >= 10 ? 1 : 2)} h</td>
+                        <td className="py-2.5 text-right font-medium text-gray-900">{saveManual.toFixed(saveManual >= 10 ? 1 : 2)} h</td>
+                        <td className="py-2.5 text-right font-medium text-gray-900">{saveTools.toFixed(saveTools >= 10 ? 1 : 2)} h</td>
                       </tr>
                     )
                   })}
@@ -180,6 +183,7 @@ export function RoiMockup() {
                     <td className="py-3">68.0</td>
                     <td className="py-3">28.5</td>
                     <td className="py-3">5.25</td>
+                    <td className="py-3 text-right">62.75 hrs</td>
                     <td className="py-3 text-right">23.25 hrs</td>
                   </tr>
                 </tbody>
@@ -187,11 +191,11 @@ export function RoiMockup() {
             </div>
 
             <p className="mt-4 text-xs text-gray-600">
-              Colytics runs the lifecycle in ~{(colyticsMonthlyHoursPerSite / 12).toFixed(2)} hrs/site/mo vs ~{(compareAgainst === "Doing it fully by hand" ? manualMonthlyHoursPerSite : multipleToolsMonthlyHoursPerSite).toFixed(1)} with separate tools.
+              Colytics runs the lifecycle in ~{colyticsMonthlyHoursPerSite.toFixed(2)} hrs/site/mo vs ~{(compareAgainst === "Doing it fully by hand" ? manualMonthlyHoursPerSite : multipleToolsMonthlyHoursPerSite).toFixed(1)} with separate tools.
             </p>
 
             <p className="mt-4 text-[11px] leading-relaxed text-gray-500">
-              Illustrative benchmarks for a monthly AEO cycle, based on agency experience — starting points you can tune. "Multiple tools" assumes a typical stack (rank tracker + AI monitor + schema tool + AI writer + detector). Defaults: $370/mo example stack, $75/hr blended rate.
+              Illustrative benchmarks for a monthly AEO cycle, based on agency experience — starting points you can tune. "Multiple tools" assumes a typical stack (rank tracker + AI monitor + schema tool + AI writer + detector). Defaults: $375/mo example stack, $75/hr blended rate.
             </p>
           </div>
         </div>
