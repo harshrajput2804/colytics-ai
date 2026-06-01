@@ -2,11 +2,15 @@ import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { BlogPostShell, type TocItem } from "@/components/blog-post-shell"
+import { BlogPostingSchema } from "@/components/blog-posting-schema"
 
 export const metadata: Metadata = {
   title: "Content Strategy for Modern Marketers",
   description:
     "Discover the content strategies that drive real results in 2026, from SEO-first content to AI-powered personalization.",
+  alternates: {
+    canonical: "https://colytics-ai-amber.vercel.app/blog/content-strategy-2026",
+  },
 }
 
 const toc: TocItem[] = [
@@ -21,6 +25,13 @@ export default function ContentStrategyPage() {
   return (
     <>
       <Header />
+      <BlogPostingSchema
+        title="Content Strategy for Modern Marketers"
+        description="Discover the content strategies that drive real results in 2026, from SEO-first content to AI-powered personalization."
+        url="https://colytics-ai-amber.vercel.app/blog/content-strategy-2026"
+        publishedAt="2025-08-10"
+        image="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&h=600&fit=crop"
+      />
       <BlogPostShell
         category="Content"
         title="Content Strategy for Modern Marketers"

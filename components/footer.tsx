@@ -1,74 +1,81 @@
-"use client"
 import Link from "next/link"
 import EarlyAccessTrigger from "@/components/early-access-trigger"
+import { CcpaOptOutButton } from "@/components/footer-ccpa-handler"
 
 export function Footer() {
-  function openCcpaOptOut() {
-    const floatButton = document.getElementById("cb-float") as HTMLButtonElement | null
-    floatButton?.click()
-
-    window.setTimeout(() => {
-      const ccpaOptOut = document.getElementById("cb-ccpa-optout") as HTMLAnchorElement | null
-      ccpaOptOut?.click()
-    }, 50)
-  }
-
   const columns = [
     {
       title: "Product",
       links: [
-        { label: "Platform Overview", href: "/" },
-        { label: "AI Search Visibility", href: "/product/ai-search-visibility" },
-        { label: "AEO Readiness Score", href: "/product/aeo-readiness" },
-        { label: "Website Intelligence", href: "/product/website-intelligence" },
-        { label: "Reporting & Automation", href: "/product/reporting" },
-        { label: "Integrations", href: "/integrations" },
-        { label: "API Access", href: "/api" },
-        { label: "Changelog", href: "/changelog" },
+        { label: "Platform Overview", href: "/#what-colytics-is" },
+        { label: "AI Search Visibility", href: "/#ai-search-visibility" },
+        { label: "ASK AI", href: "/#ask-ai" },
+        { label: "Connect to Claude", href: "/#connect-claude" },
+        { label: "Proprietary scoring ", href: "/#proprietary-scoring" },
+        { label: "AI Citation Visibility", href: "/#ai-citation-visibility" },
+        { label: "Prompt Visibility Tracking", href: "/#prompt-visibility" },
+        { label: "SEO Visibility & Search Optimization", href: "/#the-solution" },
+        { label: "Reporting & Automation", href: "/#the-solution" },
       ],
     },
     {
       title: "Solutions",
       links: [
-        { label: "AI Search Visibility", href: "/ai-search-visibility" },
-        { label: "AEO Software", href: "/aeo-tool" },
-        { label: "Website Audit Tool", href: "/website-audit-tool" },
-        { label: "Technical SEO Audit", href: "/technical-seo-audit" },
-        { label: "Content Audit Software", href: "/content-audit" },
-        { label: "Competitor Analysis", href: "/competitors" },
+        { label: "AI Search Visibility", href: "/#ai-search-visibility" },
+        { label: "AI Search Visibility Platform", href: "/#ai-citation-visibility" },
+        { label: "AEO Software", href: "/#aeo-readiness" },
+        { label: "Website Audit Tool", href: "/#the-solution" },
+        { label: "Technical SEO Audit", href: "/#the-solution" },
+        { label: "Technical SEO Audit Software", href: "/#the-solution" },
+        { label: "Content Intelligence Platform", href: "/#the-solution" },
+        { label: "Content Audit Software", href: "/#the-solution" },
+        { label: "SEO Automation Platform", href: "/#the-solution" },
+        { label: "AI Citation Monitoring", href: "/#ai-citation-visibility" },
+        { label: "Prompt Tracking Software", href: "/#prompt-visibility" },
+        { label: "Competitor Analysis", href: "/#comparison" },
       ],
     },
     {
       title: "Use Cases",
       links: [
-        { label: "SEO Agencies", href: "/for-agencies" },
-        { label: "In-house SEO Teams", href: "/for-in-house-seo" },
-        { label: "Solopreneurs", href: "/for-solopreneurs" },
-        { label: "SaaS Teams", href: "/for-saas" },
-        { label: "eCommerce Teams", href: "/for-ecommerce" },
-        { label: "Publishers", href: "/for-publishers" },
+        { label: "SEO Agencies", href: "/#who-for" },
+        { label: "In-house SEO Teams", href: "/#who-for" },
+        { label: "Solopreneurs", href: "/#who-for" },
+        { label: "SaaS Teams", href: "/#who-for" },
+        { label: "eCommerce Teams", href: "/#who-for" },
+        { label: "Publishers", href: "/#who-for" },
       ],
     },
     {
       title: "Resources",
       links: [
         { label: "Blog", href: "/blog" },
-        { label: "AI SEO Framework", href: "/framework/llm-seo" },
-        { label: "Case Studies", href: "/case-studies" },
-        { label: "Sample Reports", href: "/sample-report" },
-        { label: "ROI Calculator", href: "/calculator" },
-        { label: "Comparison Pages", href: "/comparisons" },
+        { label: "AI SEO Framework", href: "/blog/aeo-vs-seo" },
+        { label: "AI SEO Guide", href: "/blog/aeo-vs-seo" },
+        { label: "What is AEO?", href: "/#aeo-readiness" },
+        { label: "What is AI Search Visibility?", href: "/#ai-search-visibility" },
+        { label: "LLM SEO Framework", href: "/#the-solution" },
+        { label: "Case Studies", href: "/#comparison" },
+        { label: "Sample Reports", href: "/#ai-search-visibility" },
+        { label: "ROI Calculator", href: "/#roi-calculator" },
+        { label: "AI SEO Checklist", href: "/#the-solution" },
+        { label: "Schema Templates", href: "/#structured-data" },
+        { label: "AI Prompt Library", href: "/#prompt-visibility" },
+        { label: "Content Audit Template", href: "/#the-solution" },
+        { label: "AIVS Score Checker", href: "/#ai-search-visibility" },
+        { label: "Comparison Pages", href: "/#comparison" },
       ],
     },
     {
       title: "Company",
       links: [
-        { label: "About Us", href: "/about" },
-        { label: "Careers", href: "/careers" },
-        { label: "Roadmap", href: "/roadmap" },
-        { label: "Contact", href: "/contact" },
-        { label: "Press", href: "/press" },
-        { label: "Affiliate Program", href: "/affiliates" },
+        { label: "About Us", href: "/#the-solution" },
+        { label: "Careers", href: "/#who-for" },
+        { label: "Roadmap", href: "/#modules" },
+        { label: "Contact", href: "/#faq" },
+        { label: "Email hello@colytics.ai", href: "mailto:hello@colytics.ai" },
+        { label: "Press", href: "/#comparison" },
+        { label: "Affiliate Program", href: "/#pricing" },
       ],
     },
     {
@@ -77,14 +84,7 @@ export function Footer() {
         { label: "Privacy Policy", href: "/privacy-policy" },
         { label: "Terms of Service", href: "/terms-of-service" },
         { label: "Cookie Policy", href: "/cookie-policy" },
-        {
-          label: "For California Residents: Do Not Sell or Share My Personal Information",
-          href: "#",
-          onClick: (event: React.MouseEvent<HTMLAnchorElement>) => {
-            event.preventDefault()
-            openCcpaOptOut()
-          },
-        },
+        { label: "ccpa", href: null, isButton: true },
       ],
     },
   ]
@@ -105,7 +105,7 @@ export function Footer() {
           </div>
             <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-start">
               <EarlyAccessTrigger label="Get early access →" />
-              <Link href="/pricing" className="inline-flex items-center justify-center h-9 px-5 rounded-full border border-[#e8e8e8] text-[#525252] text-[13px] font-medium hover:bg-[#f5f5f5] transition-colors">
+              <Link href="/#pricing" className="inline-flex items-center justify-center h-9 px-5 rounded-full border border-[#e8e8e8] text-[#525252] text-[13px] font-medium hover:bg-[#f5f5f5] transition-colors">
                 View Pricing
               </Link>
             </div>
@@ -119,14 +119,17 @@ export function Footer() {
               <h3 className="text-[11px] font-bold uppercase tracking-widest text-[#9a9a9a] mb-4">{col.title}</h3>
               <div className="flex flex-col gap-2.5">
                 {col.links.map((link) => (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    onClick={link.onClick}
-                    className="text-[12px] text-[#737373] hover:text-[#0a0a0a] transition-colors leading-snug"
-                  >
-                    {link.label}
-                  </Link>
+                  link.isButton ? (
+                    <CcpaOptOutButton key="ccpa" />
+                  ) : (
+                    <Link
+                      key={link.label}
+                      href={link.href as string}
+                      className="text-[12px] text-[#737373] hover:text-[#0a0a0a] transition-colors leading-snug"
+                    >
+                      {link.label}
+                    </Link>
+                  )
                 ))}
               </div>
             </div>
@@ -139,7 +142,7 @@ export function Footer() {
           <div className="flex flex-wrap justify-center gap-5 text-[12px] text-[#9a9a9a]">
               <Link href="/privacy-policy" className="hover:text-[#0a0a0a] transition-colors">Privacy</Link>
             <Link href="/terms-of-service" className="hover:text-[#0a0a0a] transition-colors">Terms</Link>
-            <Link href="/security" className="hover:text-[#0a0a0a] transition-colors">Security</Link>
+            <Link href="/#faq" className="hover:text-[#0a0a0a] transition-colors">Security</Link>
           </div>
         </div>
 

@@ -16,7 +16,7 @@ export function CtaSection() {
   }
 
   return (
-    <section className="py-28 px-6 bg-[#0a0a0a] relative overflow-hidden">
+    <section className="enhanced-surface py-28 px-6 bg-[#0a0a0a] relative overflow-hidden">
       {/* Subtle noise texture */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.03]"

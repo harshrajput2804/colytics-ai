@@ -155,14 +155,15 @@ export function CitationAnalysisMockup() {
             <div className="col-span-1 xl:col-span-3 bg-white border border-[#e8e8e8] rounded-xl p-4">
               <div className="text-[12px] font-medium text-[#0a0a0a] mb-4">Module Score Overview</div>
               <div className="flex items-end gap-3 h-32">
-                {moduleScores.map((m) => (
+                {moduleScores.map((m, idx) => (
                   <div key={m.label} className="flex-1 flex flex-col items-center">
                     <div
-                      className="w-full rounded-sm mb-2 transition-all"
+                      className="motion-bar w-full rounded-sm mb-2 transition-all"
                       style={{
                         background: m.color,
                         height: `${(m.value / 100) * 100}%`,
                         minHeight: 8,
+                        animationDelay: `${idx * 0.22}s`,
                       }}
                     />
                     <span className="text-[9px] text-[#9a9a9a] text-center leading-tight">{m.label}</span>

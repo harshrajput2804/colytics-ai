@@ -39,7 +39,7 @@ export function WhoForSection() {
   ]
 
   return (
-    <section className="py-28 px-6 bg-white border-t border-[#e8e8e8]">
+    <section id="who-for" className="enhanced-surface py-28 px-6 bg-white border-t border-[#e8e8e8]">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl mb-16">
           <p className="section-label mb-5">Who It's For</p>

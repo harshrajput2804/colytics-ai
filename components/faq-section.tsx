@@ -1,7 +1,3 @@
-"use client"
-
-import { useState } from "react"
-
 const faqs = [
   { q: "What is Colytics?", a: "Colytics is an AI citation intelligence platform that monitors whether your content is cited by major AI engines (ChatGPT, Gemini, Claude, Perplexity, Grok, DeepSeek, Copilot, Google AI Overviews, and Meta AI) and diagnoses why citations are or aren't happening. It combines automated citation tracking with actionable insights to optimize your visibility in AI-generated answers." },
   { q: "What happens after I register?", a: "You receive immediate access to the dashboard. Add your domain, and your first citation analysis begins within minutes. No setup calls or waiting lists." },
@@ -20,13 +16,24 @@ const faqs = [
   { q: "Is my data secure?", a: "All data is encrypted in transit and at rest. Colytics does not share your data with third parties. Your competitive citation data is visible only to your team. We are working toward SOC 2 compliance as part of our enterprise readiness roadmap." },
 ]
 
-export function FaqSection() {
-  const [open, setOpen] = useState<number | null>(null)
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+}
 
+export function FaqSection() {
   return (
-    <section className="py-28 px-4 sm:px-6 bg-white border-t border-[#e8e8e8]">
+    <section id="faq" className="enhanced-surface py-28 px-4 sm:px-6 bg-white border-t border-[#e8e8e8]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[300px_1fr] gap-10 sm:gap-16">
-        {/* Left */}
         <div className="md:sticky md:top-32 self-start">
           <p className="section-label mb-5">FAQ</p>
           <h2 className="font-serif text-[30px] sm:text-[36px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a] mb-4">
@@ -40,18 +47,14 @@ export function FaqSection() {
           </p>
         </div>
 
-        {/* Right: accordion */}
         <div>
-          {faqs.map((faq, i) => (
-            <div key={i} className="border-t border-[#e8e8e8]">
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between py-5 text-left group"
-              >
-                <span className="text-[14px] font-medium text-[#0a0a0a] pr-8 leading-snug">{faq.q}</span>
-                <div className={`w-5 h-5 rounded-full border border-[#e8e8e8] flex items-center justify-center shrink-0 transition-colors ${open === i ? "bg-[#0a0a0a] border-[#0a0a0a]" : "bg-transparent"}`}>
+          {faqs.map((faq) => (
+            <details key={faq.q} className="group border-t border-[#e8e8e8] py-5" open>
+              <summary className="flex cursor-pointer list-none items-center justify-between text-left">
+                <span className="pr-8 text-[14px] font-medium leading-snug text-[#0a0a0a]">{faq.q}</span>
+                <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#e8e8e8] transition-colors group-open:bg-[#0a0a0a] group-open:border-[#0a0a0a]">
                   <svg
-                    className={`w-2.5 h-2.5 transition-transform ${open === i ? "text-white rotate-45" : "text-[#737373]"}`}
+                    className="h-2.5 w-2.5 text-[#737373] transition-transform group-open:rotate-45 group-open:text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -60,11 +63,11 @@ export function FaqSection() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                   </svg>
                 </div>
-              </button>
-              <div className={`overflow-hidden transition-all duration-200 ease-in-out ${open === i ? "max-h-64 pb-5" : "max-h-0"}`}>
-                <p className="text-[14px] text-[#737373] leading-relaxed pr-8">{faq.a}</p>
+              </summary>
+              <div className="pt-4">
+                <p className="pr-8 text-[14px] leading-relaxed text-[#737373]">{faq.a}</p>
               </div>
-            </div>
+            </details>
           ))}
           <div className="border-t border-[#e8e8e8]" />
         </div>

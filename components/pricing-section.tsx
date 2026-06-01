@@ -1,5 +1,3 @@
-"use client"
-
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Check } from "lucide-react"
 import EarlyAccessTrigger from "@/components/early-access-trigger"
@@ -48,7 +46,7 @@ export function PricingSection() {
   ]
 
   return (
-    <section id="pricing" className="py-28 px-4 sm:px-6 bg-[#fafafa] border-t border-[#e8e8e8] relative overflow-hidden">
+    <section id="pricing" className="enhanced-surface py-28 px-4 sm:px-6 bg-[#fafafa] border-t border-[#e8e8e8] relative overflow-hidden">
       {/* Diagonal strips pattern */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.02]"

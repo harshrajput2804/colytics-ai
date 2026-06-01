@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Blog — Colytics AI",
   description:
     "Explore in-depth articles on AI ad generators, marketing strategies, and tools for smart marketers.",
+  alternates: {
+    canonical: "https://colytics-ai-amber.vercel.app/blog",
+  },
 }
 
 const blogPosts = [
@@ -82,11 +85,11 @@ export default function BlogPage() {
       <Header />
       <main className="min-h-screen bg-white text-[#0a0a0a]">
         {/* Hero Section */}
-        <div className="relative overflow-hidden">
+        <header className="enhanced-surface relative overflow-hidden">
           <div className="absolute inset-x-0 top-0 h-96 bg-[radial-gradient(circle_at_top,rgba(21,73,240,0.12),transparent_60%)]" />
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
             <div className="text-center">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-balance">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-balance reveal-heading">
                 Colytics AI Blog
               </h1>
               <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -94,11 +97,11 @@ export default function BlogPage() {
               </p>
             </div>
           </div>
-        </div>
+        </header>
 
         {/* Featured Post */}
         {featuredPost && (
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16" aria-labelledby="featured-article-heading">
             <Link
               href={`/blog/${featuredPost.slug}`}
               className="group block rounded-3xl border border-border bg-linear-to-br from-brand/5 to-brand/0 overflow-hidden hover:shadow-lg transition-all duration-300"
@@ -124,7 +127,7 @@ export default function BlogPage() {
                         {featuredPost.category}
                       </span>
                     </div>
-                    <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-[#0a0a0a] group-hover:text-brand transition-colors">
+                    <h2 id="featured-article-heading" className="mt-4 text-2xl sm:text-3xl font-semibold text-[#0a0a0a] group-hover:text-brand transition-colors">
                       {featuredPost.title}
                     </h2>
                     <p className="mt-3 text-muted-foreground leading-7">
@@ -134,6 +137,7 @@ export default function BlogPage() {
 
                   <div className="mt-6 flex items-center justify-between">
                     <div className="flex items-center gap-4 text-sm text-muted-foreground">
+
                       <div className="flex items-center gap-1">
                         <CalendarDays className="h-4 w-4" />
                         <time dateTime={featuredPost.publishedAt}>
@@ -150,20 +154,20 @@ export default function BlogPage() {
                       </div>
                     </div>
                     <div className="inline-flex items-center gap-2 font-semibold text-brand group-hover:gap-3 transition-all">
-                      Read article
+                      Read: {featuredPost.title}
                       <ArrowRight className="h-4 w-4" />
                     </div>
                   </div>
                 </div>
               </div>
             </Link>
-          </div>
+          </section>
         )}
 
         {/* Recent Posts Grid */}
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16" aria-labelledby="recent-articles-heading">
           <div className="mb-12">
-            <h2 className="text-3xl font-semibold tracking-tight">Recent articles</h2>
+            <h2 id="recent-articles-heading" className="text-3xl font-semibold tracking-tight reveal-heading">Recent articles</h2>
             <p className="mt-2 text-muted-foreground">
               Explore our latest insights and strategies for modern marketing.
             </p>
@@ -171,18 +175,22 @@ export default function BlogPage() {
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {recentPosts.map((post) => (
-              <Link
+              <article
                 key={post.slug}
-                href={`/blog/${post.slug}`}
                 className="group flex flex-col rounded-2xl border border-border bg-white hover:shadow-lg hover:border-brand/20 transition-all duration-300 overflow-hidden"
               >
-                <div className="relative h-48 overflow-hidden bg-muted">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="contents"
+                >
+                  <div className="relative h-48 overflow-hidden bg-muted">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
 
                 <div className="flex-1 p-5 sm:p-6 flex flex-col">
                   <div className="flex items-center gap-2">
@@ -190,6 +198,7 @@ export default function BlogPage() {
                       {post.category}
                     </span>
                   </div>
+
 
                   <h3 className="mt-3 text-lg font-semibold text-[#0a0a0a] group-hover:text-brand transition-colors line-clamp-2">
                     {post.title}
@@ -213,15 +222,16 @@ export default function BlogPage() {
                     <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
-              </Link>
+                </Link>
+              </article>
             ))}
           </div>
-        </div>
+        </section>
 
         {/* CTA Section */}
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20" aria-labelledby="blog-subscribe-heading">
           <div className="rounded-3xl border bg-black bg-linear-to-r from-brand to-brand/80 p-8 sm:p-12 text-center text-white">
-            <h2 className="text-3xl sm:text-4xl font-semibold">Stay updated with our latest insights</h2>
+            <h2 id="blog-subscribe-heading" className="text-3xl sm:text-4xl font-semibold">Stay updated with our latest insights</h2>
             <p className="mt-4 text-white/50 text-lg max-w-2xl mx-auto">
               Subscribe to get the latest articles on AI marketing, strategy, and tools delivered to your inbox.
             </p>
@@ -236,7 +246,7 @@ export default function BlogPage() {
               </button>
             </div>
           </div>
-        </div>
+        </section>
       </main>
       <Footer />
     </>

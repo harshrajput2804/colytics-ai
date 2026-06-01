@@ -4,19 +4,20 @@ import { DashboardMockup } from "@/components/dashboard-mockup"
 import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function HeroSection() {
-  
-
   return (
-    <section className="relative w-full pt-24 sm:pt-28 lg:pt-32 pb-0 overflow-x-hidden bg-white">
+    <section className="enhanced-surface relative w-full pt-24 sm:pt-28 lg:pt-32 pb-0 overflow-x-hidden bg-white">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-linear-to-b from-[#e8f5e9]/30 via-[#e3f2fd]/30 to-[#f3e5f5]/20 pointer-events-none" />
-      
-      {/* Diagonal strips pattern */}
-      <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.02]" 
-        style={{ backgroundImage: 'repeating-linear-gradient(-45deg, #000, #000 1px, transparent 1px, transparent 6px)' }}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.18] motion-grid parallax-layer" data-speed="0.045" />
+      <div className="absolute inset-x-0 top-12 h-px overflow-hidden pointer-events-none opacity-90">
+        <div className="motion-sweep h-px w-1/3 bg-linear-to-r from-transparent via-[#1549f0] to-transparent" />
+      </div>
+      <div
+        className="absolute left-0 right-0 top-[14%] h-[72%] pointer-events-none opacity-[0.05] motion-grid parallax-layer"
+        data-speed="0.02"
+        style={{ maskImage: "linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)" }}
       />
-      
+
       {/* Bottom fade transition to merge smoothly with next section */}
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-linear-to-t from-background to-transparent pointer-events-none z-0" />
 
@@ -66,7 +67,7 @@ export function HeroSection() {
               className="h-11 w-full sm:w-auto px-6 rounded-full text-[14px] font-medium border-border text-[#0a0a0a] hover:bg-[#f5f5f5] bg-white transition-transform duration-150 ease-in-out hover:-translate-y-1 hover:shadow-md"
               asChild
             >
-              <Link href="#product">See how the loop works</Link>
+              <Link href="#the-solution">See how the loop works</Link>
             </Button>
           </div>
 
@@ -79,7 +80,7 @@ export function HeroSection() {
         </div>
 
         {/* Dashboard mockup — flush to bottom */}
-        <div className="mt-12 sm:mt-16 relative">
+        <div className="mt-12 sm:mt-16 relative motion-float">
           <DashboardMockup />
         </div>
       </div>

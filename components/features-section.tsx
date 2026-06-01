@@ -6,7 +6,7 @@ export function FeaturesSection() {
 
   return (
     <>
-      <section id="product" className="pt-28 pb-16 px-6 bg-white border-t border-[#e8e8e8]">
+      <section id="what-colytics-is" className="enhanced-surface pt-28 pb-16 px-6 bg-white border-t border-[#e8e8e8]">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-2xl">
             <p className="section-label mb-5">WHAT COLYTICS AI IS</p>
@@ -78,13 +78,13 @@ export function FeaturesSection() {
         </div>
       </section>
 
-      <section className="pt-28 pb-16 px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
+      <section id="ai-search-visibility" className="enhanced-surface pt-28 pb-16 px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-2xl mb-10">
             <p className="section-label mb-4">SAMPLE REPORT</p>
-            <h3 className="font-serif text-[32px] md:text-[38px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
+            <h2 className="font-serif text-[32px] md:text-[38px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
               See a real report — before you sign up.
-            </h3>
+            </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-[#737373]">
               Preview shows the AIVS™ score, top citation gaps, and a ranked fix list. The full PDF stays gated behind email capture.
             </p>

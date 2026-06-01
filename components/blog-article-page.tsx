@@ -331,7 +331,7 @@ export function BlogArticlePage() {
 
   return (
     <main className="min-h-screen bg-white text-[#0a0a0a] overflow-x-hidden">
-      <div className="relative">
+      <header className="enhanced-surface relative">
         <div className="absolute inset-x-0 top-0 h-95 bg-[radial-gradient(circle_at_top,rgba(21,73,240,0.12),transparent_60%)]" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 pb-14 lg:pb-20">
           <div
@@ -365,7 +365,7 @@ export function BlogArticlePage() {
             </p>
           </div>
         </div>
-      </div>
+      </header>
 
 
 
@@ -502,7 +502,7 @@ export function BlogArticlePage() {
                     className="group relative block"
                     aria-label="Open the AI ad sample on YouTube"
                   >
-                    <img
+                    <img loading="lazy"
                       src="https://img.youtube.com/vi/OSGrEqYXdWk/maxresdefault.jpg"
                       alt="AI ad sample from YouTube"
                       className="h-auto w-full object-cover"
@@ -600,7 +600,7 @@ export function BlogArticlePage() {
                 <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">1. AdCreative.ai</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                  <img
+                  <img loading="lazy"
                     src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1287,h_753/https://attrock.com/wp-content/uploads/2025/08/Adcreativeai.jpg"
                     alt="AdCreative.ai dashboard preview"
                     className="h-auto w-full object-cover"
@@ -653,7 +653,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <figure className="overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                    <img
+                    <img loading="lazy"
                       src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1244,h_659/https://attrock.com/wp-content/uploads/2025/08/Adcreative-pricing.jpg"
                       alt="AdCreative.ai pricing screenshot"
                       className="h-auto w-full object-cover"
@@ -674,7 +674,7 @@ export function BlogArticlePage() {
                 <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">2. Creatopy</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                  <img
+                  <img loading="lazy"
                     src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1358,h_669/https://attrock.com/wp-content/uploads/2025/08/Creatopy.jpg"
                     alt="Creatopy platform preview"
                     className="h-auto w-full object-cover"
@@ -726,7 +726,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <figure className="overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                    <img
+                    <img loading="lazy"
                       src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1245,h_696/https://attrock.com/wp-content/uploads/2025/08/Creatopy-pricing.jpg"
                       alt="Creatopy pricing screenshot"
                       className="h-auto w-full object-cover"
@@ -747,7 +747,7 @@ export function BlogArticlePage() {
                 <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">3. Quickads</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                  <img
+                  <img loading="lazy"
                     src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1408,h_738/https://attrock.com/wp-content/uploads/2025/08/Quickads.jpg"
                     alt="Quickads platform preview"
                     className="h-auto w-full object-cover"
@@ -800,7 +800,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <figure className="overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                    <img
+                    <img loading="lazy"
                       src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1012,h_477/https://attrock.com/wp-content/uploads/2025/08/Quickads-pricing.jpg"
                       alt="Quickads pricing screenshot"
                       className="h-auto w-full object-cover"
@@ -829,7 +829,7 @@ export function BlogArticlePage() {
                 <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">4. Predis.ai</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                  <img
+                  <img loading="lazy"
                     src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1361,h_688/https://attrock.com/wp-content/uploads/2025/08/Predisai.jpg"
                     alt="Predis.ai platform preview"
                     className="h-auto w-full object-cover"
@@ -882,7 +882,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <figure className="overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                    <img
+                    <img loading="lazy"
                       src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1319,h_729/https://attrock.com/wp-content/uploads/2025/08/Predisai-pricing.jpg"
                       alt="Predis.ai pricing screenshot"
                       className="h-auto w-full object-cover"
@@ -903,7 +903,7 @@ export function BlogArticlePage() {
                 <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">5. Zeely</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                  <img
+                  <img loading="lazy"
                     src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1358,h_762/https://attrock.com/wp-content/uploads/2025/08/Zeely.jpg"
                     alt="Zeely platform preview"
                     className="h-auto w-full object-cover"
@@ -958,7 +958,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <figure className="overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                    <img
+                    <img loading="lazy"
                       src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1253,h_533/https://attrock.com/wp-content/uploads/2025/08/Zeely-pricing.jpg"
                       alt="Zeely pricing screenshot"
                       className="h-auto w-full object-cover"
@@ -987,7 +987,7 @@ export function BlogArticlePage() {
                 <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">6. Admaker by Picsart</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                  <img
+                  <img loading="lazy"
                     src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1507,h_781/https://attrock.com/wp-content/uploads/2025/08/Admaker-by-Picsart.jpg"
                     alt="Admaker by Picsart platform preview"
                     className="h-auto w-full object-cover"
@@ -1039,7 +1039,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <figure className="overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                    <img
+                    <img loading="lazy"
                       src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1336,h_769/https://attrock.com/wp-content/uploads/2025/08/Admaker-by-picsart-pricing.jpg"
                       alt="Admaker by Picsart pricing screenshot"
                       className="h-auto w-full object-cover"
@@ -1060,7 +1060,7 @@ export function BlogArticlePage() {
                 <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">7. Sivi AI ad generator</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                  <img
+                  <img loading="lazy"
                     src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1514,h_781/https://attrock.com/wp-content/uploads/2025/08/Sivi.jpg"
                     alt="Sivi platform preview"
                     className="h-auto w-full object-cover"
@@ -1113,7 +1113,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <figure className="overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                    <img
+                    <img loading="lazy"
                       src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_760,h_493/https://attrock.com/wp-content/uploads/2025/08/Sivi-pricing.jpg"
                       alt="Sivi pricing screenshot"
                       className="h-auto w-full object-cover"
@@ -1142,7 +1142,7 @@ export function BlogArticlePage() {
                 <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">8. Re:nable</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                  <img
+                  <img loading="lazy"
                     src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1451,h_707/https://attrock.com/wp-content/uploads/2025/08/Renable.jpg"
                     alt="Re:nable platform preview"
                     className="h-auto w-full object-cover"
@@ -1190,7 +1190,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <figure className="overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                    <img
+                    <img loading="lazy"
                       src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1206,h_777/https://attrock.com/wp-content/uploads/2025/08/Renable-pricing.jpg"
                       alt="Re:nable pricing screenshot"
                       className="h-auto w-full object-cover"
@@ -1211,7 +1211,7 @@ export function BlogArticlePage() {
                 <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">9. Creatify</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                  <img
+                  <img loading="lazy"
                     src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1319,h_664/https://attrock.com/wp-content/uploads/2025/08/Creatify.jpg"
                     alt="Creatify platform preview"
                     className="h-auto w-full object-cover"
@@ -1264,7 +1264,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <figure className="overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                    <img
+                    <img loading="lazy"
                       src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1297,h_674/https://attrock.com/wp-content/uploads/2025/08/Creatify-pricing.jpg"
                       alt="Creatify pricing screenshot"
                       className="h-auto w-full object-cover"
@@ -1293,7 +1293,7 @@ export function BlogArticlePage() {
                 <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">10. Narrato</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                  <img
+                  <img loading="lazy"
                     src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1143,h_758/https://attrock.com/wp-content/uploads/2025/08/Narrato.jpg"
                     alt="Narrato platform preview"
                     className="h-auto w-full object-cover"
@@ -1345,7 +1345,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <figure className="overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                    <img
+                    <img loading="lazy"
                       src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1326,h_685/https://attrock.com/wp-content/uploads/2025/08/Narrato-pricing.jpg"
                       alt="Narrato pricing screenshot"
                       className="h-auto w-full object-cover"
@@ -1366,7 +1366,7 @@ export function BlogArticlePage() {
                 <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">11. Pencil</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                  <img
+                  <img loading="lazy"
                     src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1519,h_773/https://attrock.com/wp-content/uploads/2025/08/Pencil.jpg"
                     alt="Pencil platform preview"
                     className="h-auto w-full object-cover"
@@ -1418,7 +1418,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <figure className="overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                    <img
+                    <img loading="lazy"
                       src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1375,h_674/https://attrock.com/wp-content/uploads/2025/08/Pencil-pricing.jpg"
                       alt="Pencil pricing screenshot"
                       className="h-auto w-full object-cover"
@@ -1447,7 +1447,7 @@ export function BlogArticlePage() {
                 <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">12. InVideo</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                  <img
+                  <img loading="lazy"
                     src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1247,h_787/https://attrock.com/wp-content/uploads/2025/08/InVideo.jpg"
                     alt="InVideo platform preview"
                     className="h-auto w-full object-cover"
@@ -1500,7 +1500,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <figure className="overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                    <img
+                    <img loading="lazy"
                       src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1415,h_663/https://attrock.com/wp-content/uploads/2025/08/Invideo-pricing.jpg"
                       alt="InVideo pricing screenshot"
                       className="h-auto w-full object-cover"
@@ -1521,7 +1521,7 @@ export function BlogArticlePage() {
                 <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">13. Canva</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                  <img
+                  <img loading="lazy"
                     src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1469,h_711/https://attrock.com/wp-content/uploads/2025/08/Canva.jpg"
                     alt="Canva platform preview"
                     className="h-auto w-full object-cover"
@@ -1574,7 +1574,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <figure className="overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                    <img
+                    <img loading="lazy"
                       src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1174,h_706/https://attrock.com/wp-content/uploads/2025/08/Canva-pricing.jpg"
                       alt="Canva pricing screenshot"
                       className="h-auto w-full object-cover"
@@ -1603,7 +1603,7 @@ export function BlogArticlePage() {
                 <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">14. Madgicx</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                  <img
+                  <img loading="lazy"
                     src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1383,h_777/https://attrock.com/wp-content/uploads/2025/08/Madgicx.jpg"
                     alt="Madgicx platform preview"
                     className="h-auto w-full object-cover"
@@ -1656,7 +1656,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <figure className="overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                    <img
+                    <img loading="lazy"
                       src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_702,h_413/https://attrock.com/wp-content/uploads/2025/08/Madgicx-pricing.jpg"
                       alt="Madgicx pricing screenshot"
                       className="h-auto w-full object-cover"
@@ -1677,7 +1677,7 @@ export function BlogArticlePage() {
                 <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">15. Tagshop.ai</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                  <img
+                  <img loading="lazy"
                     src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1472,h_778/https://attrock.com/wp-content/uploads/2025/08/Tagshop.jpg"
                     alt="Tagshop.ai platform preview"
                     className="h-auto w-full object-cover"
@@ -1730,7 +1730,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <figure className="overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
-                    <img
+                    <img loading="lazy"
                       src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_1364,h_666/https://attrock.com/wp-content/uploads/2025/08/Tagshop-pricing.jpg"
                       alt="Tagshop.ai pricing screenshot"
                       className="h-auto w-full object-cover"
@@ -1841,7 +1841,7 @@ export function BlogArticlePage() {
         <section id="author-section" className="mt-14 rounded-4xl border border-border bg-white p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
             <div className="mx-auto shrink-0 overflow-hidden rounded-3xl border border-border bg-[#f8f8fb] lg:mx-0 lg:w-60 w-full max-w-sm lg:max-w-none">
-              <img
+              <img loading="lazy"
                 src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img/https://attrock.com/wp-content/uploads/2021/08/grv.png"
                 alt="Gaurav Sharma"
                 className="h-full w-full object-cover"
@@ -1882,3 +1882,5 @@ export function BlogArticlePage() {
     </main>
   )
 }
+
+

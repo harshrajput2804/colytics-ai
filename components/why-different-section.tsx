@@ -5,7 +5,7 @@ export function WhyDifferentSection() {
     const brands = ["HubSpot", "Semrush", "BigCommerce", "GetResponse", "LivePerson"]
 
     return (
-        <section id="why-different" className="py-20 px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
+        <section id="why-different" className="enhanced-surface py-20 px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
             <div className="max-w-6xl mx-auto">
                 <div className="rounded-[2rem] border border-[#e8e8e8] bg-white shadow-[0_18px_60px_rgba(0,0,0,0.06)] overflow-hidden">
                     <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center p-8 md:p-12 lg:p-14">

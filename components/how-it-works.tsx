@@ -1,9 +1,70 @@
-import { Globe, Search, ListChecks, ArrowRight } from "lucide-react"
+"use client"
+
+import type { ReactNode } from "react"
+import { useEffect, useRef, useState } from "react"
+import { Globe, Search, ListChecks } from "lucide-react"
 import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function HowItWorks() {
+  const stepsRef = useRef<HTMLDivElement | null>(null)
+  const cardRefs = useRef<Array<HTMLDivElement | null>>([])
+  const pathRef = useRef<SVGPathElement | null>(null)
+  const [progress, setProgress] = useState(0)
+  const [pathD, setPathD] = useState("")
+
+  useEffect(() => {
+    const node = stepsRef.current
+    if (!node) return
+
+    let raf = 0
+    const update = () => {
+      raf = 0
+      const rect = node.getBoundingClientRect()
+      const viewportAnchor = window.innerHeight * 0.58
+      const start = rect.top + window.scrollY - window.innerHeight * 0.1
+      const end = rect.bottom + window.scrollY - window.innerHeight * 0.34
+      const current = window.scrollY + viewportAnchor
+      const next = Math.max(0, Math.min(1, (current - start) / Math.max(end - start, 1)))
+      setProgress(next)
+
+      const positions = cardRefs.current
+        .map((el) => el?.getBoundingClientRect())
+        .filter((box): box is DOMRect => Boolean(box))
+
+      if (positions.length === 3) {
+        const containerRect = node.getBoundingClientRect()
+        const points = positions.map((box) => ({
+          x: box.left + box.width / 2 - containerRect.left,
+          y: box.top + box.height / 2 - containerRect.top,
+        }))
+        const d = [
+          `M ${points[0].x} ${points[0].y}`,
+          `L ${points[1].x} ${points[1].y}`,
+          `L ${points[2].x} ${points[2].y}`,
+        ].join(" ")
+        setPathD(d)
+      }
+    }
+
+    const onScroll = () => {
+      if (raf) return
+      raf = window.requestAnimationFrame(update)
+    }
+
+    update()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("resize", onScroll)
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("resize", onScroll)
+      if (raf) window.cancelAnimationFrame(raf)
+    }
+  }, [])
+
+  const activeStep = progress < 0.34 ? 1 : progress < 0.67 ? 2 : 3
+
   return (
-    <section id="solutions" className="py-20 px-4 sm:px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
+    <section id="solutions" className="enhanced-surface py-20 px-4 sm:px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl mb-16">
           <p className="section-label mb-5">Get Started</p>
@@ -12,40 +73,77 @@ export function HowItWorks() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center mb-7">
-          <div className="order-2 md:order-1">
-            <h3 className="font-serif text-2xl md:text-3xl mb-4">1. Add your domain</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Crawling starts immediately, so you can get to the first signal fast.
-            </p>
-          </div>
-          <div className="order-1 md:order-2">
-            <DomainCard />
-          </div>
-        </div>
+        <div ref={stepsRef} className="relative space-y-7 md:pl-10">
+          <svg
+            className="pointer-events-none absolute inset-0 z-0 hidden md:block overflow-visible"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="how-it-works-line" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#1549f0" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#1549f0" stopOpacity="1" />
+              </linearGradient>
+            </defs>
+            <path
+              ref={pathRef}
+              d={pathD}
+              fill="none"
+              stroke="#e8e8e8"
+              strokeWidth="14"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              opacity="0.75"
+              pathLength={1000}
+            />
+            <path
+              d={pathD}
+              fill="none"
+              stroke="url(#how-it-works-line)"
+              strokeWidth="14"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              pathLength={1000}
+              strokeDasharray="1000"
+              strokeDashoffset={1000 * (1 - progress)}
+              style={{ transition: "stroke-dashoffset 120ms linear" }}
+            />
+          </svg>
 
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center mb-7">
-          <div>
-            <GapAnalysisCard />
-          </div>
-          <div>
-            <h3 className="font-serif text-2xl md:text-3xl mb-4">2. See where you’re invisible</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              See which engines cite competitors instead of you, and why those answers skip your brand.
-            </p>
-          </div>
-        </div>
+          <StepRow
+            step={1}
+            title="Add your domain"
+            body="Crawling starts immediately, so you can get to the first signal fast."
+            card={<DomainCard />}
+            reverse={false}
+            active={activeStep >= 1}
+            cardRef={(el) => {
+              cardRefs.current[0] = el
+            }}
+          />
 
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
-          <div className="order-2 md:order-1">
-            <h3 className="font-serif text-2xl md:text-3xl mb-4">3. Ship the ranked fixes</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Use the IEU list and generated content to close the highest-value gaps and help AIVS™ climb.
-            </p>
-          </div>
-          <div className="order-1 md:order-2">
-            <RoadmapCard />
-          </div>
+          <StepRow
+            step={2}
+            title="See where you're invisible"
+            body="See which engines cite competitors instead of you, and why those answers skip your brand."
+            card={<GapAnalysisCard />}
+            reverse
+            active={activeStep >= 2}
+            cardRef={(el) => {
+              cardRefs.current[1] = el
+            }}
+          />
+
+          <StepRow
+            step={3}
+            title="Ship the ranked fixes"
+            body="Use the IEU list and generated content to close the highest-value gaps and help AIVS? climb."
+            card={<RoadmapCard />}
+            reverse={false}
+            active={activeStep >= 3}
+            cardRef={(el) => {
+              cardRefs.current[2] = el
+            }}
+          />
         </div>
       </div>
 
@@ -61,6 +159,47 @@ export function HowItWorks() {
         </div>
       </div>
     </section>
+  )
+}
+
+function StepRow({
+  step,
+  title,
+  body,
+  card,
+  reverse,
+  active,
+  cardRef,
+}: {
+  step: number
+  title: string
+  body: string
+  card: ReactNode
+  reverse: boolean
+  active: boolean
+  cardRef: (el: HTMLDivElement | null) => void
+}) {
+  return (
+    <div className="relative z-10 md:pl-10">
+      <div
+        className={`absolute left-[0.15rem] top-6 hidden md:flex h-4 w-4 items-center justify-center rounded-full border bg-white transition-colors ${
+          active ? "border-[#1549f0]" : "border-[#d9d9d9]"
+        }`}
+      >
+        <div className={`h-2 w-2 rounded-full transition-colors ${active ? "bg-[#1549f0]" : "bg-[#d9d9d9]"}`} />
+      </div>
+      <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
+        <div className={reverse ? "order-2 md:order-2" : "order-2 md:order-1"}>
+          <h3 className={`font-serif text-2xl md:text-3xl mb-4 transition-colors ${active ? "text-[#0a0a0a]" : "text-[#525252]"}`}>
+            {step}. {title}
+          </h3>
+          <p className="text-muted-foreground leading-relaxed">{body}</p>
+        </div>
+        <div ref={cardRef} className={reverse ? "order-1 md:order-1" : "order-1 md:order-2"}>
+          {card}
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -112,7 +251,9 @@ function GapAnalysisCard() {
               <span className="text-sm font-medium text-muted-foreground">Engines citing competitors</span>
             </div>
             <p className="text-xs text-muted-foreground">
-              "...Results cite <span className="bg-yellow-100 text-yellow-800 px-1 rounded">Competitor A</span> and <span className="bg-yellow-100 text-yellow-800 px-1 rounded">Competitor B</span> because they have clearer structure, stronger entity coverage, and better answer formatting..."
+              "...Results cite <span className="bg-yellow-100 text-yellow-800 px-1 rounded">Competitor A</span> and{" "}
+              <span className="bg-yellow-100 text-yellow-800 px-1 rounded">Competitor B</span> because they have clearer structure,
+              stronger entity coverage, and better answer formatting..."
             </p>
           </div>
 

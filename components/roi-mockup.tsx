@@ -35,9 +35,12 @@ export function RoiMockup() {
   ] as const
 
   return (
-    <section className="px-6 bg-white">
+    <section className="enhanced-surface px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="overflow-hidden rounded-2xl border border-[#e8e8e8] bg-white shadow-[0_-4px_60px_rgba(0,0,0,0.08)]">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px overflow-hidden opacity-80">
+          <div className="motion-sweep h-px w-1/3 bg-linear-to-r from-transparent via-[#1549f0] to-transparent" />
+        </div>
         <div className="flex items-center gap-2 border-b border-[#e8e8e8] bg-[#fafafa] px-4 py-3">
           <div className="flex gap-1.5">
             <div className="h-3 w-3 rounded-full bg-[#ff5f57]" />

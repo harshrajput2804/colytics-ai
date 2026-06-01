@@ -1,5 +1,3 @@
-"use client"
-
 import { ArrowRight, Check, MessageSquare, Sparkles } from "lucide-react"
 import EarlyAccessTrigger from "@/components/early-access-trigger"
 
@@ -9,7 +7,7 @@ interface ConnectToClaudeSectionProps {
 
 export function ConnectToClaudeSection({ reverseLayout = false }: ConnectToClaudeSectionProps) {
     return (
-        <section id="connect-claude" className="py-20 px-6 bg-white border-t border-[#e8e8e8]">
+        <section id="connect-claude" className="enhanced-surface py-20 px-6 bg-white border-t border-[#e8e8e8]">
             <div className="max-w-6xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-10 items-center">
                     {/* Claude Chat Mockup */}
@@ -32,7 +30,7 @@ export function ConnectToClaudeSection({ reverseLayout = false }: ConnectToClaud
                             </div>
                             <div className="p-5 md:p-6 flex flex-col gap-4 bg-white min-h-[480px]">
                                 {/* Context badge */}
-                                <div className="text-[12px] text-[#9a9a9a] font-medium mb-2">CMO in Claude · Colytics connected</div>
+                                <div className="text-[12px] text-[#9a9a9a] font-medium mb-2">CMO in Claude - Colytics connected</div>
 
                                 {/* Chat messages */}
                                 <div className="space-y-4 flex-1 overflow-y-auto">
@@ -54,7 +52,7 @@ export function ConnectToClaudeSection({ reverseLayout = false }: ConnectToClaud
                                             {/* Main insight */}
                                             <div className="mb-4 pb-4 border-b border-[#e8e8e8]">
                                                 <div className="flex items-baseline gap-2 mb-2">
-                                                    <div className="text-[20px] font-bold text-[#0a0a0a]">AIVS™ 71</div>
+                                                    <div className="text-[20px] font-bold text-[#0a0a0a]">AIVS? 71</div>
                                                     <span className="text-[12px] font-semibold text-green-600">(+12)</span>
                                                 </div>
                                                 <p className="text-[12px] text-[#525252] leading-relaxed">You recovered 41 lost citations and lead on Perplexity; the biggest gap is comparison content on ChatGPT.</p>
@@ -64,7 +62,7 @@ export function ConnectToClaudeSection({ reverseLayout = false }: ConnectToClaud
                                             <div className="space-y-3 mb-4">
                                                 <p className="text-[12px] font-medium text-[#0a0a0a]">One-page report ready:</p>
                                                 <div className="flex items-center gap-3 bg-white border border-[#e8e8e8] rounded-lg p-3">
-                                                    <div className="text-[16px] text-[#1549f0] font-medium">▣</div>
+                                                    <div className="text-[16px] text-[#1549f0] font-medium">PDF</div>
                                                     <div className="flex-1 min-w-0">
                                                         <div className="text-[12px] font-medium text-[#0a0a0a] truncate">AI-Visibility-Report.pdf</div>
                                                         <div className="text-[11px] text-[#9a9a9a]">generated</div>
@@ -90,7 +88,7 @@ export function ConnectToClaudeSection({ reverseLayout = false }: ConnectToClaud
                             Bring Colytics into Claude.
                         </h2>
                         <p className="text-muted-foreground leading-relaxed text-[16px] mb-6">
-                            CMOs and managers don't log in — connect Colytics to Claude via MCP and ask how the brand/team is performing, then pull a report in the chat.
+                            CMOs and managers don't log in - connect Colytics to Claude via MCP and ask how the brand/team is performing, then pull a report in the chat.
                         </p>
 
                         <ul className="space-y-3 mb-8">

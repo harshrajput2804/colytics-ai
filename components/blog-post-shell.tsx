@@ -193,7 +193,7 @@ export function BlogPostShell({
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-[#0a0a0a]">
-      <div className="relative">
+      <header className="enhanced-surface relative">
         <div className="absolute inset-x-0 top-0 h-96 bg-[radial-gradient(circle_at_top,rgba(21,73,240,0.12),transparent_60%)]" />
         <div className="relative mx-auto max-w-7xl px-4 pb-14 pt-28 sm:px-6 lg:px-8 lg:pb-20">
           <div className="mx-auto max-w-5xl">
@@ -210,7 +210,7 @@ export function BlogPostShell({
                 <Sparkles className="h-4 w-4" />
                 {category}
               </div>
-              <h1 className="mx-auto mt-6 max-w-5xl text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl">
+              <h1 className="mx-auto mt-6 max-w-5xl text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl reveal-heading">
                 {title}
               </h1>
               <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-white/70 sm:text-lg">{excerpt}</p>
@@ -232,7 +232,7 @@ export function BlogPostShell({
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
       <div className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
         <div className="grid items-start gap-5 lg:grid-cols-[240px_minmax(0,1fr)_300px] lg:gap-4 xl:gap-8">
@@ -275,7 +275,7 @@ export function BlogPostShell({
         <section id="blog-post-author" className="mt-14 rounded-4xl border border-border bg-white p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
             <div className="mx-auto shrink-0 overflow-hidden rounded-3xl border border-border bg-[#f8f8fb] w-full max-w-sm lg:mx-0 lg:w-60 lg:max-w-none">
-              <img src={authorImage} alt={author} className="h-full w-full object-cover" />
+              <img src={authorImage} alt={author} loading="lazy" className="h-full w-full object-cover" />
             </div>
 
             <div className="min-w-0 flex-1">
@@ -289,15 +289,19 @@ export function BlogPostShell({
                 <div className="flex items-center gap-5 text-[#0a0a0a]">
                   <Link href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="transition-colors hover:text-brand">
                     <Facebook className="h-4 w-4" />
+                    <span className="sr-only">Facebook</span>
                   </Link>
                   <Link href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="transition-colors hover:text-brand">
                     <Instagram className="h-4 w-4" />
+                    <span className="sr-only">Instagram</span>
                   </Link>
                   <Link href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="transition-colors hover:text-brand">
                     <Linkedin className="h-4 w-4" />
+                    <span className="sr-only">LinkedIn</span>
                   </Link>
                   <Link href="https://www.twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter" className="transition-colors hover:text-brand">
                     <Twitter className="h-4 w-4" />
+                    <span className="sr-only">Twitter</span>
                   </Link>
                 </div>
               </div>

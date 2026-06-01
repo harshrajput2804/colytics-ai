@@ -3,9 +3,9 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function ProprietaryScoringSection() {
     return (
-        <section id="proprietary-scoring" className="py-20 px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
+        <section id="proprietary-scoring" className="enhanced-surface py-20 px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
             <div className="max-w-6xl mx-auto">
-                <div className="max-w-3xl mb-12">
+                <div id="aeo-readiness" className="max-w-3xl mb-12 scroll-mt-32">
                     <p className="section-label mb-5">THE INTELLIGENCE LAYER</p>
                     <h2 className="font-serif text-[32px] md:text-[40px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a] max-w-3xl mb-3">
                         Proprietary scoring as a customer benefit.

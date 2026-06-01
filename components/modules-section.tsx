@@ -4,7 +4,7 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function ModulesSection() {
     return (
-        <section id="modules" className="py-28 px-4 sm:px-6 bg-white border-t border-[#e8e8e8]">
+        <section id="modules" className="enhanced-surface py-28 px-4 sm:px-6 bg-white border-t border-[#e8e8e8]">
             <div className="max-w-6xl mx-auto">
                 <div className="max-w-3xl mb-12">
                     <p className="section-label mb-5">MODULES Inside the platform</p>
@@ -15,7 +15,7 @@ export function ModulesSection() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-8">
-                    <div className="bg-[#fafafa] border border-[#efefef] rounded-2xl p-6 shadow-sm">
+                    <div id="structured-data" className="bg-[#fafafa] border border-[#efefef] rounded-2xl p-6 shadow-sm">
                         <div className="flex items-center gap-3 mb-3">
                             <div className="w-9 h-9 rounded-full bg-[#0a0a0a] text-white flex items-center justify-center font-semibold">A</div>
                             <h3 className="font-serif text-lg">Website & Content Analyzer</h3>
@@ -23,7 +23,7 @@ export function ModulesSection() {
                         <p className="text-muted-foreground">Crawls and scores every page for AI-readiness, citation potential, content quality and technical AEO health.</p>
                     </div>
 
-                    <div className="bg-[#fafafa] border border-[#efefef] rounded-2xl p-6 shadow-sm">
+                    <div id="prompt-visibility" className="bg-[#fafafa] border border-[#efefef] rounded-2xl p-6 shadow-sm">
                         <div className="flex items-center gap-3 mb-3">
                             <div className="w-9 h-9 rounded-full bg-[#0a0a0a] text-white flex items-center justify-center font-semibold">B</div>
                             <h3 className="font-serif text-lg">Structured Data & AI Files</h3>

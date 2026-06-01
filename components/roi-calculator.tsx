@@ -1,12 +1,10 @@
-"use client"
-import { ArrowRight } from "lucide-react"
 import { RoiMockup } from "@/components/roi-mockup"
 import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function RoiCalculator() {
     return (
         <>
-            <section className="py-20 px-6 bg-white border-t border-[#e8e8e8]">
+            <section id="roi-calculator" className="enhanced-surface py-20 px-6 bg-white border-t border-[#e8e8e8]">
                 <div className="max-w-6xl mx-auto">
                     <div className="max-w-2xl mb-16">
                         <p className="section-label mb-5">The Time & Money Calculator</p>
@@ -14,7 +12,7 @@ export function RoiCalculator() {
                             What does flying blind actually cost?
                         </h2>
                         <p className="mt-5 text-[15px] text-[#737373]">
-                            Run the full AEO lifecycle by hand and it eats ~68 hours per site every month. Stitch together separate point tools and it's still ~28. Colytics does it in ~5. Move the sliders — the math is yours to tune.
+                            Move the sliders - the math is yours to tune.
                         </p>
                     </div>
                 </div>

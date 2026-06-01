@@ -2,14 +2,14 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function StatsSection() {
   return (
-    <section className="py-20 bg-white border-t border-[#e8e8e8]">
+    <section className="enhanced-surface py-20 bg-white border-t border-[#e8e8e8]">
       <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
         <div className="grid gap-16 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:items-start">
           <div>
             <p className="section-label mb-8 text-[#d4a574]">THE SHIFT</p>
-            <h1 className="text-[36px] sm:text-[44px] md:text-[60px] font-serif font-bold text-[#0a0a0a] mb-6 leading-tight tracking-tight max-w-2xl">
+            <h2 className="text-[36px] sm:text-[44px] md:text-[60px] font-serif font-bold text-[#0a0a0a] mb-6 leading-tight tracking-tight max-w-2xl">
               Search didn't evolve. It was replaced.
-            </h1>
+            </h2>
             <p className="text-[16px] text-[#5a5a5a] leading-relaxed max-w-2xl">
               AI assistants now synthesize the answer directly — no ten blue links, no click. Roughly <span className="font-semibold">58% of informational queries</span> now end inside an AI answer. The question stopped being "do we rank?" — it's now <span className="font-bold text-[#5a5a5a]">"do we get cited?"</span> — and if not, "why, and what do we fix?"
             </p>

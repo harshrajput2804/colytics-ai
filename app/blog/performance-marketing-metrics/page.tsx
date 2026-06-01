@@ -2,11 +2,15 @@ import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { BlogPostShell, type TocItem } from "@/components/blog-post-shell"
+import { BlogPostingSchema } from "@/components/blog-posting-schema"
 
 export const metadata: Metadata = {
   title: "Key Performance Metrics Every Marketer Should Track",
   description:
     "Master the essential metrics that determine if your performance marketing campaigns are working and how to optimize them.",
+  alternates: {
+    canonical: "https://colytics-ai-amber.vercel.app/blog/performance-marketing-metrics",
+  },
 }
 
 const toc: TocItem[] = [
@@ -22,6 +26,13 @@ export default function PerformanceMetricsPage() {
   return (
     <>
       <Header />
+      <BlogPostingSchema
+        title="Key Performance Metrics Every Marketer Should Track"
+        description="Master the essential metrics that determine if your performance marketing campaigns are working and how to optimize them."
+        url="https://colytics-ai-amber.vercel.app/blog/performance-marketing-metrics"
+        publishedAt="2025-08-05"
+        image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop"
+      />
       <BlogPostShell
         category="Analytics"
         title="Key Performance Metrics Every Marketer Should Track"

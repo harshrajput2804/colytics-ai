@@ -14,9 +14,7 @@ export function DashboardMockup() {
   const maxVal = 90
 
   return (
-    <div
-      className="w-full rounded-t-2xl overflow-hidden shadow-[0_-4px_60px_rgba(0,0,0,0.08)]"
-      style={{ border: "1px solid #e8e8e8", borderBottom: "none" }}
+    <div id="ai-citation-visibility" className="w-full rounded-t-2xl overflow-hidden shadow-[0_-4px_60px_rgba(0,0,0,0.08)]" style={{ border: "1px solid #e8e8e8", borderBottom: "none" }}
     >
       {/* Browser chrome */}
       <div className="flex items-center gap-2 px-4 py-3 bg-[#fafafa] border-b border-[#e8e8e8]">
@@ -151,24 +149,24 @@ export function DashboardMockup() {
                 <div className="absolute inset-x-1 bottom-6 border-t border-[#e8e8e8]" />
                 <div className="absolute right-2 top-2 text-[9px] text-[#c0c0c0] uppercase tracking-wide">Target 65%</div>
                 <div className="absolute inset-x-0 bottom-8 flex items-end gap-2 px-1">
-                  {bars.map((b) => (
-                    <div key={b.label} className="flex-1 flex flex-col items-stretch gap-1">
-                      <div className="flex items-end gap-1 h-36">
-                        <div className="flex-1 flex flex-col items-center justify-end gap-1">
-                          <span className="text-[9px] font-semibold text-[#0a0a0a]">{b.you}</span>
-                          <div
-                            className="w-full rounded-sm bg-[#0a0a0a] shadow-[0_0_0_1px_rgba(0,0,0,0.02)]"
-                            style={{ height: `${24 + b.you * 2.2}px`, minHeight: 24 }}
+                {bars.map((b, idx) => (
+                  <div key={b.label} className="flex-1 flex flex-col items-stretch gap-1">
+                    <div className="flex items-end gap-1 h-36">
+                      <div className="flex-1 flex flex-col items-center justify-end gap-1">
+                        <span className="text-[9px] font-semibold text-[#0a0a0a]">{b.you}</span>
+                        <div
+                            className="motion-bar w-full rounded-sm bg-[#0a0a0a] shadow-[0_0_0_1px_rgba(0,0,0,0.02)]"
+                            style={{ height: `${24 + b.you * 2.2}px`, minHeight: 24, animationDelay: `${idx * 0.18}s` }}
                           />
-                        </div>
-                        <div className="flex-1 flex flex-col items-center justify-end gap-1">
-                          <span className="text-[9px] font-semibold text-[#9a9a9a]">{b.comp}</span>
-                          <div
-                            className="w-full rounded-sm bg-[#e8e8e8] shadow-[0_0_0_1px_rgba(0,0,0,0.01)]"
-                            style={{ height: `${22 + b.comp * 2}px`, minHeight: 22 }}
-                          />
-                        </div>
                       </div>
+                      <div className="flex-1 flex flex-col items-center justify-end gap-1">
+                        <span className="text-[9px] font-semibold text-[#9a9a9a]">{b.comp}</span>
+                        <div
+                            className="motion-bar w-full rounded-sm bg-[#e8e8e8] shadow-[0_0_0_1px_rgba(0,0,0,0.01)]"
+                            style={{ height: `${22 + b.comp * 2}px`, minHeight: 22, animationDelay: `${idx * 0.22 + 0.1}s` }}
+                          />
+                      </div>
+                    </div>
                       <div className="text-[9px] text-[#c0c0c0] text-center">{b.label}</div>
                     </div>
                   ))}

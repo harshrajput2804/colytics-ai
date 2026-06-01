@@ -2,11 +2,15 @@ import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { BlogPostShell, type TocItem } from "@/components/blog-post-shell"
+import { BlogPostingSchema } from "@/components/blog-posting-schema"
 
 export const metadata: Metadata = {
   title: "Complete Guide to Marketing Automation in 2026",
   description:
     "Learn how to implement marketing automation to save time, improve customer experience, and scale your campaigns effectively.",
+  alternates: {
+    canonical: "https://colytics-ai-amber.vercel.app/blog/marketing-automation-guide",
+  },
 }
 
 const toc: TocItem[] = [
@@ -21,6 +25,13 @@ export default function MarketingAutomationPage() {
   return (
     <>
       <Header />
+      <BlogPostingSchema
+        title="Complete Guide to Marketing Automation in 2026"
+        description="Learn how to implement marketing automation to save time, improve customer experience, and scale your campaigns effectively."
+        url="https://colytics-ai-amber.vercel.app/blog/marketing-automation-guide"
+        publishedAt="2025-08-15"
+        image="https://images.unsplash.com/photo-1460925895917-adf4e5b6d08f?w=1200&h=600&fit=crop"
+      />
       <BlogPostShell
         category="Marketing"
         title="Complete Guide to Marketing Automation in 2026"
