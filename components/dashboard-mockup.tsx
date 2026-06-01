@@ -34,9 +34,9 @@ export function DashboardMockup() {
         <div className="w-14" />
       </div>
 
-      <div className="flex bg-white" style={{ minHeight: 480 }}>
+      <div className="flex flex-col md:flex-row bg-white" style={{ minHeight: 480 }}>
         {/* Sidebar */}
-        <div className="w-52 border-r border-[#e8e8e8] bg-[#fafafa] hidden md:flex flex-col p-4">
+        <div className="w-full md:w-52 border-r border-[#e8e8e8] bg-[#fafafa] hidden md:flex flex-col p-4">
           {/* Logo mark */}
           <div className="flex items-center gap-2 mb-7 px-1">
             <img src="/logo/colytics-logo-notext.svg" alt="Colytics" className="w-6 h-6" />
@@ -91,7 +91,7 @@ export function DashboardMockup() {
         </div>
 
         {/* Main content */}
-        <div className="flex-1 p-6 overflow-hidden">
+        <div className="flex-1 p-4 sm:p-6 overflow-hidden">
           {/* Page header */}
           <div className="flex items-start justify-between mb-6">
             <div>
@@ -109,7 +109,7 @@ export function DashboardMockup() {
           </div>
 
           {/* KPI row */}
-          <div className="grid grid-cols-4 gap-3 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 mb-6">
             {[
               { label: "Total Citations", value: "1,248", delta: "+12%", positive: true },
               { label: "Missed Opportunities", value: "342", delta: "-8%", positive: false },
@@ -127,9 +127,9 @@ export function DashboardMockup() {
           </div>
 
           {/* Chart + Table row */}
-          <div className="grid grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 xl:grid-cols-5 gap-4">
             {/* Bar chart */}
-            <div className="col-span-3 bg-white border border-[#e8e8e8] rounded-xl p-4 flex h-full flex-col">
+            <div className="col-span-1 xl:col-span-3 bg-white border border-[#e8e8e8] rounded-xl p-4 flex h-full flex-col">
               <div className="flex items-center justify-between mb-4">
                 <div className="text-[12px] font-medium text-[#0a0a0a]">Citation Share vs Top Competitor</div>
                 <div className="flex items-center gap-3 text-[10px] text-[#9a9a9a]">
@@ -177,7 +177,7 @@ export function DashboardMockup() {
             </div>
 
             {/* Model breakdown */}
-            <div className="col-span-2 bg-white border border-[#e8e8e8] rounded-xl p-4">
+            <div className="col-span-1 xl:col-span-2 bg-white border border-[#e8e8e8] rounded-xl p-4">
               <div className="text-[12px] font-medium text-[#0a0a0a] mb-4">By AI Model</div>
               <div className="space-y-3">
                 {[

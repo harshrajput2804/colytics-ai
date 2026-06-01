@@ -37,9 +37,9 @@ export function CitationAnalysisMockup() {
         <div className="w-14" />
       </div>
 
-      <div className="flex bg-white" style={{ minHeight: 520 }}>
+      <div className="flex flex-col md:flex-row bg-white" style={{ minHeight: 520 }}>
         {/* Sidebar */}
-        <div className="w-52 border-r border-[#e8e8e8] bg-[#fafafa] hidden md:flex flex-col p-4">
+        <div className="w-full md:w-52 border-r border-[#e8e8e8] bg-[#fafafa] hidden md:flex flex-col p-4">
           {/* Logo mark */}
           <div className="flex items-center gap-2 mb-7 px-1">
             <img src="/logo/colytics-logo-notext.svg" alt="Colytics" className="w-6 h-6" />
@@ -95,7 +95,7 @@ export function CitationAnalysisMockup() {
         </div>
 
         {/* Main content */}
-        <div className="flex-1 p-6 overflow-hidden">
+        <div className="flex-1 p-4 sm:p-6 overflow-hidden">
           {/* Page header */}
           <div className="flex items-start justify-between mb-6">
             <div>
@@ -108,7 +108,7 @@ export function CitationAnalysisMockup() {
           </div>
 
           {/* KPI Row with Overall Score */}
-          <div className="grid grid-cols-4 gap-3 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 mb-6">
             {/* Overall Score Card */}
             <div className="bg-white border border-[#e8e8e8] rounded-xl p-4 flex flex-col items-center justify-center">
               <div className="relative w-24 h-24 mb-3">
@@ -150,9 +150,9 @@ export function CitationAnalysisMockup() {
           </div>
 
           {/* Charts Grid */}
-          <div className="grid grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 xl:grid-cols-5 gap-4">
             {/* Module Score Overview */}
-            <div className="col-span-3 bg-white border border-[#e8e8e8] rounded-xl p-4">
+            <div className="col-span-1 xl:col-span-3 bg-white border border-[#e8e8e8] rounded-xl p-4">
               <div className="text-[12px] font-medium text-[#0a0a0a] mb-4">Module Score Overview</div>
               <div className="flex items-end gap-3 h-32">
                 {moduleScores.map((m) => (
@@ -172,7 +172,7 @@ export function CitationAnalysisMockup() {
             </div>
 
             {/* Current Metrics */}
-            <div className="col-span-2 space-y-2">
+            <div className="col-span-1 xl:col-span-2 space-y-2">
               {aeoBreakdown.map((a) => (
                 <div key={a.category} className="bg-white border border-[#e8e8e8] rounded-lg p-2.5">
                   <div className="flex items-center justify-between">

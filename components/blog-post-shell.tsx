@@ -274,7 +274,7 @@ export function BlogPostShell({
       <div className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
         <section id="blog-post-author" className="mt-14 rounded-4xl border border-border bg-white p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
-            <div className="mx-auto shrink-0 overflow-hidden rounded-3xl border border-border bg-[#f8f8fb] lg:mx-0 lg:w-60">
+            <div className="mx-auto shrink-0 overflow-hidden rounded-3xl border border-border bg-[#f8f8fb] w-full max-w-sm lg:mx-0 lg:w-60 lg:max-w-none">
               <img src={authorImage} alt={author} className="h-full w-full object-cover" />
             </div>
 

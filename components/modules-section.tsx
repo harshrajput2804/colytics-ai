@@ -4,17 +4,17 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function ModulesSection() {
     return (
-        <section id="modules" className="py-28 px-6 bg-white border-t border-[#e8e8e8]">
+        <section id="modules" className="py-28 px-4 sm:px-6 bg-white border-t border-[#e8e8e8]">
             <div className="max-w-6xl mx-auto">
                 <div className="max-w-3xl mb-12">
                     <p className="section-label mb-5">MODULES Inside the platform</p>
-                    <h2 className="font-serif text-[32px] md:text-[40px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a] max-w-3xl mb-3">
+                    <h2 className="font-serif text-[30px] sm:text-[32px] md:text-[40px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a] max-w-3xl mb-3">
                         Nine connected modules from audit to cited content to revenue — no extra tools
                     </h2>
                     {/* <p className="text-muted-foreground leading-relaxed">Nine connected modules from audit to cited content to revenue — no extra tools.</p> */}
                 </div>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-8">
                     <div className="bg-[#fafafa] border border-[#efefef] rounded-2xl p-6 shadow-sm">
                         <div className="flex items-center gap-3 mb-3">
                             <div className="w-9 h-9 rounded-full bg-[#0a0a0a] text-white flex items-center justify-center font-semibold">A</div>
@@ -88,7 +88,7 @@ export function ModulesSection() {
                     </div>
                 </div>
 
-                <div className="max-w-7xl mx-auto mt-6 mb-6 bg-gray-50 border-l-4 border-black p-6 rounded-md">
+                <div className="max-w-7xl mx-auto mt-6 mb-6 bg-gray-50 border-l-4 border-black p-5 sm:p-6 rounded-md">
                     <p className="text-[15px] text-[#111827] font-semibold mb-4">The edge isn’t one feature — it’s the combination:</p>
                     <ul className="space-y-3">
                         <li className="flex items-start gap-3">
@@ -119,13 +119,13 @@ export function ModulesSection() {
                 </div>
 
                 <div className="mx-auto mt-7 w-full max-w-7xl border-t border-[#e8e8e8] pt-7">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
                         <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
                             Generate content that gets cited.
                         </p>
                         <EarlyAccessTrigger
                             label="Explore the modules"
-                            className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap"
+                            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap w-full sm:w-auto"
                         />
                     </div>
                 </div>

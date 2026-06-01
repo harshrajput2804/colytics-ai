@@ -36,27 +36,27 @@ export function TestimonialsSection() {
   }, [])
 
   return (
-    <section className="py-28 px-6 bg-white border-t border-[#e8e8e8]">
+    <section className="py-28 px-4 sm:px-6 bg-white border-t border-[#e8e8e8]">
       <div className="max-w-6xl mx-auto">
         {/* Header - keeping original */}
         <div className="max-w-2xl mb-16">
           <p className="section-label mb-5">Early Access Feedback</p>
-          <h2 className="font-serif text-[42px] md:text-[52px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
+          <h2 className="font-serif text-[32px] sm:text-[42px] md:text-[52px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
             What founding teams are saying.
           </h2>
         </div>
 
         {/* Testimonial carousel - current version style */}
-        <div className="flex flex-col md:flex-row items-center gap-12">
+        <div className="flex flex-col md:flex-row items-center gap-8 sm:gap-12">
           <div className="w-full md:w-1/3 flex justify-center">
             <img
               src={testimonials[activeTestimonial].image}
               alt={testimonials[activeTestimonial].name}
-              className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-2xl shadow-xl transition-all duration-500"
+              className="w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 object-cover rounded-2xl shadow-xl transition-all duration-500"
             />
           </div>
           <div className="w-full md:w-2/3 flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="min-h-[160px] flex items-center mb-6">
+            <div className="flex items-center mb-6">
               <h3 className="font-serif text-2xl md:text-3xl leading-relaxed text-balance">"{testimonials[activeTestimonial].quote}"</h3>
             </div>
             <div>
@@ -77,13 +77,13 @@ export function TestimonialsSection() {
         </div>
 
          <div className="mx-auto mt-7 w-full max-w-7xl border-t border-[#e8e8e8] pt-7">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
             <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
                Join the early users shaping the product — your feedback ships.
             </p>
             <EarlyAccessTrigger
               label="Get early access"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap w-full sm:w-auto"
             />
           </div>
         </div>

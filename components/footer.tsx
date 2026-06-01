@@ -91,7 +91,7 @@ export function Footer() {
 
   return (
     <footer className="bg-white border-t border-[#e8e8e8] pt-16 pb-0">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Logo + tagline */}
         <div className="flex flex-col md:flex-row justify-between gap-8 mb-14">
           <div className="max-w-xs">
@@ -103,9 +103,9 @@ export function Footer() {
               The AI Visibility & AEO Intelligence Platform for teams competing in AI search.
             </p>
           </div>
-            <div className="flex gap-3 items-start">
+            <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-start">
               <EarlyAccessTrigger label="Get early access →" />
-              <Link href="/pricing" className="inline-flex items-center h-9 px-5 rounded-full border border-[#e8e8e8] text-[#525252] text-[13px] font-medium hover:bg-[#f5f5f5] transition-colors">
+              <Link href="/pricing" className="inline-flex items-center justify-center h-9 px-5 rounded-full border border-[#e8e8e8] text-[#525252] text-[13px] font-medium hover:bg-[#f5f5f5] transition-colors">
                 View Pricing
               </Link>
             </div>
@@ -113,7 +113,7 @@ export function Footer() {
         </div>
 
         {/* Link columns */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 mb-14">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 sm:gap-8 mb-14">
           {columns.map((col) => (
             <div key={col.title}>
               <h3 className="text-[11px] font-bold uppercase tracking-widest text-[#9a9a9a] mb-4">{col.title}</h3>
@@ -136,7 +136,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-3 py-5 border-t border-[#e8e8e8]">
           <p className="text-[12px] text-[#9a9a9a]">© 2026 Colytics AI, Inc. All rights reserved.</p>
-          <div className="flex gap-5 text-[12px] text-[#9a9a9a]">
+          <div className="flex flex-wrap justify-center gap-5 text-[12px] text-[#9a9a9a]">
               <Link href="/privacy-policy" className="hover:text-[#0a0a0a] transition-colors">Privacy</Link>
             <Link href="/terms-of-service" className="hover:text-[#0a0a0a] transition-colors">Terms</Link>
             <Link href="/security" className="hover:text-[#0a0a0a] transition-colors">Security</Link>

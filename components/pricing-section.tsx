@@ -48,7 +48,7 @@ export function PricingSection() {
   ]
 
   return (
-    <section id="pricing" className="py-28 px-6 bg-[#fafafa] border-t border-[#e8e8e8] relative overflow-hidden">
+    <section id="pricing" className="py-28 px-4 sm:px-6 bg-[#fafafa] border-t border-[#e8e8e8] relative overflow-hidden">
       {/* Diagonal strips pattern */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.02]"
@@ -67,11 +67,11 @@ export function PricingSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {plans.map((plan) => (
             <div
               key={plan.key}
-              className={`rounded-2xl p-8 flex flex-col transition-colors relative ${plan.featured
+              className={`rounded-2xl p-6 sm:p-8 flex flex-col transition-colors relative ${plan.featured
                   ? "bg-muted border-muted-foreground/20 shadow-md ring-1 ring-muted-foreground/10"
                   : "bg-white border shadow-sm"
                 }`}
@@ -124,13 +124,13 @@ export function PricingSection() {
         </div>
 
         <div className="mx-auto mt-7 w-full max-w-7xl border-t border-[#e8e8e8] pt-7">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
             <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
               Get the full platform free for 60 days — no card, no risk.
             </p>
             <EarlyAccessTrigger
               label="Start Free"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap w-full sm:w-auto"
             />
           </div>
         </div>

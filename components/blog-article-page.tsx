@@ -1840,7 +1840,7 @@ export function BlogArticlePage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
         <section id="author-section" className="mt-14 rounded-4xl border border-border bg-white p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
-            <div className="mx-auto shrink-0 overflow-hidden rounded-3xl border border-border bg-[#f8f8fb] lg:mx-0 lg:w-[240px]">
+            <div className="mx-auto shrink-0 overflow-hidden rounded-3xl border border-border bg-[#f8f8fb] lg:mx-0 lg:w-60 w-full max-w-sm lg:max-w-none">
               <img
                 src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img/https://attrock.com/wp-content/uploads/2021/08/grv.png"
                 alt="Gaurav Sharma"

@@ -3,16 +3,16 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function HowItWorks() {
   return (
-    <section id="solutions" className="py-20 px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
+    <section id="solutions" className="py-20 px-4 sm:px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl mb-16">
           <p className="section-label mb-5">Get Started</p>
-          <h2 className="font-serif text-[42px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
+          <h2 className="font-serif text-[32px] sm:text-[42px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
             Three steps to AI visibility and AEO intelligence.
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center mb-7">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center mb-7">
           <div className="order-2 md:order-1">
             <h3 className="font-serif text-2xl md:text-3xl mb-4">1. Add your domain</h3>
             <p className="text-muted-foreground leading-relaxed">
@@ -24,7 +24,7 @@ export function HowItWorks() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center mb-7">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center mb-7">
           <div>
             <GapAnalysisCard />
           </div>
@@ -36,7 +36,7 @@ export function HowItWorks() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="order-2 md:order-1">
             <h3 className="font-serif text-2xl md:text-3xl mb-4">3. Ship the ranked fixes</h3>
             <p className="text-muted-foreground leading-relaxed">
@@ -50,13 +50,13 @@ export function HowItWorks() {
       </div>
 
       <div className="mx-auto mt-7 w-full max-w-7xl border-t border-[#e8e8e8] pt-7">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
           <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
             Your first audit is minutes away.
           </p>
           <EarlyAccessTrigger
             label="Run my free audit"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap w-full sm:w-auto"
           />
         </div>
       </div>

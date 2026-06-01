@@ -24,12 +24,12 @@ export function FaqSection() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section className="py-28 px-6 bg-white border-t border-[#e8e8e8]">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-[300px_1fr] gap-16">
+    <section className="py-28 px-4 sm:px-6 bg-white border-t border-[#e8e8e8]">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[300px_1fr] gap-10 sm:gap-16">
         {/* Left */}
         <div className="md:sticky md:top-32 self-start">
           <p className="section-label mb-5">FAQ</p>
-          <h2 className="font-serif text-[36px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a] mb-4">
+          <h2 className="font-serif text-[30px] sm:text-[36px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a] mb-4">
             Frequently asked questions.
           </h2>
           <p className="text-[14px] text-[#737373] leading-relaxed">

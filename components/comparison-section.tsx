@@ -16,11 +16,11 @@ export function ComparisonSection() {
   ]
 
   return (
-    <section className="py-28 px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
+    <section className="py-28 px-4 sm:px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
       <div className="max-w-5xl mx-auto">
         <div className="max-w-2xl mb-16">
           <p className="section-label mb-5">The Difference</p>
-          <h2 className="font-serif text-[42px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
+          <h2 className="font-serif text-[32px] sm:text-[42px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
             The Gap no other tool closes.
           </h2>
           <p className="mt-5 text-[16px] text-[#737373] leading-relaxed">
@@ -29,6 +29,8 @@ export function ComparisonSection() {
         </div>
 
         <div className="bg-white border border-[#e8e8e8] rounded-2xl overflow-hidden">
+          <div className="overflow-x-auto">
+            <div className="min-w-160">
           {/* Table header */}
           <div className="grid grid-cols-[1fr_140px_140px_140px] border-b border-[#e8e8e8] bg-[#fafafa]">
             <div className="px-6 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#9a9a9a]">Capability</div>
@@ -50,7 +52,7 @@ export function ComparisonSection() {
           {rows.map((row, i) => (
             <div
               key={i}
-              className={`grid grid-cols-[1fr_140px_140px_140px] border-b border-[#f0f0f0] last:border-0 items-center ${!row.colytics ? "bg-[#fff]" : ""
+              className={`grid grid-cols-[1fr_140px_140px_140px] border-b border-[#f0f0f0] last:border-0 items-center ${!row.colytics ? "bg-white" : ""
                 }`}
             >
               <div className="px-6 py-4 text-[13px] text-[#525252]">{row.capability}</div>
@@ -91,16 +93,18 @@ export function ComparisonSection() {
               </div>
             </div>
           ))}
+            </div>
+          </div>
         </div>
 
         <div className="mx-auto mt-7 w-full max-w-7xl border-t border-[#e8e8e8] pt-7">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
             <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
               "AI visibility monitors show you the scoreboard. Colytics gives you the playbook."
             </p>
             <EarlyAccessTrigger
               label="Replace the stack"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap w-full sm:w-auto"
             />
           </div>
         </div>

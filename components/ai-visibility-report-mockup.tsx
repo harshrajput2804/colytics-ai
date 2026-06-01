@@ -37,9 +37,9 @@ export function AIVisibilityReportMockup() {
         <div className="w-14" />
       </div>
 
-      <div className="flex bg-white" style={{ minHeight: 520 }}>
+      <div className="flex flex-col md:flex-row bg-white" style={{ minHeight: 520 }}>
         {/* Sidebar */}
-        <div className="w-52 border-r border-[#e8e8e8] bg-[#fafafa] hidden md:flex flex-col p-4">
+        <div className="w-full md:w-52 border-r border-[#e8e8e8] bg-[#fafafa] hidden md:flex flex-col p-4">
           {/* Logo mark */}
           <div className="flex items-center gap-2 mb-7 px-1">
             <img src="/logo/colytics-logo-notext.svg" alt="Colytics" className="w-6 h-6" />
@@ -95,7 +95,7 @@ export function AIVisibilityReportMockup() {
         </div>
 
         {/* Main content */}
-        <div className="flex-1 p-6 overflow-hidden">
+        <div className="flex-1 p-4 sm:p-6 overflow-hidden">
           {/* Page header */}
           <div className="flex items-start justify-between mb-6">
             <div>
@@ -108,9 +108,9 @@ export function AIVisibilityReportMockup() {
           </div>
 
           {/* Top band: Overall gauge (left), Module bars (center), Metrics (right) */}
-          <div className="grid grid-cols-12 gap-4 mb-6 items-center">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-4 mb-6 items-center">
             {/* Overall gauge */}
-            <div className="col-span-12 md:col-span-3">
+            <div className="col-span-1 xl:col-span-3">
               <div className="bg-white border border-[#e8e8e8] rounded-xl p-4 flex flex-col items-center justify-center">
                 <div className="relative w-28 h-28 mb-3">
                   <svg className="w-full h-full" viewBox="0 0 100 100">
@@ -137,7 +137,7 @@ export function AIVisibilityReportMockup() {
             </div>
 
             {/* Module bars centered */}
-            <div className="col-span-12 md:col-span-6">
+            <div className="col-span-1 xl:col-span-6">
               <div className="bg-white border border-[#e8e8e8] rounded-xl p-4">
                 <div className="text-[12px] font-medium text-[#0a0a0a] mb-3">Module Score Overview</div>
                 <div className="flex items-end gap-3 h-28">
@@ -159,7 +159,7 @@ export function AIVisibilityReportMockup() {
             </div>
 
             {/* Metrics stacked on right */}
-            <div className="col-span-12 md:col-span-3 space-y-3">
+            <div className="col-span-1 xl:col-span-3 space-y-3">
               {[
                 { label: "CURRENT", value: "64.9", color: "#0a0a0a" },
                 { label: "PREDICTED", value: "90.4", color: "#10b981" },
@@ -176,9 +176,9 @@ export function AIVisibilityReportMockup() {
           </div>
 
           {/* Lower content: AEO checker + table preview */}
-          <div className="grid grid-cols-12 gap-4">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-4">
             {/* AEO Checker */}
-            <div className="col-span-12 md:col-span-4 bg-white border border-[#e8e8e8] rounded-xl p-4">
+            <div className="col-span-1 xl:col-span-4 bg-white border border-[#e8e8e8] rounded-xl p-4">
               <div className="text-[12px] font-medium text-[#0a0a0a] mb-3">AEO Checker</div>
               <div className="space-y-2">
                 {aeoBreakdown.map((a) => (
@@ -191,7 +191,7 @@ export function AIVisibilityReportMockup() {
             </div>
 
             {/* Table preview area */}
-            <div className="col-span-12 md:col-span-8 bg-white border border-[#e8e8e8] rounded-xl p-4">
+            <div className="col-span-1 xl:col-span-8 bg-white border border-[#e8e8e8] rounded-xl p-4">
               <div className="text-[12px] font-medium text-[#0a0a0a] mb-3">Top Opportunities</div>
               <div className="overflow-x-auto">
                 <table className="w-full text-[11px]">
