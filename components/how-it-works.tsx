@@ -1,155 +1,203 @@
 "use client"
 
-import type { ReactNode } from "react"
 import { useEffect, useRef, useState } from "react"
-import { Globe, Search, ListChecks } from "lucide-react"
+import { Check, Globe, ListChecks, Search } from "lucide-react"
 import EarlyAccessTrigger from "@/components/early-access-trigger"
 
+const STEPS = [
+  {
+    number: "01",
+    title: "Connect Your Domain",
+    body: "Add your website URL. Add prompts and topics. Colytics begins crawling, analyzing content structure, and mapping your schema coverage.",
+  },
+  {
+    number: "02",
+    title: "See Your Citation Gaps",
+    body: "Within minutes, see where competitors are cited and you are not. Understand the structural reasons behind every gap.",
+  },
+  {
+    number: "03",
+    title: "Execute the Fix List",
+    body: "Get a prioritized roadmap of content, schema, and structural changes ranked by expected citation impact. Ship fixes. Track gains.",
+  },
+]
+
 export function HowItWorks() {
-  const stepsRef = useRef<HTMLDivElement | null>(null)
-  const cardRefs = useRef<Array<HTMLDivElement | null>>([])
-  const pathRef = useRef<SVGPathElement | null>(null)
-  const [progress, setProgress] = useState(0)
-  const [pathD, setPathD] = useState("")
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const lineRef = useRef<HTMLDivElement | null>(null)
+  const [fillPercent, setFillPercent] = useState(0)
+  const [reducedMotion, setReducedMotion] = useState(false)
 
   useEffect(() => {
-    const node = stepsRef.current
-    if (!node) return
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
+    const onChange = () => setReducedMotion(mq.matches)
+    onChange()
+    mq.addEventListener("change", onChange)
+    return () => mq.removeEventListener("change", onChange)
+  }, [])
+
+  useEffect(() => {
+    if (reducedMotion) {
+      setFillPercent(100)
+      return
+    }
+
+    const section = sectionRef.current
+    if (!section) return
 
     let raf = 0
+    let current = 0
+
     const update = () => {
       raf = 0
-      const rect = node.getBoundingClientRect()
-      const viewportAnchor = window.innerHeight * 0.58
-      const start = rect.top + window.scrollY - window.innerHeight * 0.1
-      const end = rect.bottom + window.scrollY - window.innerHeight * 0.34
-      const current = window.scrollY + viewportAnchor
-      const next = Math.max(0, Math.min(1, (current - start) / Math.max(end - start, 1)))
-      setProgress(next)
-
-      const positions = cardRefs.current
-        .map((el) => el?.getBoundingClientRect())
-        .filter((box): box is DOMRect => Boolean(box))
-
-      if (positions.length === 3) {
-        const containerRect = node.getBoundingClientRect()
-        const points = positions.map((box) => ({
-          x: box.left + box.width / 2 - containerRect.left,
-          y: box.top + box.height / 2 - containerRect.top,
-        }))
-        const d = [
-          `M ${points[0].x} ${points[0].y}`,
-          `L ${points[1].x} ${points[1].y}`,
-          `L ${points[2].x} ${points[2].y}`,
-        ].join(" ")
-        setPathD(d)
+      const rect = section.getBoundingClientRect()
+      // Start filling when section top hits 80% viewport height
+      // Finish when section bottom hits 30% viewport height
+      const start = window.innerHeight * 0.60
+      const end = window.innerHeight * 0.10
+      const raw = (start - rect.top) / (start - end + rect.height * 0.8)
+      const target = Math.max(0, Math.min(1, raw)) * 100
+      // Smooth lerp
+      current += (target - current) * 0.08
+      setFillPercent(current)
+      if (Math.abs(target - current) > 0.1) {
+        raf = requestAnimationFrame(update)
       }
     }
 
     const onScroll = () => {
       if (raf) return
-      raf = window.requestAnimationFrame(update)
+      raf = requestAnimationFrame(update)
     }
 
     update()
     window.addEventListener("scroll", onScroll, { passive: true })
     window.addEventListener("resize", onScroll)
+
     return () => {
       window.removeEventListener("scroll", onScroll)
       window.removeEventListener("resize", onScroll)
-      if (raf) window.cancelAnimationFrame(raf)
+      if (raf) cancelAnimationFrame(raf)
     }
-  }, [])
+  }, [reducedMotion])
 
-  const activeStep = progress < 0.34 ? 1 : progress < 0.67 ? 2 : 3
+  // Each step activates at roughly 0%, 40%, 75% fill
+  const stepThresholds = [0, 38, 72]
+  const activeStep = stepThresholds.reduce(
+    (acc, threshold, i) => (fillPercent >= threshold ? i : acc),
+    -1
+  )
 
   return (
-    <section id="solutions" className="enhanced-surface py-20 px-4 sm:px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
-      <div className="max-w-6xl mx-auto">
-        <div className="max-w-2xl mb-16">
-          <p className="section-label mb-5">Get Started</p>
-          <h2 className="font-serif text-[32px] sm:text-[42px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
+    <section
+      ref={sectionRef}
+      id="solutions"
+      className="py-24 px-4 sm:px-6 bg-[#fafafa] border-t border-[#e8e8e8]"
+    >
+      <div className="max-w-3xl mx-auto">
+        {/* Header */}
+        <div className="mb-16">
+          <p className="text-xs font-semibold uppercase tracking-widest text-[#737373] mb-4">
+            How It Works
+          </p>
+          <h2 className="font-serif text-[32px] sm:text-[42px] md:text-[52px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
             Three steps to AI visibility and AEO intelligence.
           </h2>
         </div>
 
-        <div ref={stepsRef} className="relative space-y-7 md:pl-10">
-          <svg
-            className="pointer-events-none absolute inset-0 z-0 hidden md:block overflow-visible"
-            aria-hidden="true"
-          >
-            <defs>
-              <linearGradient id="how-it-works-line" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#1549f0" stopOpacity="0.25" />
-                <stop offset="100%" stopColor="#1549f0" stopOpacity="1" />
-              </linearGradient>
-            </defs>
-            <path
-              ref={pathRef}
-              d={pathD}
-              fill="none"
-              stroke="#e8e8e8"
-              strokeWidth="14"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              opacity="0.75"
-              pathLength={1000}
-            />
-            <path
-              d={pathD}
-              fill="none"
-              stroke="url(#how-it-works-line)"
-              strokeWidth="14"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              pathLength={1000}
-              strokeDasharray="1000"
-              strokeDashoffset={1000 * (1 - progress)}
-              style={{ transition: "stroke-dashoffset 120ms linear" }}
-            />
-          </svg>
+        {/* Timeline */}
+        <div className="relative">
+          {/* Vertical track line */}
+          <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-[#e5e5e5] hidden sm:block" />
 
-          <StepRow
-            step={1}
-            title="Add your domain"
-            body="Crawling starts immediately, so you can get to the first signal fast."
-            card={<DomainCard />}
-            reverse={false}
-            active={activeStep >= 1}
-            cardRef={(el) => {
-              cardRefs.current[0] = el
+          {/* Animated fill line */}
+          <div
+            className="absolute left-[19px] top-0 w-[2px] bg-[#2563eb] hidden sm:block transition-none pointer-events-none"
+            style={{
+              height: `${fillPercent}%`,
+              boxShadow: "0 0 8px rgba(37,99,235,0.4)",
             }}
           />
 
-          <StepRow
-            step={2}
-            title="See where you're invisible"
-            body="See which engines cite competitors instead of you, and why those answers skip your brand."
-            card={<GapAnalysisCard />}
-            reverse
-            active={activeStep >= 2}
-            cardRef={(el) => {
-              cardRefs.current[1] = el
-            }}
-          />
+          {/* Steps */}
+          <div className="space-y-0">
+            {STEPS.map((step, i) => {
+              const isActive = activeStep >= i
+              return (
+                <div key={step.number} className="relative flex gap-6 sm:gap-10 pb-16 last:pb-0">
+                  {/* Node dot */}
+                  <div className="relative z-10 shrink-0 hidden sm:flex items-start pt-1">
+                    <div
+                      className={`w-10 h-10 rounded-full border-2 flex items-center justify-center text-xs font-bold transition-all duration-500 ${
+                        isActive
+                          ? "border-[#2563eb] bg-[#2563eb] text-white shadow-[0_0_16px_rgba(37,99,235,0.35)]"
+                          : "border-[#d4d4d4] bg-white text-[#a3a3a3]"
+                      }`}
+                    >
+                      {isActive ? (
+                        i === STEPS.length - 1 && activeStep === STEPS.length - 1 ? (
+                          <Check className="w-4 h-4" strokeWidth={2.5} />
+                        ) : (
+                          step.number
+                        )
+                      ) : (
+                        step.number
+                      )}
+                    </div>
+                  </div>
 
-          <StepRow
-            step={3}
-            title="Ship the ranked fixes"
-            body="Use the IEU list and generated content to close the highest-value gaps and help AIVS? climb."
-            card={<RoadmapCard />}
-            reverse={false}
-            active={activeStep >= 3}
-            cardRef={(el) => {
-              cardRefs.current[2] = el
-            }}
-          />
+                  {/* Content */}
+                  <div className="flex-1 pt-1">
+                    {/* Step label — mobile only */}
+                    <div className="flex items-center gap-3 mb-3 sm:hidden">
+                      <div
+                        className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-xs font-bold transition-all duration-500 ${
+                          isActive
+                            ? "border-[#2563eb] bg-[#2563eb] text-white"
+                            : "border-[#d4d4d4] bg-white text-[#a3a3a3]"
+                        }`}
+                      >
+                        {step.number}
+                      </div>
+                    </div>
+
+                    <h3
+                      className={`font-serif text-xl sm:text-2xl md:text-[28px] leading-snug mb-3 transition-colors duration-500 ${
+                        isActive ? "text-[#0a0a0a]" : "text-[#c0c0c0]"
+                      }`}
+                    >
+                      {step.title}
+                    </h3>
+                    <p
+                      className={`text-[15px] leading-relaxed max-w-xl transition-colors duration-500 ${
+                        isActive ? "text-[#525252]" : "text-[#c8c8c8]"
+                      }`}
+                    >
+                      {step.body}
+                    </p>
+
+                    {/* Card for each step */}
+                    <div
+                      className={`mt-6 transition-all duration-700 ${
+                        isActive ? "opacity-100 translate-y-0" : "opacity-40 translate-y-2"
+                      }`}
+                    >
+                      {i === 0 && <DomainCard />}
+                      {i === 1 && <GapAnalysisCard />}
+                      {i === 2 && <RoadmapCard />}
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
         </div>
       </div>
 
-      <div className="mx-auto mt-7 w-full max-w-7xl border-t border-[#e8e8e8] pt-7">
+      {/* CTA footer */}
+      <div className="mx-auto mt-20 w-full max-w-3xl border-t border-[#e8e8e8] pt-8">
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
-          <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
+          <p className="text-[15px] text-[#737373] leading-relaxed">
             Your first audit is minutes away.
           </p>
           <EarlyAccessTrigger
@@ -162,75 +210,30 @@ export function HowItWorks() {
   )
 }
 
-function StepRow({
-  step,
-  title,
-  body,
-  card,
-  reverse,
-  active,
-  cardRef,
-}: {
-  step: number
-  title: string
-  body: string
-  card: ReactNode
-  reverse: boolean
-  active: boolean
-  cardRef: (el: HTMLDivElement | null) => void
-}) {
-  return (
-    <div className="relative z-10 md:pl-10">
-      <div
-        className={`absolute left-[0.15rem] top-6 hidden md:flex h-4 w-4 items-center justify-center rounded-full border bg-white transition-colors ${
-          active ? "border-[#1549f0]" : "border-[#d9d9d9]"
-        }`}
-      >
-        <div className={`h-2 w-2 rounded-full transition-colors ${active ? "bg-[#1549f0]" : "bg-[#d9d9d9]"}`} />
-      </div>
-      <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
-        <div className={reverse ? "order-2 md:order-2" : "order-2 md:order-1"}>
-          <h3 className={`font-serif text-2xl md:text-3xl mb-4 transition-colors ${active ? "text-[#0a0a0a]" : "text-[#525252]"}`}>
-            {step}. {title}
-          </h3>
-          <p className="text-muted-foreground leading-relaxed">{body}</p>
-        </div>
-        <div ref={cardRef} className={reverse ? "order-1 md:order-1" : "order-1 md:order-2"}>
-          {card}
-        </div>
-      </div>
-    </div>
-  )
-}
-
 function DomainCard() {
   return (
-    <div className="bg-muted/50 rounded-xl p-6">
-      <div className="bg-white rounded-lg p-5 shadow-sm">
-        <h4 className="text-sm font-medium mb-4">Add your domain</h4>
-        <div className="flex items-center gap-2 p-3 border rounded-lg mb-4">
-          <Globe className="w-4 h-4 text-muted-foreground" />
-          <span className="text-sm">yourwebsite.com</span>
+    <div className="rounded-2xl border border-[#e8e8e8] bg-white p-5 sm:p-6 shadow-[0_8px_32px_rgba(0,0,0,0.06)] max-w-lg">
+      <h4 className="text-sm font-semibold text-[#0a0a0a] mb-4">Setup Target Domain</h4>
+      <div className="flex items-center gap-2.5 p-3 border border-[#e8e8e8] rounded-xl mb-4 bg-[#fafafa]">
+        <Globe className="w-4 h-4 text-[#a3a3a3] shrink-0" />
+        <span className="text-sm text-[#525252]">yourwebsite.com</span>
+      </div>
+      <p className="text-[11px] font-semibold text-[#737373] uppercase tracking-widest mb-3">Target Prompts</p>
+      <div className="space-y-2">
+        <div className="flex items-center gap-2.5 p-3 border border-[#e8e8e8] rounded-xl">
+          <Search className="w-4 h-4 text-[#a3a3a3] shrink-0" />
+          <span className="text-sm text-[#525252]">best enterprise seo tools</span>
         </div>
-
-        <h4 className="text-sm font-medium mb-3 mt-6">Crawling starts immediately</h4>
-        <div className="space-y-2">
-          <div className="flex items-center gap-2 p-3 border rounded-lg bg-muted/20">
-            <Search className="w-4 h-4 text-muted-foreground" />
-            <span className="text-sm">"best enterprise seo tools"</span>
-          </div>
-          <div className="flex items-center gap-2 p-3 border rounded-lg bg-muted/20">
-            <Search className="w-4 h-4 text-muted-foreground" />
-            <span className="text-sm">"how to improve ai search visibility"</span>
-          </div>
+        <div className="flex items-center gap-2.5 p-3 border border-[#e8e8e8] rounded-xl">
+          <Search className="w-4 h-4 text-[#a3a3a3] shrink-0" />
+          <span className="text-sm text-[#525252]">how to improve ai search visibility</span>
         </div>
-
-        <div className="mt-6 flex items-center gap-2">
-          <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center">
-            <span className="text-white text-xs">✓</span>
-          </div>
-          <span className="text-sm text-green-600">Crawling started</span>
+      </div>
+      <div className="mt-5 flex items-center gap-2">
+        <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center shrink-0">
+          <Check className="w-3 h-3 text-white" strokeWidth={3} />
         </div>
+        <span className="text-sm font-medium text-green-600">Crawling initialized</span>
       </div>
     </div>
   )
@@ -238,75 +241,68 @@ function DomainCard() {
 
 function GapAnalysisCard() {
   return (
-    <div className="bg-muted/50 rounded-xl p-6">
-      <div className="bg-white rounded-lg p-5 shadow-sm">
-        <div className="flex items-center justify-between mb-4">
-          <h4 className="text-sm font-medium">Where you’re invisible</h4>
-          <span className="px-2 py-1 bg-red-100 text-red-700 rounded text-xs">Missed Citation</span>
-        </div>
-
-        <div className="space-y-4">
-          <div className="p-3 border rounded-lg">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-muted-foreground">Engines citing competitors</span>
-            </div>
-            <p className="text-xs text-muted-foreground">
-              "...Results cite <span className="bg-yellow-100 text-yellow-800 px-1 rounded">Competitor A</span> and{" "}
-              <span className="bg-yellow-100 text-yellow-800 px-1 rounded">Competitor B</span> because they have clearer structure,
-              stronger entity coverage, and better answer formatting..."
-            </p>
-          </div>
-
-          <div className="p-3 bg-red-50 border border-red-100 rounded-lg">
-            <div className="text-sm font-medium text-red-800 mb-1">Why you missed this:</div>
-            <ul className="text-xs text-red-700 space-y-1 list-disc pl-4">
-              <li>Weak schema and structure</li>
-              <li>Competitors answer the query more clearly</li>
-              <li>Low entity density for the topic</li>
-            </ul>
-          </div>
-        </div>
+    <div className="rounded-2xl border border-[#e8e8e8] bg-white p-5 sm:p-6 shadow-[0_8px_32px_rgba(0,0,0,0.06)] max-w-lg">
+      <div className="flex items-start justify-between gap-3 mb-4">
+        <h4 className="text-sm font-semibold text-[#0a0a0a]">Citation Gap: &apos;best seo tools&apos;</h4>
+        <span className="shrink-0 px-2.5 py-1 bg-red-50 text-red-600 rounded-full text-[11px] font-semibold border border-red-100">
+          Missed Citation
+        </span>
+      </div>
+      <div className="p-3.5 border border-[#e8e8e8] rounded-xl mb-3 bg-[#fafafa]">
+        <p className="text-[10px] font-semibold text-[#a3a3a3] uppercase tracking-widest mb-2">ChatGPT Response</p>
+        <p className="text-xs text-[#525252] leading-relaxed">
+          &quot;Top options include{" "}
+          <span className="bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-medium">Competitor A</span>
+          {" "}and{" "}
+          <span className="bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-medium">Competitor B</span>
+          {" "}for enterprise teams needing scalable SEO workflows...&quot;
+        </p>
+      </div>
+      <div className="p-3.5 bg-red-50 border border-red-100 rounded-xl">
+        <p className="text-xs font-semibold text-red-800 mb-2">Why you missed this:</p>
+        <ul className="text-xs text-red-700 space-y-1 list-disc pl-4">
+          <li>Missing relevant Schema markup</li>
+          <li>Content lacks structured lists</li>
+          <li>Low entity density for &quot;enterprise seo&quot;</li>
+        </ul>
       </div>
     </div>
   )
 }
 
 function RoadmapCard() {
+  const items = [
+    { done: true, title: "Add SoftwareApplication Schema", impact: "High" },
+    { done: false, title: "Structure pricing page data", impact: "Medium" },
+    { done: false, title: "Increase entity density on /enterprise", impact: "Medium" },
+  ]
   return (
-    <div className="bg-muted/50 rounded-xl p-6">
-      <div className="bg-white rounded-lg p-5 shadow-sm">
-        <div className="flex items-center justify-between mb-4">
-          <h4 className="text-sm font-medium">Ranked fixes</h4>
-          <ListChecks className="w-4 h-4 text-muted-foreground" />
-        </div>
-
-        <div className="space-y-3">
-          <div className="flex items-start gap-3 p-3 border rounded-lg bg-green-50">
-            <div className="w-5 h-5 rounded-full border border-green-500 shrink-0 flex items-center justify-center">
-              <span className="text-green-500 text-xs">✓</span>
+    <div className="rounded-2xl border border-[#e8e8e8] bg-white p-5 sm:p-6 shadow-[0_8px_32px_rgba(0,0,0,0.06)] max-w-lg">
+      <div className="flex items-center justify-between mb-4">
+        <h4 className="text-sm font-semibold text-[#0a0a0a]">Prioritized Fixes</h4>
+        <ListChecks className="w-4 h-4 text-[#a3a3a3]" />
+      </div>
+      <div className="space-y-2.5">
+        {items.map((item) => (
+          <div
+            key={item.title}
+            className={`flex items-start gap-3 p-3 rounded-xl border ${
+              item.done ? "border-green-200 bg-green-50" : "border-[#e8e8e8] bg-white"
+            }`}
+          >
+            <div
+              className={`mt-0.5 w-5 h-5 rounded-full shrink-0 flex items-center justify-center border ${
+                item.done ? "border-green-500 bg-green-500" : "border-[#d4d4d4]"
+              }`}
+            >
+              {item.done ? <Check className="w-3 h-3 text-white" strokeWidth={3} /> : null}
             </div>
             <div>
-              <div className="text-sm font-medium">IEU list: add SoftwareApplication schema</div>
-              <div className="text-xs text-muted-foreground">Expected Impact: High</div>
+              <p className="text-sm font-medium text-[#0a0a0a]">{item.title}</p>
+              <p className="text-xs text-[#737373] mt-0.5">Expected Impact: {item.impact}</p>
             </div>
           </div>
-
-          <div className="flex items-start gap-3 p-3 border rounded-lg">
-            <div className="w-5 h-5 rounded-full border shrink-0"></div>
-            <div>
-              <div className="text-sm font-medium">Generated content for the pricing page</div>
-              <div className="text-xs text-muted-foreground">Expected Impact: Medium</div>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3 p-3 border rounded-lg">
-            <div className="w-5 h-5 rounded-full border shrink-0"></div>
-            <div>
-              <div className="text-sm font-medium">AIVS™ climb: improve entity density and answer depth</div>
-              <div className="text-xs text-muted-foreground">Expected Impact: Medium</div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   )

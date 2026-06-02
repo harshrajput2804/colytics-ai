@@ -3,20 +3,19 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { CookieConsentBanner } from "@/components/cookie-consent-banner"
 import { VisualEnhancements } from "@/components/visual-enhancements"
-
-const siteUrl = "https://colytics-ai-amber.vercel.app"
+import { SITE_NAME, SITE_URL } from "@/lib/site-config"
 
 const entityStructuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
-      "@id": `${siteUrl}/#organization`,
-      name: "Colytics AI",
-      url: siteUrl,
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${siteUrl}/logo/colytics-logo-side.svg`,
+        url: `${SITE_URL}/logo/colytics-logo-side.svg`,
       },
       email: "hello@colytics.ai",
       description:
@@ -32,23 +31,23 @@ const entityStructuredData = {
       ],
       makesOffer: {
         "@type": "SoftwareApplication",
-        "@id": `${siteUrl}/#software`,
-        name: "Colytics AI",
+        "@id": `${SITE_URL}/#software`,
+        name: SITE_NAME,
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web",
-        url: siteUrl,
+        url: SITE_URL,
       },
     },
     {
       "@type": "WebSite",
-      "@id": `${siteUrl}/#website`,
-      name: "Colytics AI",
-      url: siteUrl,
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      url: SITE_URL,
       publisher: {
-        "@id": `${siteUrl}/#organization`,
+        "@id": `${SITE_URL}/#organization`,
       },
       about: {
-        "@id": `${siteUrl}/#software`,
+        "@id": `${SITE_URL}/#software`,
       },
       inLanguage: "en",
     },
@@ -56,14 +55,14 @@ const entityStructuredData = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://colytics-ai.com"),
+  metadataBase: new URL(SITE_URL),
   title: "Colytics AI — The AI Visibility & AEO Intelligence Platform",
   description:
     "Colytics AI shows why AI and Google ignore your brand—and fixes it. Get cited across 9 AI engines. Free during early access.",
   keywords:
     "AI visibility, AEO, AI citation tracking, answer engine optimization, Google AI Overviews, AI search visibility, LLM visibility, AI SEO",
   alternates: {
-    canonical: "https://colytics-ai-amber.vercel.app",
+    canonical: SITE_URL,
   },
 }
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Header } from "@/components/header"
+import { GlobalSurfaceAnimation } from "@/components/global-surface-animation"
 import { HeroSection } from "@/components/hero-section"
 import { StatsSection } from "@/components/stats-section"
 import { ProblemSection } from "@/components/problem-section"
@@ -20,28 +21,29 @@ import { PricingSection } from "@/components/pricing-section"
 import { FaqSection } from "@/components/faq-section"
 import { CtaSection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
+import { SITE_NAME, SITE_URL } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Colytics AI — AI visibility and AEO intelligence in one platform",
+  title: `${SITE_NAME} — AI visibility and AEO intelligence in one platform`,
   description:
     "See why AI engines cite or skip your brand, fix the gaps, and track prompts, citations, and AEO readiness across the homepage loop.",
   alternates: {
-    canonical: "https://colytics-ai.com",
+    canonical: SITE_URL,
   },
   openGraph: {
-    title: "Colytics AI — AI visibility and AEO intelligence in one platform",
+    title: `${SITE_NAME} — AI visibility and AEO intelligence in one platform`,
     description:
       "See why AI engines cite or skip your brand, fix the gaps, and track prompts, citations, and AEO readiness across the homepage loop.",
-    url: "https://colytics-ai.com",
+    url: SITE_URL,
     type: "website",
   },
 }
-const baseUrl = "https://colytics-ai-amber.vercel.app"
+const baseUrl = SITE_URL
 
 const softwareAppSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "Colytics AI",
+  name: SITE_NAME,
   description: "AI visibility and AEO intelligence platform. Track brand citations across 9 AI engines, audit content for Answer Engine Optimization, and detect schema opportunities.",
   url: baseUrl,
   applicationCategory: "BusinessApplication",
@@ -131,31 +133,34 @@ const productStructuredData = {
 export default function Home() {
   return (
     <>
-      <Header />
-      <main className="landing-page min-h-screen bg-white text-[#0a0a0a] overflow-x-hidden">
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productStructuredData) }} />
-        <HeroSection />
-        <StatsSection />
-        <ProblemSection />
-        <FeaturesSection />
-        <AeoLifecycleSection />
-        <TheSolutionSection />
-        <ModulesSection />
-        <ProprietaryScoringSection />
-        <AskAiSection />
-        <ConnectToClaudeSection />
-        <WhyDifferentSection />
-        <ComparisonSection />
-        <WhoForSection />
-        <HowItWorks />
-        <RoiCalculator />
-        <TestimonialsSection />
-        <PricingSection />
-        <FaqSection />
-        <CtaSection />
-      </main>
-      <Footer />
+      <GlobalSurfaceAnimation />
+      <div className="relative z-10">
+        <Header />
+        <main className="landing-page min-h-screen bg-white/96 text-[#0a0a0a] overflow-x-hidden">
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productStructuredData) }} />
+          <HeroSection />
+          <StatsSection />
+          <ProblemSection />
+          <FeaturesSection />
+          <AeoLifecycleSection />
+          <TheSolutionSection />
+          <ModulesSection />
+          <ProprietaryScoringSection />
+          <AskAiSection />
+          <ConnectToClaudeSection />
+          <WhyDifferentSection />
+          <ComparisonSection />
+          <WhoForSection />
+          <HowItWorks />
+          <RoiCalculator />
+          <TestimonialsSection />
+          <PricingSection />
+          <FaqSection />
+          <CtaSection />
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }

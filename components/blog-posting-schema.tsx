@@ -1,3 +1,5 @@
+import { SITE_NAME, SITE_URL } from "@/lib/site-config"
+
 type BlogPostingSchemaProps = {
   title: string
   description: string
@@ -9,11 +11,11 @@ type BlogPostingSchemaProps = {
 
 const publisher = {
   "@type": "Organization",
-  name: "Colytics AI",
-  url: "https://colytics-ai-amber.vercel.app",
+  name: SITE_NAME,
+  url: SITE_URL,
   logo: {
     "@type": "ImageObject",
-    url: "https://colytics-ai-amber.vercel.app/logo/colytics-logo-side.svg",
+    url: `${SITE_URL}/logo/colytics-logo-side.svg`,
   },
 }
 

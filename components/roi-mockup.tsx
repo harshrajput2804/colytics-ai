@@ -35,7 +35,7 @@ export function RoiMockup() {
   ] as const
 
   return (
-    <section className="enhanced-surface px-6 bg-white">
+    <div className="px-6">
       <div className="max-w-6xl mx-auto">
         <div className="overflow-hidden rounded-2xl border border-[#e8e8e8] bg-white shadow-[0_-4px_60px_rgba(0,0,0,0.08)]">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px overflow-hidden opacity-80">
@@ -204,7 +204,7 @@ export function RoiMockup() {
         </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 
