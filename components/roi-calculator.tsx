@@ -4,7 +4,7 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 export function RoiCalculator() {
     return (
         <>
-            <section id="roi-calculator" className="enhanced-surface py-20 px-6 bg-white border-t border-[#e8e8e8]">
+            <section id="roi-calculator" className="enhanced-surface py-20 px-6 bg-transparent border-t border-[#e8e8e8]">
                 <div className="max-w-6xl mx-auto">
                     <div className="max-w-2xl mb-16">
                         <p className="section-label mb-5">The Time & Money Calculator</p>

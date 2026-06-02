@@ -5,7 +5,7 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function HeroSection() {
   return (
-    <section className="enhanced-surface relative w-full pt-24 sm:pt-28 lg:pt-32 pb-0 overflow-x-hidden bg-white">
+    <section className="enhanced-surface relative w-full pt-24 sm:pt-28 lg:pt-32 pb-0 overflow-x-hidden bg-transparent">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-linear-to-b from-[#e8f5e9]/30 via-[#e3f2fd]/30 to-[#f3e5f5]/20 pointer-events-none" />
 

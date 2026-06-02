@@ -136,7 +136,7 @@ export default function Home() {
       <GlobalSurfaceAnimation />
       <div className="relative z-10">
         <Header />
-        <main className="landing-page min-h-screen bg-white/96 text-[#0a0a0a] overflow-x-hidden">
+        <main className="landing-page min-h-screen bg-white/20 text-[#0a0a0a] overflow-x-hidden">
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productStructuredData) }} />
           <HeroSection />

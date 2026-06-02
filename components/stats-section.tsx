@@ -2,7 +2,7 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function StatsSection() {
   return (
-    <section className="enhanced-surface py-20 bg-white border-t border-[#e8e8e8]">
+    <section className="enhanced-surface py-20 bg-transparent border-t border-[#e8e8e8]">
       <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
         <div className="grid gap-16 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:items-start">
           <div>

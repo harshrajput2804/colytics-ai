@@ -29,7 +29,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="enhanced-surface border-t border-[#e8e8e8] bg-white px-4 py-28 sm:px-6">
+    <section className="enhanced-surface border-t border-[#e8e8e8] bg-transparent px-4 py-28 sm:px-6">
       <div className="mx-auto max-w-6xl">
         <div className="mb-16 max-w-2xl">
           <p className="section-label mb-5">Early Access Feedback</p>

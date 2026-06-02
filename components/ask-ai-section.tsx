@@ -4,7 +4,7 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function AskAiSection() {
   return (
-    <section id="ask-ai" className="enhanced-surface border-t border-[#e8e8e8] bg-white px-6 py-20">
+    <section id="ask-ai" className="enhanced-surface border-t border-[#e8e8e8] bg-transparent px-6 py-20">
       <div className="mx-auto max-w-6xl">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div className="max-w-xl">

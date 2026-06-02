@@ -2,7 +2,7 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function ProblemSection() {
   return (
-    <section className="enhanced-surface py-20 px-4 sm:px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
+    <section className="enhanced-surface py-20 px-4 sm:px-6 bg-transparent border-t border-[#e8e8e8]">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl mb-16">
           <p className="section-label mb-5">THE PROBLEM</p>

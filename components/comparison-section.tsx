@@ -16,7 +16,7 @@ export function ComparisonSection() {
   ]
 
   return (
-    <section id="comparison" className="enhanced-surface py-28 px-4 sm:px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
+    <section id="comparison" className="enhanced-surface py-28 px-4 sm:px-6 bg-transparent border-t border-[#e8e8e8]">
       <div className="max-w-5xl mx-auto">
         <div className="max-w-2xl mb-16">
           <p className="section-label mb-5">The Difference</p>

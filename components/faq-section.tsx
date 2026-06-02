@@ -31,7 +31,7 @@ const faqSchema = {
 
 export function FaqSection() {
   return (
-    <section id="faq" className="enhanced-surface py-28 px-4 sm:px-6 bg-white border-t border-[#e8e8e8]">
+    <section id="faq" className="enhanced-surface py-28 px-4 sm:px-6 bg-transparent border-t border-[#e8e8e8]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[300px_1fr] gap-10 sm:gap-16">
         <div className="md:sticky md:top-32 self-start">

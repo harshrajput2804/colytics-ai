@@ -6,7 +6,7 @@ export function FeaturesSection() {
 
   return (
     <>
-      <section id="what-colytics-is" className="enhanced-surface pt-28 pb-16 px-6 bg-white border-t border-[#e8e8e8]">
+      <section id="what-colytics-is" className="enhanced-surface pt-28 pb-16 px-6 bg-transparent border-t border-[#e8e8e8]">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-2xl">
             <p className="section-label mb-5">WHAT COLYTICS AI IS</p>
@@ -78,7 +78,7 @@ export function FeaturesSection() {
         </div>
       </section>
 
-      <section id="ai-search-visibility" className="enhanced-surface pt-28 pb-16 px-6 bg-[#fafafa] border-t border-[#e8e8e8]">
+      <section id="ai-search-visibility" className="enhanced-surface pt-28 pb-16 px-6 bg-transparent border-t border-[#e8e8e8]">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-2xl mb-10">
             <p className="section-label mb-4">SAMPLE REPORT</p>

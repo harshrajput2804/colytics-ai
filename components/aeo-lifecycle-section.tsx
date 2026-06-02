@@ -18,7 +18,7 @@ const circleRadius = "clamp(160px, 24vw, 245px)"
 
 export function AeoLifecycleSection() {
     return (
-        <section id="aeo-lifecycle" className="enhanced-surface py-28 px-6 bg-white border-t border-[#e8e8e8]">
+        <section id="aeo-lifecycle" className="enhanced-surface py-28 px-6 bg-transparent border-t border-[#e8e8e8]">
             <div className="max-w-6xl mx-auto">
                 <div className="max-w-3xl mb-14">
                     <p className="section-label mb-5">THE AEO LIFECYCLE (CIRCULAR LOOP)</p>

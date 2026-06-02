@@ -7,7 +7,7 @@ interface ConnectToClaudeSectionProps {
 
 export function ConnectToClaudeSection({ reverseLayout = false }: ConnectToClaudeSectionProps) {
     return (
-        <section id="connect-claude" className="enhanced-surface py-20 px-6 bg-white border-t border-[#e8e8e8]">
+        <section id="connect-claude" className="enhanced-surface py-20 px-6 bg-transparent border-t border-[#e8e8e8]">
             <div className="max-w-6xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-10 items-center">
                     {/* Claude Chat Mockup */}

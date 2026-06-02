@@ -4,7 +4,7 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function ModulesSection() {
     return (
-        <section id="modules" className="enhanced-surface py-28 px-4 sm:px-6 bg-white border-t border-[#e8e8e8]">
+        <section id="modules" className="enhanced-surface py-28 px-4 sm:px-6 bg-transparent border-t border-[#e8e8e8]">
             <div className="max-w-6xl mx-auto">
                 <div className="max-w-3xl mb-12">
                     <p className="section-label mb-5">MODULES Inside the platform</p>
