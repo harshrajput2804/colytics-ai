@@ -4,28 +4,28 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function PricingSection() {
   const plans = [
-    {
-      key: "free" as const,
-      name: "Free Forever",
-      price: 0,
-      description: "Everything you need to start.",
-      cta: "Start free →",
-      features: [
-        "1 project",
-        "Website & Content Analyzer",
-        "Structured data & AI files (llms.txt, schema)",
-        "Citation monitoring",
-        "Community support",
-      ],
-      featured: false,
-    },
+    // {
+    //   key: "free" as const,
+    //   name: "Free Forever",
+    //   price: 0,
+    //   description: "Everything you need to start.",
+    //   cta: "Start free →",
+    //   features: [
+    //     "1 project",
+    //     "Website & Content Analyzer",
+    //     "Structured data & AI files (llms.txt, schema)",
+    //     "Citation monitoring",
+    //     "Community support",
+    //   ],
+    //   featured: false,
+    // },
     {
       key: "pro" as const,
       name: "Pro",
       price: 49,
-      promo: "Free for 60 days",
+      // promo: "Free for 60 days",
       description: "Everything to compete in AI search.",
-      cta: "Start free →",
+      cta: "Get Started →",
       features: [
         "Up to 2 projects",
         "Tracking across all 9 AI engines",
@@ -61,11 +61,11 @@ export function PricingSection() {
             Simple pricing for every team
           </h2>
           <p className="text-body mt-4 max-w-xl mx-auto">
-            No card to start · 14-day refund on paid plans · annual billing 20% off
+            14-day refund on paid plans · annual billing 20% off
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="max-w-xl mx-auto">
           {plans.map((plan) => (
             <div
               key={plan.key}
@@ -96,11 +96,11 @@ export function PricingSection() {
                 )}
               </div>
 
-              {plan.promo && (
+              {/* {plan.promo && (
                 <div className="mb-6 text-xs text-green-600 font-medium">
                   {plan.promo}, no card
                 </div>
-              )}
+              )} */}
 
               <Button
                 className={`w-full rounded-full mb-8 bg-[#0a0a0a] text-white hover:bg-[#1a1a1a] shadow-sm border-0`}
@@ -123,10 +123,10 @@ export function PricingSection() {
         <div className="mx-auto mt-7 w-full max-w-7xl border-t border-[#e8e8e8] pt-7">
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
             <p className="text-body flex-1">
-              Get the full platform free for 60 days — no card, no risk.
+              Get early access to the full platform.
             </p>
             <EarlyAccessTrigger
-              label="Start Free"
+              label="Get Early Access"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg text-button hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap w-full sm:w-auto"
             />
           </div>

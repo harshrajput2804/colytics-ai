@@ -48,7 +48,7 @@ export function FaqSection() {
         </div>
 
         <div>
-          {faqs.map((faq) => (
+          {/* {faqs.map((faq) => (
             <details key={faq.q} className="group border-t border-[#e8e8e8] py-5">
               <summary className="flex cursor-pointer list-none items-center justify-between text-left">
                 <h3 className="heading-5 pr-8 leading-snug">{faq.q}</h3>
@@ -68,6 +68,27 @@ export function FaqSection() {
                 <p className="text-body pr-8 text-sm">{faq.a}</p>
               </div>
             </details>
+          ))} */}
+
+
+          {faqs.map((faq, index) => (
+            <div key={faq.q} className="border-t border-[#e8e8e8] py-8">
+              <div className="flex gap-4">
+                <span className="heading-3 font-medium tracking-wider text-[#737373] shrink-0">
+                  Q{index + 1}.
+                </span>
+
+                <div>
+                  <h3 className="heading-3 mb-3">
+                    {faq.q}
+                  </h3>
+
+                  <p className="text-body">
+                    {faq.a}
+                  </p>
+                </div>
+              </div>
+            </div>
           ))}
           <div className="border-t border-[#e8e8e8]" />
         </div>

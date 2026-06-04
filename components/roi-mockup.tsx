@@ -56,8 +56,8 @@ export function RoiMockup() {
           <div className="w-14" />
         </div>
 
-        <div className="grid gap-0 lg:grid-cols-[320px_1fr]">
-          <div className="space-y-5 border-b border-[#e8e8e8] bg-[#fafafa] px-5 py-5 lg:row-span-2 lg:border-b-0 lg:border-r">
+        <div className="grid gap-0 lg:grid-cols-[320px_1fr] min-w-0">
+          <div className="space-y-5 border-b border-[#e8e8e8] bg-[#fafafa] px-5 py-5 lg:border-b-0 lg:border-r min-w-0">
             <label className="block">
               <div className="mb-2 flex items-center justify-between text-[11px] uppercase tracking-[0.25em] text-gray-600">
                 <span>Websites / Clients</span>
@@ -125,7 +125,7 @@ export function RoiMockup() {
             </label>
           </div>
 
-          <div className="px-5 py-5 lg:pb-4">
+          <div className="px-5 py-5 lg:pb-4 min-w-0">
             <div className="space-y-4">
               <div>
                 <div className="text-[10px] uppercase tracking-[0.35em] text-gray-500">
@@ -153,44 +153,54 @@ export function RoiMockup() {
             </div>
           </div>
 
-          <div className="px-5 pb-5 pt-0 lg:col-span-2 lg:pt-0">
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse text-sm">
-                <thead>
-                  <tr className="border-b border-gray-300 text-left text-[10px] uppercase tracking-[0.25em] text-gray-600">
-                    <th className="pb-3 font-medium">Module & Lifecycle Work</th>
-                    <th className="pb-3 font-medium">Manual</th>
-                    <th className="pb-3 font-medium">Multiple Tools</th>
-                    <th className="pb-3 font-medium">Colytics AI</th>
-                    <th className="pb-3 font-medium text-right">Save vs Manual</th>
-                    <th className="pb-3 font-medium text-right">Save vs Tools</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {rows.map((row) => {
-                    const saveManual = row[1] - row[3]
-                    const saveTools = row[2] - row[3]
-                    return (
-                      <tr key={row[0]} className="border-b border-gray-200 align-top">
-                        <td className="py-2.5 pr-4 text-gray-800">{row[0]}</td>
-                        <td className="py-2.5 text-gray-700">{row[1].toFixed(1)}</td>
-                        <td className="py-2.5 text-gray-700">{row[2].toFixed(1)}</td>
-                        <td className="py-2.5 text-gray-700">{row[3].toFixed(2)}</td>
-                        <td className="py-2.5 text-right font-medium text-gray-900">{saveManual.toFixed(saveManual >= 10 ? 1 : 2)} h</td>
-                        <td className="py-2.5 text-right font-medium text-gray-900">{saveTools.toFixed(saveTools >= 10 ? 1 : 2)} h</td>
-                      </tr>
-                    )
-                  })}
-                  <tr className="border-b border-gray-300 bg-gray-50 font-semibold">
-                    <td className="py-3 pr-4">Total per site / month</td>
-                    <td className="py-3">68.0</td>
-                    <td className="py-3">28.5</td>
-                    <td className="py-3">5.25</td>
-                    <td className="py-3 text-right">62.75 hrs</td>
-                    <td className="py-3 text-right">23.25 hrs</td>
-                  </tr>
-                </tbody>
-              </table>
+          <div className="px-5 pb-5 pt-0 lg:col-span-2 lg:pt-0 min-w-0">
+            {/* Mobile swipe indicator */}
+            <div className="flex items-center justify-between gap-2 mb-3 lg:hidden text-[10px] text-gray-400 font-medium tracking-wider uppercase select-none">
+              <span>Lifecycle Modules</span>
+              <span className="flex items-center gap-1 font-sans text-[11px] normal-case text-gray-500">
+                Swipe to scroll <span className="animate-pulse">→</span>
+              </span>
+            </div>
+
+            <div className="relative mockup-scroll-hint">
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[760px] border text-sm">
+                  <thead>
+                    <tr className="border-b border-gray-300 text-left text-[10px] uppercase tracking-[0.25em] text-gray-600">
+                      <th className="pb-3 font-medium w-[30%] min-w-[200px]">Module & Lifecycle Work</th>
+                      <th className="pb-3 font-medium w-[10%] min-w-[70px]">Manual</th>
+                      <th className="pb-3 font-medium w-[14%] min-w-[100px]">Multiple Tools</th>
+                      <th className="pb-3 font-medium w-[12%] min-w-[90px]">Colytics AI</th>
+                      <th className="pb-3 font-medium text-right w-[17%] min-w-[120px]">Save vs Manual</th>
+                      <th className="pb-3 font-medium text-right w-[17%] min-w-[120px]">Save vs Tools</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {rows.map((row) => {
+                      const saveManual = row[1] - row[3]
+                      const saveTools = row[2] - row[3]
+                      return (
+                        <tr key={row[0]} className="border-b border-gray-200 align-top">
+                          <td className="py-2.5 pr-4 text-gray-800 font-medium">{row[0]}</td>
+                          <td className="py-2.5 text-gray-700">{row[1].toFixed(1)}</td>
+                          <td className="py-2.5 text-gray-700">{row[2].toFixed(1)}</td>
+                          <td className="py-2.5 text-gray-700">{row[3].toFixed(2)}</td>
+                          <td className="py-2.5 text-right font-semibold text-gray-700">{saveManual.toFixed(saveManual >= 10 ? 1 : 2)} h</td>
+                          <td className="py-2.5 text-right font-semibold text-gray-700">{saveTools.toFixed(saveTools >= 10 ? 1 : 2)} h</td>
+                        </tr>
+                      )
+                    })}
+                    <tr className="border-b border-gray-300 bg-gray-50/50 font-semibold">
+                      <td className="py-3 pr-4 text-gray-800">Total per site / month</td>
+                      <td className="py-3 text-gray-700">68.0</td>
+                      <td className="py-3 text-gray-700">28.5</td>
+                      <td className="py-3 text-gray-700">5.25</td>
+                      <td className="py-3 text-right text-gray-700">62.75 hrs</td>
+                      <td className="py-3 text-right text-gray-700">23.25 hrs</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
             <p className="mt-4 text-xs text-gray-600">

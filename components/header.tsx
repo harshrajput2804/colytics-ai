@@ -83,13 +83,13 @@ export function Header() {
         </nav>
         <div className="hidden sm:flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
-            <Link href="/#pricing">Login</Link>
+            <Link href="/">Login</Link>
           </Button>
           <EarlyAccessTrigger label="Get early access →" />
         </div>
         <div className="flex items-center gap-2 sm:hidden">
           <Button variant="ghost" size="icon-sm" asChild>
-            <Link href="/#pricing">Login</Link>
+            <Link href="/">Login</Link>
           </Button>
           <Sheet>
             <SheetTrigger asChild>

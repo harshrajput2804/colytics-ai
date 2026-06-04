@@ -52,14 +52,14 @@ export const TracingBeam = ({
 
     return (
         <div ref={containerRef} className={cn("relative w-full", className)}>
-            {/* The Tracing Beam (Left Side) — fixed to viewport left edge */}
+            {/* The Tracing Beam (Left Side) — positioned relative to the centered max-w-7xl content column */}
             {showLeftBeam && (
-                <div className="absolute top-0 bottom-0 left-0 w-0 pointer-events-none z-20 hidden md:block"
-                    style={{ left: 'calc((100vw - 100%) / -2)' }}
+                <div className="absolute top-0 bottom-0 pointer-events-none z-20 hidden xl:block"
+                    style={{ left: 'calc((100% - 1280px) / 2 - 80px)', width: '80px' }}
                 >
-                    {/* Hatched Background Area — flush to page left edge */}
+                    {/* Hatched Background Area — aligned to the left of the line */}
                     <div
-                        className="absolute inset-y-0 left-0 w-[70px] border-r border-border/40 opacity-[0.08]"
+                        className="absolute inset-y-0 left-0 w-[60px] border-r border-border/40 opacity-[0.08]"
                         style={{
                             backgroundImage: `repeating-linear-gradient(
                 -45deg,
@@ -73,9 +73,9 @@ export const TracingBeam = ({
                         <div className="absolute inset-y-0 left-0 w-px bg-border/20" />
                     </div>
 
-                    {/* The Primary Vertical Line */}
+                    {/* The Primary Vertical Line (20px to the left of the content boundary) */}
                     <div className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-border/5 via-border/60 to-border/5"
-                        style={{ left: '70px' }}
+                        style={{ left: '60px' }}
                     >
                         {/* The Moving Dot — Brand Blue Pulse */}
                         <div
@@ -112,11 +112,11 @@ export const TracingBeam = ({
 
             {/* The Tracing Beam (Right Side — Symmetrical) */}
             {showRightBeam && (
-                <div className="absolute top-0 bottom-0 right-0 w-0 pointer-events-none z-20 hidden md:block scale-x-[-1]"
-                    style={{ right: 'calc((100vw - 100%) / -2)' }}
+                <div className="absolute top-0 bottom-0 pointer-events-none z-20 hidden xl:block scale-x-[-1]"
+                    style={{ right: 'calc((100% - 1280px) / 2 - 80px)', width: '80px' }}
                 >
                     <div
-                        className="absolute inset-y-0 left-0 w-[120px] border-r border-border/40 opacity-[0.08]"
+                        className="absolute inset-y-0 left-0 w-[60px] border-r border-border/40 opacity-[0.08]"
                         style={{
                             backgroundImage: `repeating-linear-gradient(
                 -45deg,
@@ -130,7 +130,7 @@ export const TracingBeam = ({
                         <div className="absolute inset-y-0 left-0 w-px bg-border/20" />
                     </div>
                     <div className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-border/5 via-border/60 to-border/5"
-                        style={{ left: '120px' }}
+                        style={{ left: '60px' }}
                     >
                         <div
                             className="absolute left-[-5px] w-2.5 h-2.5 rounded-full bg-[#1549f0] shadow-[0_0_15px_#1549f0] transition-all duration-500 ease-out z-30"
