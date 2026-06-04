@@ -91,22 +91,22 @@ export function Footer() {
 
   return (
     <>
-      <footer className="bg-white/60 border-t border-[#e8e8e8] pt-16 pb-0">
+      <footer id="site-footer" className="bg-white/60 border-t border-[#e8e8e8] pt-16 pb-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Logo + tagline */}
           <div className="flex flex-col md:flex-row justify-between gap-8 mb-14">
             <div className="max-w-xs">
               <Link href="/" className="flex items-center gap-2 mb-3">
                 <img src="/logo/colytics-logo-notext.svg" alt="Colytics" className="w-6 h-6" />
-                <span className="font-semibold text-[14px] text-[#0a0a0a]">Colytics AI</span>
+                <span className="text-ui-md font-semibold text-[#0a0a0a]">Colytics AI</span>
               </Link>
-              <p className="text-[13px] text-[#9a9a9a] leading-relaxed">
+              <p className="text-ui-sm text-[#9a9a9a]">
                 The AI Visibility & AEO Intelligence Platform for teams competing in AI search.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-start">
               <EarlyAccessTrigger label="Get early access →" />
-              <Link href="/#pricing" className="inline-flex items-center justify-center h-9 px-5 rounded-full border border-[#e8e8e8] text-[#525252] text-[13px] font-medium hover:bg-[#f5f5f5] transition-colors">
+              <Link href="/#pricing" className="inline-flex items-center justify-center h-11 px-6 rounded-full border border-[#e8e8e8] text-ui-sm font-medium text-[#525252] hover:bg-[#f5f5f5] transition-colors">
                 View Pricing
               </Link>
             </div>
@@ -117,7 +117,7 @@ export function Footer() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 sm:gap-8 mb-14">
             {columns.map((col) => (
               <div key={col.title}>
-                <h3 className="text-[11px] font-bold uppercase tracking-widest text-[#9a9a9a] mb-4">{col.title}</h3>
+                <h3 className="heading-6 mb-4">{col.title}</h3>
                 <div className="flex flex-col gap-2.5">
                   {col.links.map((link) => (
                     link.isButton ? (
@@ -126,7 +126,7 @@ export function Footer() {
                       <Link
                         key={link.label}
                         href={link.href as string}
-                        className="text-[12px] text-[#737373] hover:text-[#0a0a0a] transition-colors leading-snug"
+                        className="text-ui-sm hover:text-[#0a0a0a] transition-colors leading-snug"
                       >
                         {link.label}
                       </Link>
@@ -139,8 +139,8 @@ export function Footer() {
 
           {/* Bottom bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 py-5 border-t border-[#e8e8e8]">
-            <p className="text-[12px] text-[#9a9a9a]">© 2026 Colytics AI, Inc. All rights reserved.</p>
-            <div className="flex flex-wrap justify-center gap-5 text-[12px] text-[#9a9a9a]">
+            <p className="text-caption">© 2026 Colytics AI, Inc. All rights reserved.</p>
+            <div className="flex flex-wrap justify-center gap-5 text-caption">
               <Link href="/privacy-policy" className="hover:text-[#0a0a0a] transition-colors">Privacy</Link>
               <Link href="/terms-of-service" className="hover:text-[#0a0a0a] transition-colors">Terms</Link>
               <Link href="/#faq" className="hover:text-[#0a0a0a] transition-colors">Security</Link>

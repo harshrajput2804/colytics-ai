@@ -29,11 +29,11 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="enhanced-surface border-t border-[#e8e8e8] bg-transparent px-4 py-28 sm:px-6">
+    <section className="enhanced-surface section-spacing border-t border-[#e8e8e8] bg-transparent">
       <div className="mx-auto max-w-6xl">
         <div className="mb-16 max-w-2xl">
           <p className="section-label mb-5">Early Access Feedback</p>
-          <h2 className="font-serif text-[32px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a] sm:text-[42px] md:text-[52px]">
+          <h2 className="heading-2-sm">
             What founding teams are saying.
           </h2>
         </div>
@@ -60,7 +60,7 @@ export function TestimonialsSection() {
             </p>
             <EarlyAccessTrigger
               label="Get early access"
-              className="inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-[#0a0a0a] px-8 py-4 text-[14px] font-medium text-white transition-colors hover:bg-[#0a0a0a]/90 sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-[#0a0a0a] px-8 py-4 text-[14px] font-medium !text-white transition-colors hover:bg-[#0a0a0a]/90 sm:w-auto"
             />
           </div>
         </div>

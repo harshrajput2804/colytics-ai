@@ -99,7 +99,7 @@ export function CitationAnalysisMockup() {
           {/* Page header */}
           <div className="flex items-start justify-between mb-6">
             <div>
-              <h2 className="text-[15px] font-semibold text-[#0a0a0a]">Citation Analysis</h2>
+              <p className="ui-heading">Citation Analysis</p>
               <p className="text-[12px] text-[#9a9a9a] mt-0.5">Analyze your citations and their impact across AI search results</p>
             </div>
             <button className="px-3 py-1.5 bg-[#4f46e5] rounded-lg text-[11px] text-white font-medium cursor-pointer hover:bg-[#4338ca]">

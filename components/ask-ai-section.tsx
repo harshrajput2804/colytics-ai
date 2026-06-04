@@ -4,15 +4,15 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function AskAiSection() {
   return (
-    <section id="ask-ai" className="enhanced-surface border-t border-[#e8e8e8] bg-transparent px-6 py-20">
-      <div className="mx-auto max-w-6xl">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
-          <div className="max-w-xl">
+    <section id="ask-ai" className="enhanced-surface section-spacing border-t border-[#e8e8e8] bg-transparent">
+      <div className="mx-auto max-w-6xl min-w-0">
+        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2">
+          <div className="max-w-xl order-1">
             <p className="section-label mb-5">ASK AI</p>
-            <h2 className="mb-4 font-serif text-[32px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a] md:text-[40px]">
+            <h2 className="heading-2-compact mb-4">
               Don&apos;t read the dashboard. Ask it.
             </h2>
-            <p className="mb-6 text-[16px] leading-relaxed text-muted-foreground">
+            <p className="text-body mb-6">
               Every chart, score and alert has an Ask AI button. It explains what you are seeing, why it changed, and the best next move, in plain language.
             </p>
 
@@ -27,11 +27,13 @@ export function AskAiSection() {
 
             <EarlyAccessTrigger
               label="Ask your first question"
-              className="inline-flex items-center gap-2 whitespace-nowrap rounded-lg bg-[#0a0a0a] px-8 py-4 text-[14px] font-medium text-white transition-colors hover:bg-[#0a0a0a]/90"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0a0a0a] px-8 py-4 text-[14px] font-medium !text-white transition-colors hover:bg-[#0a0a0a]/90 w-full sm:w-auto min-h-11"
             />
           </div>
 
-          <AskAiMockup />
+          <div className="order-2 min-w-0">
+            <AskAiMockup />
+          </div>
         </div>
       </div>
     </section>

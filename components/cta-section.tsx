@@ -16,20 +16,20 @@ export function CtaSection() {
   }
 
   return (
-    <section id="cta" className="enhanced-surface py-28 px-6 bg-transparent relative overflow-hidden">
+    <section id="cta" className="enhanced-surface py-28 px-6 bg-[#0a0a0a] relative overflow-hidden">
       <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
         {/* Left: messaging */}
         <div>
           <div className="flex items-center gap-2 mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-[#1549f0]" />
-            <span className="text-[11px] font-semibold uppercase tracking-widest text-[#737373]">Early Access Open</span>
+            <span className="text-[11px] font-semibold uppercase tracking-widest text-white/40">Early Access Open</span>
           </div>
-          <h2 className="font-serif text-[48px] md:text-[64px] leading-none tracking-[-0.02em] text-[#0a0a0a] mb-6">
+          <h2 className="font-serif text-[48px] md:text-[64px] leading-none tracking-[-0.02em] text-white mb-6">
             Your competitors are already being cited.
           </h2>
-          <div className="bg-white/70 border border-[#e8e8e8] rounded-xl p-5 mb-10">
-            <p className="text-[16px] text-[#0a0a0a] font-semibold mb-2">✓ Full Pro free for 60 days</p>
-            <p className="text-[14px] text-[#525252] leading-relaxed">Then $49/mo, or stay on Free Forever with essential features. No credit card required.</p>
+          <div className="bg-white/5 border border-white/10 rounded-xl p-5 mb-10">
+            <p className="text-[16px] text-white/50 font-semibold mb-2">✓ Full Pro free for 60 days</p>
+            <p className="text-[14px] text-white/70 leading-relaxed">Then $49/mo, or stay on Free Forever with essential features. No credit card required.</p>
           </div>
 
           <div className="space-y-3">
@@ -39,19 +39,19 @@ export function CtaSection() {
               "Optimize for AEO and claim your AI visibility",
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full bg-[#000000] flex items-center justify-center shrink-0">
-                  <svg className="w-2.5 h-2.5 text-[#fff]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <div className="w-5 h-5 rounded-full bg-[#1549f0]/20 flex items-center justify-center shrink-0">
+                  <svg className="w-2.5 h-2.5 text-[#1549f0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
                 </div>
-                <span className="text-[13px] text-[#525252]">{item}</span>
+                <span className="text-[13px] text-white/70">{item}</span>
               </div>
             ))}
           </div>
 
-          <div className="mt-10 pt-10 border-t border-[#e8e8e8]">
-            <p className="text-[11px] text-[#737373] uppercase tracking-widest font-medium mb-4">Enterprise Ready</p>
-            <div className="flex flex-wrap gap-5 text-[12px] text-[#737373]">
+          <div className="mt-10 pt-10 border-t border-white/10">
+            <p className="text-[11px] text-white/30 uppercase tracking-widest font-medium mb-4">Enterprise Ready</p>
+            <div className="flex flex-wrap gap-5 text-[12px] text-white/40">
               <span>No credit card needed</span>
               <span>Bank-level encryption</span>
               <span>GDPR & CCPA compliant</span>

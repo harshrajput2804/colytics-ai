@@ -7,13 +7,13 @@ interface ConnectToClaudeSectionProps {
 
 export function ConnectToClaudeSection({ reverseLayout = false }: ConnectToClaudeSectionProps) {
     return (
-        <section id="connect-claude" className="enhanced-surface py-20 px-6 bg-transparent border-t border-[#e8e8e8]">
+        <section id="connect-claude" className="enhanced-surface section-spacing bg-transparent border-t border-[#e8e8e8]">
             <div className="max-w-6xl mx-auto">
-                <div className="grid lg:grid-cols-2 gap-10 items-center">
+                <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 items-center">
                     {/* Claude Chat Mockup */}
-                    <div className={`relative ${reverseLayout ? 'order-2 lg:order-2' : 'order-2 lg:order-1'}`}>
-                        <div className="absolute -inset-4 rounded-4xl bg-[radial-gradient(circle_at_top,rgba(21,73,240,0.10),transparent_60%)] blur-2xl" />
-                        <div className="relative rounded-3xl border border-[#e8e8e8] bg-white shadow-[0_18px_60px_rgba(0,0,0,0.08)] overflow-hidden">
+                    <div className={`relative min-w-0 ${reverseLayout ? 'order-2 lg:order-2' : 'order-2 lg:order-1'}`}>
+                        <div className="absolute -inset-2 sm:-inset-4 rounded-4xl bg-[radial-gradient(circle_at_top,rgba(21,73,240,0.10),transparent_60%)] blur-2xl" />
+                        <div className="relative mockup-shell rounded-2xl sm:rounded-3xl border border-[#e8e8e8] bg-white shadow-[0_18px_60px_rgba(0,0,0,0.08)] overflow-hidden">
                             <div className="flex items-center gap-2 px-4 py-3 bg-[#fafafa] border-b border-[#e8e8e8]">
                                 <div className="flex gap-1.5">
                                     <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
@@ -28,7 +28,7 @@ export function ConnectToClaudeSection({ reverseLayout = false }: ConnectToClaud
                                 </div>
                                 <div className="w-14" />
                             </div>
-                            <div className="p-5 md:p-6 flex flex-col gap-4 bg-white min-h-[480px]">
+                            <div className="p-4 sm:p-5 md:p-6 flex flex-col gap-4 bg-white min-h-[320px] sm:min-h-[420px] lg:min-h-[480px]">
                                 {/* Context badge */}
                                 <div className="text-[12px] text-[#9a9a9a] font-medium mb-2">CMO in Claude - Colytics connected</div>
 
@@ -36,14 +36,14 @@ export function ConnectToClaudeSection({ reverseLayout = false }: ConnectToClaud
                                 <div className="space-y-4 flex-1 overflow-y-auto">
                                     {/* User message */}
                                     <div className="flex justify-end">
-                                        <div className="max-w-sm bg-[#000000] text-white rounded-2xl rounded-tr-md px-4 py-3 text-[13px] leading-relaxed">
+                                        <div className="max-w-[85%] sm:max-w-sm bg-[#000000] text-white rounded-2xl rounded-tr-md px-4 py-3 text-[13px] leading-relaxed">
                                             How are we doing in AI search this month? Build me a one-page report.
                                         </div>
                                     </div>
 
                                     {/* Assistant response with detailed info */}
                                     <div className="flex justify-start">
-                                        <div className="max-w-lg bg-[#f5f5f5] text-[#0a0a0a] rounded-2xl rounded-tl-md p-4 text-[13px]">
+                                        <div className="max-w-full sm:max-w-lg bg-[#f5f5f5] text-[#0a0a0a] rounded-2xl rounded-tl-md p-4 text-[13px] min-w-0">
                                             <div className="flex items-center gap-2 mb-3">
                                                 <Sparkles className="w-4 h-4 text-[#1549f0]" />
                                                 <span className="text-[11px] font-medium text-[#000000]">Colytics via MCP</span>
@@ -70,7 +70,7 @@ export function ConnectToClaudeSection({ reverseLayout = false }: ConnectToClaud
                                                 </div>
                                             </div>
 
-                                            <button className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#000000] text-white rounded-lg font-medium text-[12px] hover:bg-[#000000]/90 transition-colors">
+                                            <button className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-[#000000] text-white rounded-lg font-medium text-[12px] hover:bg-[#000000]/90 transition-colors min-h-11">
                                                 View Full Report
                                                 <ArrowRight className="h-3 w-3" />
                                             </button>
@@ -84,10 +84,10 @@ export function ConnectToClaudeSection({ reverseLayout = false }: ConnectToClaud
                     {/* Copy */}
                     <div className={`max-w-xl ${reverseLayout ? 'order-1 lg:order-1' : 'order-1 lg:order-2'}`}>
                         <p className="section-label mb-5">Connect to Claude - MCP</p>
-                        <h2 className="font-serif text-[32px] md:text-[40px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a] mb-4">
+                        <h2 className="heading-2-compact mb-4">
                             Bring Colytics into Claude.
                         </h2>
-                        <p className="text-muted-foreground leading-relaxed text-[16px] mb-6">
+                        <p className="text-body mb-6">
                             CMOs and managers don't log in - connect Colytics to Claude via MCP and ask how the brand/team is performing, then pull a report in the chat.
                         </p>
 
@@ -108,7 +108,7 @@ export function ConnectToClaudeSection({ reverseLayout = false }: ConnectToClaud
 
                         <EarlyAccessTrigger
                             label="Connect to Claude"
-                            className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap"
+                            className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg text-button hover:bg-[#0a0a0a]/90 transition-colors w-full sm:w-auto min-h-11 justify-center"
                         />
                     </div>
                 </div>

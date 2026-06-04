@@ -44,7 +44,7 @@ export default function ContentStrategyPage() {
         floatingLinkHref="/pricing"
         floatingLinkLabel="See pricing"
       >
-        <div className="prose prose-lg max-w-none py-16 sm:py-20">
+        <div className="prose-content max-w-none py-16 sm:py-20">
           <section id="foundation" className="scroll-mt-32">
             <h2>Building a Content Strategy That Works</h2>
             <p>
@@ -53,21 +53,21 @@ export default function ContentStrategyPage() {
           </section>
 
           <section id="pillars" className="scroll-mt-32 mt-10">
-            <h3>Content Pillars and Topics</h3>
+            <h2>Content Pillars and Topics</h2>
             <p>
               Organize your content around core topics that matter to your business and audience. This helps with topical authority and makes it easier to plan content at scale.
             </p>
           </section>
 
           <section id="seo-aeo" className="scroll-mt-32 mt-10">
-            <h3>The Role of SEO and AEO</h3>
+            <h2>The Role of SEO and AEO</h2>
             <p>
               Modern content strategy must account for both traditional search and AI-powered answers. Optimize your content for both by providing clear, well-structured information with direct answers to common questions.
             </p>
           </section>
 
           <section id="distribution" className="scroll-mt-32 mt-10">
-            <h3>Distribution Strategy</h3>
+            <h2>Distribution Strategy</h2>
             <ul>
               <li>Blog and owned content first</li>
               <li>Repurpose content across multiple channels</li>
@@ -78,7 +78,7 @@ export default function ContentStrategyPage() {
           </section>
 
           <section id="measure" className="scroll-mt-32 mt-10">
-            <h3>Measuring Success</h3>
+            <h2>Measuring Success</h2>
             <p>
               Track metrics that matter: organic traffic, engagement, lead generation, and revenue attributed to content. Use these insights to continuously improve your strategy.
             </p>

@@ -45,7 +45,7 @@ export default function PerformanceMetricsPage() {
         floatingLinkHref="/contact"
         floatingLinkLabel="Talk to an expert"
       >
-        <div className="prose prose-lg max-w-none py-16 sm:py-20">
+        <div className="prose-content max-w-none py-16 sm:py-20">
           <section id="metrics" className="scroll-mt-32">
             <h2>Metrics That Matter</h2>
             <p>
@@ -54,7 +54,7 @@ export default function PerformanceMetricsPage() {
           </section>
 
           <section id="top-funnel" className="scroll-mt-32 mt-10">
-            <h3>Top-of-Funnel Metrics</h3>
+            <h2>Top-of-Funnel Metrics</h2>
             <ul>
               <li><strong>Impressions:</strong> Raw visibility, but limited insight</li>
               <li><strong>Click-Through Rate (CTR):</strong> Shows how compelling your messaging is</li>
@@ -64,7 +64,7 @@ export default function PerformanceMetricsPage() {
           </section>
 
           <section id="mid-funnel" className="scroll-mt-32 mt-10">
-            <h3>Mid-Funnel Metrics</h3>
+            <h2>Mid-Funnel Metrics</h2>
             <ul>
               <li><strong>Cost Per Lead (CPL):</strong> Indicates prospecting efficiency</li>
               <li><strong>Lead Quality Score:</strong> Not all leads are equal</li>
@@ -74,7 +74,7 @@ export default function PerformanceMetricsPage() {
           </section>
 
           <section id="bottom-funnel" className="scroll-mt-32 mt-10">
-            <h3>Bottom-Funnel Metrics</h3>
+            <h2>Bottom-Funnel Metrics</h2>
             <ul>
               <li><strong>Conversion Rate:</strong> Percentage of visitors who take desired action</li>
               <li><strong>Cost Per Acquisition (CPA):</strong> True customer acquisition cost</li>
@@ -84,14 +84,14 @@ export default function PerformanceMetricsPage() {
           </section>
 
           <section id="roi" className="scroll-mt-32 mt-10">
-            <h3>The Golden Metric: ROI</h3>
+            <h2>The Golden Metric: ROI</h2>
             <p>
               At the end of the day, marketing ROI is what matters. Calculate this by dividing profit generated from marketing by the total marketing cost. If your ROI is positive, you're on the right track.
             </p>
           </section>
 
           <section id="tracking" className="scroll-mt-32 mt-10">
-            <h3>Setting Up Your Tracking</h3>
+            <h2>Setting Up Your Tracking</h2>
             <p>
               Use tools like Google Analytics, Mixpanel, or dedicated marketing analytics platforms to track these metrics consistently. Set baseline measurements and track progress over time to identify trends and opportunities for optimization.
             </p>

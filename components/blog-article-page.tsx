@@ -178,8 +178,8 @@ function SectionHeading({ eyebrow, title, description }: { eyebrow: string; titl
   return (
     <div className="mb-6">
       <p className="section-label mb-2">{eyebrow}</p>
-      <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#0a0a0a]">{title}</h2>
-      <p className="mt-3 text-base leading-7 text-muted-foreground max-w-3xl">{description}</p>
+      <h2 className="heading-2">{title}</h2>
+      <p className="text-body mt-3 max-w-3xl">{description}</p>
     </div>
   )
 }
@@ -338,10 +338,10 @@ export function BlogArticlePage() {
             id="blog-hero"
             className="mx-auto max-w-400 rounded-4xl bg-[#0a0a0a] px-6 py-10 text-center text-white shadow-[0_25px_80px_rgba(0,0,0,0.18)] transition-all duration-700 ease-out sm:px-10 sm:py-14 lg:px-16 lg:py-16"
           >
-            <h1 className="mx-auto mt-6 max-w-5xl text-4xl font-semibold tracking-tight text-white text-balance sm:text-5xl lg:text-6xl">
+            <h1 className="heading-1-inverse mx-auto mt-6 max-w-5xl">
               15 Best AI Ad Generators for Smart Marketers in 2026
             </h1>
-            <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-white/70 sm:text-lg">
+            <p className="text-lead mx-auto mt-5 max-w-3xl text-white/70">
               A clean editorial blog layout with a sticky table of contents on the left, a focused reading area in the center, and a single floating panel on the right.
             </p>
 
@@ -387,8 +387,17 @@ export function BlogArticlePage() {
           </aside>
 
           <article className="min-w-0 lg:pr-3">
-            <section id="intro" className="scroll-mt-32 mt-8 mb-6 sm:mt-10 sm:mb-8">
-              <div className="prose max-w-none text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
+            <details className="lg:hidden mb-6 rounded-2xl border border-border bg-white/90 p-4 shadow-sm">
+              <summary className="flex cursor-pointer list-none items-center gap-2 text-sm font-semibold text-[#0a0a0a]">
+                <FileText className="h-4 w-4 text-brand shrink-0" />
+                Table of contents
+              </summary>
+              <div id="toc-list-mobile" className="mt-4 max-h-64 space-y-2 overflow-y-auto pr-1">
+                {renderToc(tocHierarchy)}
+              </div>
+            </details>
+            <section id="intro" className="scroll-mt-32 mt-0 sm:mt-8 mb-6 sm:mb-8">
+              <div className="prose-content max-w-none">
                 <p>
                   The best AI ad generators have changed how marketers create campaigns that convert.
                 </p>
@@ -428,22 +437,22 @@ export function BlogArticlePage() {
             </section>
 
             {/* <section id="bp-brand-guidelines" className="scroll-mt-32 mt-10">
-              <h3 className="text-xl font-semibold">Start With Clear Brand Guidelines</h3>
+              <h3>Start With Clear Brand Guidelines</h3>
               <p className="mt-3 text-sm leading-7 text-muted-foreground">Provide brand voice, color, and imagery guidelines so AI-generated creatives stay on-brand and reduce back-and-forth edits.</p>
             </section>
 
             <section id="bp-detailed-prompts" className="scroll-mt-32 mt-10">
-              <h3 className="text-xl font-semibold">Write Detailed Prompts</h3>
+              <h3>Write Detailed Prompts</h3>
               <p className="mt-3 text-sm leading-7 text-muted-foreground">Include audience, objective, tone, and format details in prompts to get outputs closer to your desired creative direction.</p>
             </section>
 
             <section id="bp-test-variations" className="scroll-mt-32 mt-10">
-              <h3 className="text-xl font-semibold">Test Multiple Variations</h3>
+              <h3>Test Multiple Variations</h3>
               <p className="mt-3 text-sm leading-7 text-muted-foreground">Generate several options per creative and A/B test them to surface the best-performing combinations quickly.</p>
             </section>
 
             <section id="bp-review-refine" className="scroll-mt-32 mt-10">
-              <h3 className="text-xl font-semibold">Review And Refine</h3>
+              <h3>Review And Refine</h3>
               <p className="mt-3 text-sm leading-7 text-muted-foreground">Treat AI output as a starting point—edit and refine to fit nuance, compliance, and brand safety before publishing.</p>
             </section> */}
 
@@ -537,22 +546,22 @@ export function BlogArticlePage() {
             </section>
 
             <section id="speed-and-efficiency" className="scroll-mt-32 mt-10">
-              <h3 className="text-xl font-semibold">Speed And Efficiency</h3>
+              <h3>Speed And Efficiency</h3>
               <p className="mt-3 text-[15px] leading-7 text-muted-foreground sm:text-sm sm:leading-7">AI ad generators reduce production time significantly. The traditional ad creation process involves multiple steps: brainstorming concepts, writing content for your ad, designing visuals, and formatting for different platforms. The best AI ad generators handle all these tasks simultaneously, letting you launch campaigns the same day you conceive them.</p>
             </section>
 
             <section id="cost-reduction" className="scroll-mt-32 mt-10">
-              <h3 className="text-xl font-semibold">Cost Reduction</h3>
+              <h3>Cost Reduction</h3>
               <p className="mt-3 text-[15px] leading-7 text-muted-foreground sm:text-sm sm:leading-7">The best AI ad generators eliminate the need for expensive design teams or marketing agencies. Small businesses that previously couldn't afford professional ad creation now have access to enterprise-level capabilities. You don’t need to hire graphic designers, copywriters, and video editors to produce high-quality content.</p>
             </section>
 
             <section id="testing-and-optimization" className="scroll-mt-32 mt-10">
-              <h3 className="text-xl font-semibold">Testing And Optimization</h3>
+              <h3>Testing And Optimization</h3>
               <p className="mt-3 text-[15px] leading-7 text-muted-foreground sm:text-sm sm:leading-7">AI ad generators allow for rapid testing of multiple variations to find the most effective ones. You can generate dozens of different headlines, ad images, and calls to action within minutes. This level of testing was previously only available to companies with deep marketing budgets.</p>
             </section>
 
             <section id="platform-adaptation" className="scroll-mt-32 mt-10">
-              <h3 className="text-xl font-semibold">Platform Adaptation</h3>
+              <h3>Platform Adaptation</h3>
               <p className="mt-3 text-[15px] leading-7 text-muted-foreground sm:text-sm sm:leading-7">The best AI ad generators ensure consistency across marketing campaigns while adapting content for different platforms. Facebook ad creatives require different dimensions than Instagram stories or LinkedIn posts. AI automatically reformats your content for each platform's specifications, maintaining brand consistency.</p>
             </section>
 
@@ -564,25 +573,25 @@ export function BlogArticlePage() {
               />
               <div className="space-y-5 text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
                 <div>
-                  <h3 className="text-xl font-semibold text-[#0a0a0a]">Start With Clear Brand Guidelines</h3>
+                  <h3>Start With Clear Brand Guidelines</h3>
                   <p className="mt-3">
                     Upload your logos, color schemes, and brand voice examples before creating any ad creatives. The best AI ad generators work better when they understand your brand identity. Define your tone of voice clearly, whether it's professional, casual, or playful.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#0a0a0a]">Write Detailed Prompts</h3>
+                  <h3>Write Detailed Prompts</h3>
                   <p className="mt-3">
                     Vague inputs produce generic results. Instead of “create an ad for shoes,” write “create a Facebook ad for running shoes targeting fitness enthusiasts aged 25-40.” Include your target audience, pain points, and desired outcomes for better ad creatives.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#0a0a0a]">Test Multiple Variations</h3>
+                  <h3>Test Multiple Variations</h3>
                   <p className="mt-3">
                     Generate at least five different versions of each ad concept. AI ad generators excel at creating variations quickly, so use this advantage. A/B test different headlines, ad images, and calls to action to find winning combinations that optimize ad performance.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#0a0a0a]">Review And Refine</h3>
+                  <h3>Review And Refine</h3>
                   <p className="mt-3">
                     AI-generated content isn't always perfect on the first try. Review each ad for accuracy, brand alignment, and messaging clarity. Make manual adjustments where needed. The best results come from combining AI efficiency with human oversight.
                   </p>
@@ -597,7 +606,7 @@ export function BlogArticlePage() {
                 description="Here are some of the best AI ad generators available today, covering everything from budget-friendly options to enterprise-level solutions. Each platform excels in different areas, so you'll find the perfect match for your marketing needs and budget."
               />
               <article id="tool-1" className="scroll-mt-32 bg-white p-4 sm:p-6 lg:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">1. AdCreative.ai</h3>
+                <h3>1. AdCreative.ai</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
                   <img loading="lazy"
@@ -616,7 +625,7 @@ export function BlogArticlePage() {
 
                 <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Key Features</h4>
+                    <h4>Key Features</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>AdCreative.ai offers AI-powered conversion scoring that predicts which ads will perform best before launch.</li>
                       <li>The platform generates dozens of unique ad creatives within seconds for rapid testing.</li>
@@ -626,7 +635,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pros</h4>
+                    <h4>Pros</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Predictive systems identify top-performing ads before you spend.</li>
                       <li>Integrates with major ad platforms for real-time optimization.</li>
@@ -635,7 +644,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Cons</h4>
+                    <h4>Cons</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Creative customization options remain limited compared to traditional design software.</li>
                       <li>Team collaboration features are basic, making it less suitable for larger marketing departments.</li>
@@ -643,7 +652,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pricing</h4>
+                    <h4>Pricing</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Starter Plans: $39/month</li>
                       <li>Professional Plans: $249/month</li>
@@ -664,14 +673,14 @@ export function BlogArticlePage() {
                   </figure>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Usability</h4>
+                    <h4>Usability</h4>
                     <p className="mt-3">Perfect for solo marketers and small teams focused on performance-driven campaigns.</p>
                   </section>
                 </div>
               </article>
 
               <article id="tool-2" className="scroll-mt-32 mt-0 bg-white p-4 sm:p-6 lg:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">2. Creatopy</h3>
+                <h3>2. Creatopy</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
                   <img loading="lazy"
@@ -690,7 +699,7 @@ export function BlogArticlePage() {
 
                 <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Key Features</h4>
+                    <h4>Key Features</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You can automate image cropping and banner resizing across hundreds of different creative ad formats.</li>
                       <li>The platform offers one-click translation capabilities for international campaign localization.</li>
@@ -700,7 +709,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pros</h4>
+                    <h4>Pros</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You maintain creative control while benefiting from automation that speeds up production.</li>
                       <li>Brand kit functionality ensures consistent visual identity across all team members.</li>
@@ -709,7 +718,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Cons</h4>
+                    <h4>Cons</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>The learning curve increases due to the comprehensive feature set and customization options.</li>
                       <li>Higher-tier pricing may exceed budgets for small businesses and freelancers.</li>
@@ -717,7 +726,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pricing</h4>
+                    <h4>Pricing</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Pro: $45/month</li>
                       <li>Plus: $297/month</li>
@@ -737,14 +746,14 @@ export function BlogArticlePage() {
                   </figure>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Usability</h4>
+                    <h4>Usability</h4>
                     <p className="mt-3">Ideal for marketing teams and agencies that need scalable creative production.</p>
                   </section>
                 </div>
               </article>
 
               <article id="tool-3" className="scroll-mt-32 mt-10 bg-white p-4 sm:p-6 lg:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">3. Quickads</h3>
+                <h3>3. Quickads</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
                   <img loading="lazy"
@@ -763,7 +772,7 @@ export function BlogArticlePage() {
 
                 <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Key Features</h4>
+                    <h4>Key Features</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You have access to over 10,000 industry-specific ad templates organized by customer lifecycle stages.</li>
                       <li>Built-in Getty Images integration provides unlimited premium stock photography without additional costs.</li>
@@ -773,7 +782,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pros</h4>
+                    <h4>Pros</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You can create scroll-stopping advertisements in under 30 seconds from initial concept.</li>
                       <li>The extensive ad templates cover diverse industries and campaign objectives effectively.</li>
@@ -782,7 +791,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Cons</h4>
+                    <h4>Cons</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>The advanced editing dashboard requires time investment to master all available features.</li>
                       <li>Template-based approach may not satisfy brands needing highly customized creative approaches.</li>
@@ -790,7 +799,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pricing</h4>
+                    <h4>Pricing</h4>
                     <p className="mt-3">Quickads lets new users try the first month with just $1 on all plans. After that, here’s what you pay:</p>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Starter Plan: $79/month</li>
@@ -811,12 +820,12 @@ export function BlogArticlePage() {
                   </figure>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Usability</h4>
+                    <h4>Usability</h4>
                     <p className="mt-3">This AI ad generator is best suited for entrepreneurs and small marketing teams prioritizing speed.</p>
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">You May Also Like</h4>
+                    <h4>You May Also Like</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Best Online Video Makers: A Detailed Comparison</li>
                       <li>The Best Video Editing Software: A Detailed Guide</li>
@@ -826,7 +835,7 @@ export function BlogArticlePage() {
               </article>
 
               <article id="tool-4" className="scroll-mt-32 mt-10 bg-white p-4 sm:p-6 lg:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">4. Predis.ai</h3>
+                <h3>4. Predis.ai</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
                   <img loading="lazy"
@@ -845,7 +854,7 @@ export function BlogArticlePage() {
 
                 <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Key Features</h4>
+                    <h4>Key Features</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You can create text-to-video content and carousel ad creatives optimized for specific social media platforms.</li>
                       <li>Robust competitor analysis tracks top-performing advertisements and engagement trends in your industry.</li>
@@ -855,7 +864,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pros</h4>
+                    <h4>Pros</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Competitor insights help optimize campaign strategies based on real performance data from successful ads.</li>
                       <li>The user-friendly interface accommodates marketers without extensive technical or design experience.</li>
@@ -864,7 +873,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Cons</h4>
+                    <h4>Cons</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Direct publishing integration with major ad platforms is limited, requiring manual upload processes.</li>
                       <li>Free and lower-tier plans restrict ad generation credits and access to advanced features.</li>
@@ -872,7 +881,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pricing</h4>
+                    <h4>Pricing</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Free Plan</li>
                       <li>Plus: $39/month</li>
@@ -893,14 +902,14 @@ export function BlogArticlePage() {
                   </figure>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Usability</h4>
+                    <h4>Usability</h4>
                     <p className="mt-3">This AI ad generator is great for ecommerce brands and social media marketers.</p>
                   </section>
                 </div>
               </article>
 
               <article id="tool-5" className="scroll-mt-32 mt-10 bg-white p-4 sm:p-6 lg:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">5. Zeely</h3>
+                <h3>5. Zeely</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
                   <img loading="lazy"
@@ -919,7 +928,7 @@ export function BlogArticlePage() {
 
                 <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Key Features</h4>
+                    <h4>Key Features</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You can generate authentic UGC video ads using 150+ AI avatars modeled after real content creators.</li>
                       <li>Built-in video creation lets you produce stunning content in under 7 minutes — cutting production time by up to 97%.</li>
@@ -930,7 +939,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pros</h4>
+                    <h4>Pros</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You receive realistic video ads that mimic genuine user-generated reviews and testimonials.</li>
                       <li>The mobile-friendly interface enables complete campaign management from any smartphone device.</li>
@@ -940,7 +949,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Cons</h4>
+                    <h4>Cons</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Creative customization focuses on efficiency rather than highly branded approaches.</li>
                       <li>Users can experience a learning curve with a robust platform toolset.</li>
@@ -948,7 +957,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pricing</h4>
+                    <h4>Pricing</h4>
                     <p className="mt-3">Zeely offers very flexible pricing plans that scale based on your campaign volume. Apart from the usual monthly plans, it offers weekly, bimonthly, and quarterly plans.</p>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Starter: $29.95/month</li>
@@ -969,12 +978,12 @@ export function BlogArticlePage() {
                   </figure>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Usability</h4>
+                    <h4>Usability</h4>
                     <p className="mt-3">Perfect for small to medium-sized ecommerce businesses and solopreneurs managing social-first advertising campaigns.</p>
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">You May Also Like</h4>
+                    <h4>You May Also Like</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Best Video Editing Software for a Small Business</li>
                       <li>Best Image Compression Tools and What Makes Them Stand Out</li>
@@ -984,7 +993,7 @@ export function BlogArticlePage() {
               </article>
 
               <article id="tool-6" className="scroll-mt-32 mt-10 bg-white p-4 sm:p-6 lg:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">6. Admaker by Picsart</h3>
+                <h3>6. Admaker by Picsart</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
                   <img loading="lazy"
@@ -1003,7 +1012,7 @@ export function BlogArticlePage() {
 
                 <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Key Features</h4>
+                    <h4>Key Features</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You can remove backgrounds from product images automatically to create clean, professional presentations.</li>
                       <li>The batch processing feature handles multiple ad format adaptations simultaneously across platforms.</li>
@@ -1013,7 +1022,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pros</h4>
+                    <h4>Pros</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>The interface requires zero design experience while producing polished, market-ready advertisements.</li>
                       <li>Multi-platform optimization ensures your ad creatives display correctly across different social media channels.</li>
@@ -1022,7 +1031,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Cons</h4>
+                    <h4>Cons</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>The tool works best for basic product promotion rather than complex strategic campaign development.</li>
                       <li>Enterprise-level features and integrations are limited compared to higher-priced alternatives.</li>
@@ -1030,7 +1039,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pricing</h4>
+                    <h4>Pricing</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>AdMaker Lite: $49/month</li>
                       <li>AdMaker Max: $149/month</li>
@@ -1050,14 +1059,14 @@ export function BlogArticlePage() {
                   </figure>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Usability</h4>
+                    <h4>Usability</h4>
                     <p className="mt-3">This AI ad generator is an excellent choice for startups, small business owners, and content creators.</p>
                   </section>
                 </div>
               </article>
 
               <article id="tool-7" className="scroll-mt-32 mt-10 bg-white p-4 sm:p-6 lg:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">7. Sivi AI ad generator</h3>
+                <h3>7. Sivi AI ad generator</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
                   <img loading="lazy"
@@ -1076,7 +1085,7 @@ export function BlogArticlePage() {
 
                 <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Key Features</h4>
+                    <h4>Key Features</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You get template-free ad generation that creates original compositions rather than filling preset layouts.</li>
                       <li>The platform generates simultaneous ad copy and visual content for complete advertising packages.</li>
@@ -1086,7 +1095,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pros</h4>
+                    <h4>Pros</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Generative AI capabilities produce original compositions rather than filling preset layouts.</li>
                       <li>The intuitive editor allows post-generation customization while maintaining professional design standards.</li>
@@ -1095,7 +1104,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Cons</h4>
+                    <h4>Cons</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>AI-generated imagery sometimes lacks the precision required for highly detailed or specific visual requirements.</li>
                       <li>Performance tracking and campaign analytics require integration with external measurement and optimization tools.</li>
@@ -1103,7 +1112,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pricing</h4>
+                    <h4>Pricing</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Free Plan</li>
                       <li>Plus: $20/month</li>
@@ -1124,12 +1133,12 @@ export function BlogArticlePage() {
                   </figure>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Usability</h4>
+                    <h4>Usability</h4>
                     <p className="mt-3">This AI ad generator is ideal for marketers and brands prioritizing unique visual content and brand consistency.</p>
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">You May Also Like</h4>
+                    <h4>You May Also Like</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Best Graphic Design Software Solutions You Must Use</li>
                       <li>How to Make a Video for Social Media</li>
@@ -1139,7 +1148,7 @@ export function BlogArticlePage() {
               </article>
 
               <article id="tool-8" className="scroll-mt-32 mt-10 bg-white p-4 sm:p-6 lg:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">8. Re:nable</h3>
+                <h3>8. Re:nable</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
                   <img loading="lazy"
@@ -1158,7 +1167,7 @@ export function BlogArticlePage() {
 
                 <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Key Features</h4>
+                    <h4>Key Features</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You get automated data collection from product feeds and customer reviews for personalized advertising content.</li>
                       <li>The drag-and-drop template editor requires no design skills while offering extensive customization options.</li>
@@ -1168,7 +1177,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pros</h4>
+                    <h4>Pros</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You benefit from AI-driven campaign management that continuously optimizes performance without manual intervention.</li>
                       <li>The platform combines creative automation with intelligent budget allocation across multiple ad accounts.</li>
@@ -1177,7 +1186,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Cons</h4>
+                    <h4>Cons</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Pricing details aren't transparently published, requiring custom quotes that may exceed small business budgets.</li>
                       <li>Limited international support and compliance features restrict global campaign capabilities.</li>
@@ -1185,7 +1194,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pricing</h4>
+                    <h4>Pricing</h4>
                     <p className="mt-3">Unlike some of the best AI ad generators on this list, Re:nable features custom pricing. It starts at around $39 monthly and varies based on product volume and feature requirements.</p>
                   </section>
 
@@ -1201,14 +1210,14 @@ export function BlogArticlePage() {
                   </figure>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Usability</h4>
+                    <h4>Usability</h4>
                     <p className="mt-3">This AI ad generator is best suited for ecommerce brands and marketing agencies.</p>
                   </section>
                 </div>
               </article>
 
               <article id="tool-9" className="scroll-mt-32 mt-10 bg-white p-4 sm:p-6 lg:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">9. Creatify</h3>
+                <h3>9. Creatify</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
                   <img loading="lazy"
@@ -1227,7 +1236,7 @@ export function BlogArticlePage() {
 
                 <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Key Features</h4>
+                    <h4>Key Features</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You can generate video ads directly from product URLs with AI-written scripts and realistic avatars.</li>
                       <li>The platform offers over 1,000 diverse avatars with multiple language voiceovers for global targeting.</li>
@@ -1237,7 +1246,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pros</h4>
+                    <h4>Pros</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>The platform simplifies UGC video ads that typically perform well on social media channels.</li>
                       <li>Rapid variation testing becomes possible through automated batch processing of multiple creative concepts.</li>
@@ -1246,7 +1255,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Cons</h4>
+                    <h4>Cons</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Advanced features like custom avatars and batch processing require higher-tier subscription upgrades.</li>
                       <li>Brands with strict visual guidelines may find customization too limited.</li>
@@ -1254,7 +1263,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pricing</h4>
+                    <h4>Pricing</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Free Plan</li>
                       <li>Starter: $39/month</li>
@@ -1275,12 +1284,12 @@ export function BlogArticlePage() {
                   </figure>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Usability</h4>
+                    <h4>Usability</h4>
                     <p className="mt-3">Perfect for ecommerce marketers and agencies looking for scalable video ad production.</p>
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">You May Also Like</h4>
+                    <h4>You May Also Like</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Types of Video Content You Should Be Using</li>
                       <li>Video Editing Mistakes and How to Avoid Them</li>
@@ -1290,7 +1299,7 @@ export function BlogArticlePage() {
               </article>
 
               <article id="tool-10" className="scroll-mt-32 mt-10 bg-white p-4 sm:p-6 lg:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">10. Narrato</h3>
+                <h3>10. Narrato</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
                   <img loading="lazy"
@@ -1309,7 +1318,7 @@ export function BlogArticlePage() {
 
                 <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Key Features</h4>
+                    <h4>Key Features</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You get AI content writing that generates ad copy alongside blog posts and social media posts.</li>
                       <li>Collaborative workflows include team-based approvals, task assignments, and editorial calendar management.</li>
@@ -1319,7 +1328,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pros</h4>
+                    <h4>Pros</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You benefit from integrated content creation that maintains consistent messaging across advertising and content marketing.</li>
                       <li>Strong AI assistance improves both creative ideation and optimization of written content for better performance.</li>
@@ -1328,7 +1337,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Cons</h4>
+                    <h4>Cons</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Content marketing focus means less specialization in complex video or advanced graphic advertisement generation.</li>
                       <li>Pricing structures vary aggressively, with some advanced features requiring higher-tier subscription upgrades.</li>
@@ -1336,7 +1345,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pricing</h4>
+                    <h4>Pricing</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Pro: $48/month</li>
                       <li>Business: $124/month</li>
@@ -1356,14 +1365,14 @@ export function BlogArticlePage() {
                   </figure>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Usability</h4>
+                    <h4>Usability</h4>
                     <p className="mt-3">This AI ad generator is best for marketing teams and agencies integrating AI ad creation.</p>
                   </section>
                 </div>
               </article>
 
               <article id="tool-11" className="scroll-mt-32 mt-10 bg-white p-4 sm:p-6 lg:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">11. Pencil</h3>
+                <h3>11. Pencil</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
                   <img loading="lazy"
@@ -1382,7 +1391,7 @@ export function BlogArticlePage() {
 
                 <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Key Features</h4>
+                    <h4>Key Features</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You can create automated video ads using product images, text descriptions, and website URLs.</li>
                       <li>Predictive AI models suggest creative edits and provide performance scores before campaign launch.</li>
@@ -1392,7 +1401,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pros</h4>
+                    <h4>Pros</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You benefit from data-driven creative optimization that improves advertisement performance through continuous learning.</li>
                       <li>Automated testing and personalization reduce manual oversight while maximizing campaign effectiveness.</li>
@@ -1401,7 +1410,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Cons</h4>
+                    <h4>Cons</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>The platform focuses primarily on video advertisements, lacking comprehensive static or animated graphic capabilities.</li>
                       <li>Advanced features and customization require significant investment, targeting mid-sized to large business budgets.</li>
@@ -1409,7 +1418,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pricing</h4>
+                    <h4>Pricing</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Core: $14/month</li>
                       <li>Growth: $55/month</li>
@@ -1429,12 +1438,12 @@ export function BlogArticlePage() {
                   </figure>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Usability</h4>
+                    <h4>Usability</h4>
                     <p className="mt-3">Ideal for performance marketers and agencies focused on data-driven video ad optimization.</p>
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">You May Also Like</h4>
+                    <h4>You May Also Like</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>How to Create a Video Marketing Strategy That Actually Works</li>
                       <li>How to Make a Promo Video That Sells</li>
@@ -1444,7 +1453,7 @@ export function BlogArticlePage() {
               </article>
 
               <article id="tool-12" className="scroll-mt-32 mt-10 bg-white p-4 sm:p-6 lg:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">12. InVideo</h3>
+                <h3>12. InVideo</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
                   <img loading="lazy"
@@ -1463,7 +1472,7 @@ export function BlogArticlePage() {
 
                 <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Key Features</h4>
+                    <h4>Key Features</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You can convert basic product descriptions into complete video ads with scripts, voiceovers, and editing.</li>
                       <li>Access to over 16 million royalty-free stock photos, videos, and music tracks enhances creative possibilities.</li>
@@ -1473,7 +1482,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pros</h4>
+                    <h4>Pros</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You create studio-quality video ads without requiring video editing skills or expensive software.</li>
                       <li>Text-based editing commands simplify the modification process for users who are uncomfortable with traditional video editors.</li>
@@ -1482,7 +1491,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Cons</h4>
+                    <h4>Cons</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Output quality depends heavily on prompt clarity, with vague inputs producing generic or unsatisfactory results.</li>
                       <li>Free plan limitations include watermarked videos and restricted access to premium stock content.</li>
@@ -1490,7 +1499,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pricing</h4>
+                    <h4>Pricing</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Plus: $35/month</li>
                       <li>Max: $60/month</li>
@@ -1511,14 +1520,14 @@ export function BlogArticlePage() {
                   </figure>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Usability</h4>
+                    <h4>Usability</h4>
                     <p className="mt-3">Excellent for marketers and content creators seeking video ad production without technical expertise.</p>
                   </section>
                 </div>
               </article>
 
               <article id="tool-13" className="scroll-mt-32 mt-10 bg-white p-4 sm:p-6 lg:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">13. Canva</h3>
+                <h3>13. Canva</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
                   <img loading="lazy"
@@ -1537,7 +1546,7 @@ export function BlogArticlePage() {
 
                 <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Key Features</h4>
+                    <h4>Key Features</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You get AI Magic Write functionality that generates ad copy, headlines, and content ideas within the design interface.</li>
                       <li>The drag-and-drop editor provides extensive template libraries for advertisements, graphics, and social media posts.</li>
@@ -1547,7 +1556,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pros</h4>
+                    <h4>Pros</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You access extremely user-friendly design tools that accommodate all skill levels, including complete beginners.</li>
                       <li>Extensive free tier and affordable premium pricing make professional design capabilities accessible to small budgets.</li>
@@ -1556,7 +1565,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Cons</h4>
+                    <h4>Cons</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>AI advertisement generation lacks specialization compared to platforms dedicated specifically to advertising automation.</li>
                       <li>Generic template approaches may not satisfy brands requiring highly unique or differentiated creative strategies.</li>
@@ -1564,7 +1573,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pricing</h4>
+                    <h4>Pricing</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Canva Free</li>
                       <li>Canva Pro: $15/month</li>
@@ -1585,12 +1594,12 @@ export function BlogArticlePage() {
                   </figure>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Usability</h4>
+                    <h4>Usability</h4>
                     <p className="mt-3">Perfect for small businesses and marketers seeking affordable design tools.</p>
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">You May Also Like</h4>
+                    <h4>You May Also Like</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>DocHipo Review – The Best Graphic Design Tool Ever?</li>
                       <li>How to Create Graphics that Engage Your Customers</li>
@@ -1600,7 +1609,7 @@ export function BlogArticlePage() {
               </article>
 
               <article id="tool-14" className="scroll-mt-32 mt-10 bg-white p-4 sm:p-6 lg:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">14. Madgicx</h3>
+                <h3>14. Madgicx</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
                   <img loading="lazy"
@@ -1619,7 +1628,7 @@ export function BlogArticlePage() {
 
                 <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Key Features</h4>
+                    <h4>Key Features</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You get AI-powered creative generation with ad copy suggestions tailored to specific campaign goals and audiences.</li>
                       <li>Performance-driven optimization uses machine learning to adjust bidding, targeting, and budget allocation automatically.</li>
@@ -1629,7 +1638,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pros</h4>
+                    <h4>Pros</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You benefit from integrated creative and campaign management that eliminates the need for multiple advertising tools.</li>
                       <li>All-in-one platform reduces complexity while providing advanced automation and optimization capabilities.</li>
@@ -1638,7 +1647,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Cons</h4>
+                    <h4>Cons</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Feature complexity and learning curve may overwhelm very small businesses or beginner marketers.</li>
                       <li>Premium pricing and add-ons target established businesses and agencies rather than individual marketers or startups.</li>
@@ -1646,7 +1655,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pricing</h4>
+                    <h4>Pricing</h4>
                     <p className="mt-3">Unlike many of the best AI ad generators on this list, Madgicx provides a single-tier plan, offering monthly, quarterly, and annual pricing options. It also charges extra for add-ons.</p>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Madgicx Pro Complete: $72/month</li>
@@ -1667,14 +1676,14 @@ export function BlogArticlePage() {
                   </figure>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Usability</h4>
+                    <h4>Usability</h4>
                     <p className="mt-3">Best for established marketers and agencies.</p>
                   </section>
                 </div>
               </article>
 
               <article id="tool-15" className="scroll-mt-32 mt-10 bg-white p-4 sm:p-6 lg:p-8">
-                <h3 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">15. Tagshop.ai</h3>
+                <h3>15. Tagshop.ai</h3>
 
                 <figure className="mt-5 overflow-hidden rounded-1xl border border-border bg-[#f8f8fb]">
                   <img loading="lazy"
@@ -1693,7 +1702,7 @@ export function BlogArticlePage() {
 
                 <div className="mt-6 space-y-6 text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Key Features</h4>
+                    <h4>Key Features</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>You can automate advertisement script writing and video creation, optimized for multiple social media platforms.</li>
                       <li>Data-driven performance suggestions provide advertisement variant testing with predicted engagement and click-through rates.</li>
@@ -1703,7 +1712,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pros</h4>
+                    <h4>Pros</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Affordable pricing plans and free trial access make professional video advertising accessible to smaller budgets.</li>
                       <li>User-friendly interface supports marketers without extensive design skills while maintaining professional output standards.</li>
@@ -1712,7 +1721,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Cons</h4>
+                    <h4>Cons</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>The platform remains less established compared to larger AI ad generators, with a smaller user community and support network.</li>
                       <li>Video focus may not serve brands requiring comprehensive static graphic or animated advertisement capabilities.</li>
@@ -1720,7 +1729,7 @@ export function BlogArticlePage() {
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Pricing</h4>
+                    <h4>Pricing</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Basic (Free plan)</li>
                       <li>Starter: $29/month</li>
@@ -1741,12 +1750,12 @@ export function BlogArticlePage() {
                   </figure>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">Usability</h4>
+                    <h4>Usability</h4>
                     <p className="mt-3">Well-suited for small to medium businesses and marketing teams seeking cost-effective video advertising.</p>
                   </section>
 
                   <section>
-                    <h4 className="text-lg font-semibold text-[#0a0a0a]">You May Also Like</h4>
+                    <h4>You May Also Like</h4>
                     <ul className="mt-3 list-disc space-y-2 pl-6">
                       <li>Best AI Content Writing Tools to Elevate Your Content</li>
                       <li>Content Marketing Tools: The Best Your Brand Must Use</li>
@@ -1851,7 +1860,7 @@ export function BlogArticlePage() {
             <div className="min-w-0 flex-1">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                  <h2 className="text-2xl font-semibold tracking-tight text-[#0a0a0a]">About the Author</h2>
+                  <h2>About the Author</h2>
                   <p className="mt-3 text-lg font-semibold text-[#0a0a0a]">Gaurav Sharma -</p>
                   <p className="text-base text-muted-foreground">CEO/Founder @ Attrock</p>
                 </div>

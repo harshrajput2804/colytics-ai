@@ -4,11 +4,11 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function ModulesSection() {
     return (
-        <section id="modules" className="enhanced-surface py-28 px-4 sm:px-6 bg-transparent border-t border-[#e8e8e8]">
+        <section id="modules" className="enhanced-surface section-spacing bg-transparent border-t border-[#e8e8e8]">
             <div className="max-w-6xl mx-auto">
                 <div className="max-w-3xl mb-12">
                     <p className="section-label mb-5">MODULES Inside the platform</p>
-                    <h2 className="font-serif text-[30px] sm:text-[32px] md:text-[40px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a] max-w-3xl mb-3">
+                    <h2 className="heading-2-compact max-w-3xl mb-3">
                         Nine connected modules from audit to cited content to revenue — no extra tools
                     </h2>
                     {/* <p className="text-muted-foreground leading-relaxed">Nine connected modules from audit to cited content to revenue — no extra tools.</p> */}
@@ -18,73 +18,73 @@ export function ModulesSection() {
                     <div id="structured-data" className="bg-[#fafafa] border border-[#efefef] rounded-2xl p-6 shadow-sm">
                         <div className="flex items-center gap-3 mb-3">
                             <div className="w-9 h-9 rounded-full bg-[#0a0a0a] text-white flex items-center justify-center font-semibold">A</div>
-                            <h3 className="font-serif text-lg">Website & Content Analyzer</h3>
+                            <h3 className="heading-3-serif">Website & Content Analyzer</h3>
                         </div>
-                        <p className="text-muted-foreground">Crawls and scores every page for AI-readiness, citation potential, content quality and technical AEO health.</p>
+                        <p className="text-body">Crawls and scores every page for AI-readiness, citation potential, content quality and technical AEO health.</p>
                     </div>
 
                     <div id="prompt-visibility" className="bg-[#fafafa] border border-[#efefef] rounded-2xl p-6 shadow-sm">
                         <div className="flex items-center gap-3 mb-3">
                             <div className="w-9 h-9 rounded-full bg-[#0a0a0a] text-white flex items-center justify-center font-semibold">B</div>
-                            <h3 className="font-serif text-lg">Structured Data & AI Files</h3>
+                            <h3 className="heading-3-serif">Structured Data & AI Files</h3>
                         </div>
-                        <p className="text-muted-foreground">Schema, `llms.txt`, `facts.json` so AI engines read and trust your content.</p>
+                        <p className="text-body">Schema, `llms.txt`, `facts.json` so AI engines read and trust your content.</p>
                     </div>
 
                     <div className="bg-[#fafafa] border border-[#efefef] rounded-2xl p-6 shadow-sm">
                         <div className="flex items-center gap-3 mb-3">
                             <div className="w-9 h-9 rounded-full bg-[#0a0a0a] text-white flex items-center justify-center font-semibold">C</div>
-                            <h3 className="font-serif text-lg">AI SEO / AEO Visibility</h3>
+                            <h3 className="heading-3-serif">AI SEO / AEO Visibility</h3>
                         </div>
-                        <p className="text-muted-foreground">Answer-completeness & entity scoring, LLM answer simulator, actions ranked by citation lift.</p>
+                        <p className="text-body">Answer-completeness & entity scoring, LLM answer simulator, actions ranked by citation lift.</p>
                     </div>
 
                     <div className="bg-[#fafafa] border border-[#efefef] rounded-2xl p-6 shadow-sm">
                         <div className="flex items-center gap-3 mb-3">
                             <div className="w-9 h-9 rounded-full bg-[#0a0a0a] text-white flex items-center justify-center font-semibold">D</div>
-                            <h3 className="font-serif text-lg">Keyword → Prompt Intelligence</h3>
+                            <h3 className="heading-3-serif">Keyword → Prompt Intelligence</h3>
                         </div>
-                        <p className="text-muted-foreground">Transforms keywords into buyer prompts, scored and mapped to content gaps.</p>
+                        <p className="text-body">Transforms keywords into buyer prompts, scored and mapped to content gaps.</p>
                     </div>
 
                     <div className="bg-[#fafafa] border border-[#efefef] rounded-2xl p-6 shadow-sm">
                         <div className="flex items-center gap-3 mb-3">
                             <div className="w-9 h-9 rounded-full bg-[#0a0a0a] text-white flex items-center justify-center font-semibold">E</div>
-                            <h3 className="font-serif text-lg">Prompt Tracking & Multi-Model Tester</h3>
+                            <h3 className="heading-3-serif">Prompt Tracking & Multi-Model Tester</h3>
                         </div>
-                        <p className="text-muted-foreground">Tracks prompts across engines with prompt → response → cited-URL trails.</p>
+                        <p className="text-body">Tracks prompts across engines with prompt → response → cited-URL trails.</p>
                     </div>
 
                     <div className="bg-[#fafafa] border border-[#efefef] rounded-2xl p-6 shadow-sm">
                         <div className="flex items-center gap-3 mb-3">
                             <div className="w-9 h-9 rounded-full bg-[#0a0a0a] text-white flex items-center justify-center font-semibold">F</div>
-                            <h3 className="font-serif text-lg">Competitor AI Intelligence</h3>
+                            <h3 className="heading-3-serif">Competitor AI Intelligence</h3>
                         </div>
-                        <p className="text-muted-foreground">Where competitors get cited and why; prompt-wins library, source-gap map, alerts.</p>
+                        <p className="text-body">Where competitors get cited and why; prompt-wins library, source-gap map, alerts.</p>
                     </div>
 
                     <div className="bg-[#fafafa] border border-[#efefef] rounded-2xl p-6 shadow-sm">
                         <div className="flex items-center gap-3 mb-3">
                             <div className="w-9 h-9 rounded-full bg-[#0a0a0a] text-white flex items-center justify-center font-semibold">G</div>
-                            <h3 className="font-serif text-lg">Reports & Alerts</h3>
+                            <h3 className="heading-3-serif">Reports & Alerts</h3>
                         </div>
-                        <p className="text-muted-foreground">Weekly reports + alerts on lost citations, model drift, and new rivals.</p>
+                        <p className="text-body">Weekly reports + alerts on lost citations, model drift, and new rivals.</p>
                     </div>
 
                     <div className="bg-[#fafafa] border border-[#efefef] rounded-2xl p-6 shadow-sm">
                         <div className="flex items-center gap-3 mb-3">
                             <div className="w-9 h-9 rounded-full bg-[#0a0a0a] text-white flex items-center justify-center font-semibold">H</div>
-                            <h3 className="font-serif text-lg">Impact Analytics</h3>
+                            <h3 className="heading-3-serif">Impact Analytics</h3>
                         </div>
-                        <p className="text-muted-foreground">AI citations → GA4 traffic, conversions and revenue.</p>
+                        <p className="text-body">AI citations → GA4 traffic, conversions and revenue.</p>
                     </div>
 
                     <div className="bg-[#fafafa] border border-[#efefef] rounded-2xl p-6 shadow-sm">
                         <div className="flex items-center gap-3 mb-3">
                             <div className="w-9 h-9 rounded-full bg-[#0a0a0a] text-white flex items-center justify-center font-semibold">I</div>
-                            <h3 className="font-serif text-lg">Content Generation & AI Detection</h3>
+                            <h3 className="heading-3-serif">Content Generation & AI Detection</h3>
                         </div>
-                        <p className="text-muted-foreground">Long-form citation-ready content, validated humanized and AEO-ready.</p>
+                        <p className="text-body">Long-form citation-ready content, validated humanized and AEO-ready.</p>
                     </div>
                 </div>
 
@@ -120,12 +120,12 @@ export function ModulesSection() {
 
                 <div className="mx-auto mt-7 w-full max-w-7xl border-t border-[#e8e8e8] pt-7">
                     <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
-                        <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
+                        <p className="text-body flex-1">
                             Generate content that gets cited.
                         </p>
                         <EarlyAccessTrigger
                             label="Explore the modules"
-                            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap w-full sm:w-auto"
+                            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg text-button hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap w-full sm:w-auto"
                         />
                     </div>
                 </div>

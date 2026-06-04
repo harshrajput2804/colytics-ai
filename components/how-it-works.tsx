@@ -92,15 +92,15 @@ export function HowItWorks() {
     <section
       ref={sectionRef}
       id="solutions"
-      className="py-24 px-4 sm:px-6 bg-[#fafafa] border-t border-[#e8e8e8]"
+      className="section-spacing bg-[#fafafa] border-t border-[#e8e8e8]"
     >
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto min-w-0">
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-10 sm:mb-16">
           <p className="text-xs font-semibold uppercase tracking-widest text-[#737373] mb-4">
             How It Works
           </p>
-          <h2 className="font-serif text-[32px] sm:text-[42px] md:text-[52px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
+          <h2 className="heading-2-sm">
             Three steps to AI visibility and AEO intelligence.
           </h2>
         </div>
@@ -128,11 +128,10 @@ export function HowItWorks() {
                   {/* Node dot */}
                   <div className="relative z-10 shrink-0 hidden sm:flex items-start pt-1">
                     <div
-                      className={`w-10 h-10 rounded-full border-2 flex items-center justify-center text-xs font-bold transition-all duration-500 ${
-                        isActive
+                      className={`w-10 h-10 rounded-full border-2 flex items-center justify-center text-xs font-bold transition-all duration-500 ${isActive
                           ? "border-[#2563eb] bg-[#2563eb] text-white shadow-[0_0_16px_rgba(37,99,235,0.35)]"
                           : "border-[#d4d4d4] bg-white text-[#a3a3a3]"
-                      }`}
+                        }`}
                     >
                       {isActive ? (
                         i === STEPS.length - 1 && activeStep === STEPS.length - 1 ? (
@@ -151,36 +150,32 @@ export function HowItWorks() {
                     {/* Step label — mobile only */}
                     <div className="flex items-center gap-3 mb-3 sm:hidden">
                       <div
-                        className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-xs font-bold transition-all duration-500 ${
-                          isActive
+                        className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-xs font-bold transition-all duration-500 ${isActive
                             ? "border-[#2563eb] bg-[#2563eb] text-white"
                             : "border-[#d4d4d4] bg-white text-[#a3a3a3]"
-                        }`}
+                          }`}
                       >
                         {step.number}
                       </div>
                     </div>
 
                     <h3
-                      className={`font-serif text-xl sm:text-2xl md:text-[28px] leading-snug mb-3 transition-colors duration-500 ${
-                        isActive ? "text-[#0a0a0a]" : "text-[#c0c0c0]"
-                      }`}
+                      className={`heading-3-lg mb-3 transition-colors duration-500 ${isActive ? "text-[#0a0a0a]" : "text-[#c0c0c0]"
+                        }`}
                     >
                       {step.title}
                     </h3>
                     <p
-                      className={`text-[15px] leading-relaxed max-w-xl transition-colors duration-500 ${
-                        isActive ? "text-[#525252]" : "text-[#c8c8c8]"
-                      }`}
+                      className={`text-body-dark max-w-xl transition-colors duration-500 ${isActive ? "text-[#525252]" : "text-[#c8c8c8]"
+                        }`}
                     >
                       {step.body}
                     </p>
 
                     {/* Card for each step */}
                     <div
-                      className={`mt-6 transition-all duration-700 ${
-                        isActive ? "opacity-100 translate-y-0" : "opacity-40 translate-y-2"
-                      }`}
+                      className={`mt-6 transition-all duration-700 ${isActive ? "opacity-100 translate-y-0" : "opacity-40 translate-y-2"
+                        }`}
                     >
                       {i === 0 && <DomainCard />}
                       {i === 1 && <GapAnalysisCard />}
@@ -197,12 +192,12 @@ export function HowItWorks() {
       {/* CTA footer */}
       <div className="mx-auto mt-20 w-full max-w-3xl border-t border-[#e8e8e8] pt-8">
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
-          <p className="text-[15px] text-[#737373] leading-relaxed">
+          <p className="text-body">
             Your first audit is minutes away.
           </p>
           <EarlyAccessTrigger
             label="Run my free audit"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap w-full sm:w-auto"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0a0a0a] !text-white rounded-lg text-button hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap w-full sm:w-auto"
           />
         </div>
       </div>
@@ -213,7 +208,7 @@ export function HowItWorks() {
 function DomainCard() {
   return (
     <div className="rounded-2xl border border-[#e8e8e8] bg-white p-5 sm:p-6 shadow-[0_8px_32px_rgba(0,0,0,0.06)] max-w-lg">
-      <h4 className="text-sm font-semibold text-[#0a0a0a] mb-4">Setup Target Domain</h4>
+      <p className="ui-heading mb-4">Setup Target Domain</p>
       <div className="flex items-center gap-2.5 p-3 border border-[#e8e8e8] rounded-xl mb-4 bg-[#fafafa]">
         <Globe className="w-4 h-4 text-[#a3a3a3] shrink-0" />
         <span className="text-sm text-[#525252]">yourwebsite.com</span>
@@ -243,7 +238,7 @@ function GapAnalysisCard() {
   return (
     <div className="rounded-2xl border border-[#e8e8e8] bg-white p-5 sm:p-6 shadow-[0_8px_32px_rgba(0,0,0,0.06)] max-w-lg">
       <div className="flex items-start justify-between gap-3 mb-4">
-        <h4 className="text-sm font-semibold text-[#0a0a0a]">Citation Gap: &apos;best seo tools&apos;</h4>
+        <p className="ui-heading">Citation Gap: &apos;best seo tools&apos;</p>
         <span className="shrink-0 px-2.5 py-1 bg-red-50 text-red-600 rounded-full text-[11px] font-semibold border border-red-100">
           Missed Citation
         </span>
@@ -279,21 +274,19 @@ function RoadmapCard() {
   return (
     <div className="rounded-2xl border border-[#e8e8e8] bg-white p-5 sm:p-6 shadow-[0_8px_32px_rgba(0,0,0,0.06)] max-w-lg">
       <div className="flex items-center justify-between mb-4">
-        <h4 className="text-sm font-semibold text-[#0a0a0a]">Prioritized Fixes</h4>
+        <p className="ui-heading">Prioritized Fixes</p>
         <ListChecks className="w-4 h-4 text-[#a3a3a3]" />
       </div>
       <div className="space-y-2.5">
         {items.map((item) => (
           <div
             key={item.title}
-            className={`flex items-start gap-3 p-3 rounded-xl border ${
-              item.done ? "border-green-200 bg-green-50" : "border-[#e8e8e8] bg-white"
-            }`}
+            className={`flex items-start gap-3 p-3 rounded-xl border ${item.done ? "border-green-200 bg-green-50" : "border-[#e8e8e8] bg-white"
+              }`}
           >
             <div
-              className={`mt-0.5 w-5 h-5 rounded-full shrink-0 flex items-center justify-center border ${
-                item.done ? "border-green-500 bg-green-500" : "border-[#d4d4d4]"
-              }`}
+              className={`mt-0.5 w-5 h-5 rounded-full shrink-0 flex items-center justify-center border ${item.done ? "border-green-500 bg-green-500" : "border-[#d4d4d4]"
+                }`}
             >
               {item.done ? <Check className="w-3 h-3 text-white" strokeWidth={3} /> : null}
             </div>

@@ -210,10 +210,10 @@ export function BlogPostShell({
                 <Sparkles className="h-4 w-4" />
                 {category}
               </div>
-              <h1 className="mx-auto mt-6 max-w-5xl text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl reveal-heading">
+              <h1 className="heading-1-inverse mx-auto mt-6 max-w-5xl reveal-heading">
                 {title}
               </h1>
-              <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-white/70 sm:text-lg">{excerpt}</p>
+              <p className="text-lead mx-auto mt-5 max-w-3xl text-white/70">{excerpt}</p>
 
               <div className="mt-8 grid gap-3 text-sm text-white/85 sm:grid-cols-3 lg:grid-cols-3 lg:gap-6">
                 <div className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-3 shadow-sm">
@@ -253,7 +253,18 @@ export function BlogPostShell({
             </div>
           </aside>
 
-          <article className="min-w-0 lg:pr-3">{children}</article>
+          <article className="min-w-0 lg:pr-3">
+            <details className="lg:hidden mb-6 rounded-2xl border border-border bg-white/90 p-4 shadow-sm">
+              <summary className="flex cursor-pointer list-none items-center gap-2 text-sm font-semibold text-[#0a0a0a]">
+                <FileText className="h-4 w-4 text-brand shrink-0" />
+                Table of contents
+              </summary>
+              <div className="mt-4 max-h-64 space-y-2 overflow-y-auto pr-1">
+                {renderToc(toc)}
+              </div>
+            </details>
+            {children}
+          </article>
 
           <aside className={`hidden lg:block transition-all duration-700 ease-out ${heroLeft ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}>
             <div style={{ position: "fixed", top: "7rem", right: "calc(50% - 640px)", width: 300 }} className="h-full rounded-3xl border border-border bg-white p-5 shadow-[0_10px_40px_rgba(15,23,42,0.06)]">
@@ -282,7 +293,7 @@ export function BlogPostShell({
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <p className="section-label">Author</p>
-                  <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[#0a0a0a]">{author}</h2>
+                  <h2 className="heading-3-lg mt-2">{author}</h2>
                   <p className="mt-2 text-sm font-medium text-muted-foreground">{authorRole}</p>
                 </div>
 
@@ -306,7 +317,7 @@ export function BlogPostShell({
                 </div>
               </div>
 
-              <p className="mt-6 max-w-3xl text-[15px] leading-7 text-[#1f2937] sm:text-base sm:leading-8">
+              <p className="text-body-dark mt-6 max-w-3xl sm:text-base sm:leading-8">
                 {authorBio}
               </p>
             </div>

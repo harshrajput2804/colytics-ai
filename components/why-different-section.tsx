@@ -5,16 +5,16 @@ export function WhyDifferentSection() {
     const brands = ["HubSpot", "Semrush", "BigCommerce", "GetResponse", "LivePerson"]
 
     return (
-        <section id="why-different" className="enhanced-surface py-20 px-6 bg-transparent border-t border-[#e8e8e8]">
+        <section id="why-different" className="enhanced-surface section-spacing bg-transparent border-t border-[#e8e8e8]">
             <div className="max-w-6xl mx-auto">
                 <div className="rounded-[2rem] border border-[#e8e8e8] bg-white shadow-[0_18px_60px_rgba(0,0,0,0.06)] overflow-hidden">
                     <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center p-8 md:p-12 lg:p-14">
                         <div className="max-w-2xl">
                             <p className="section-label mb-5">WHY WE’RE DIFFERENT</p>
-                            <h2 className="font-serif text-[34px] md:text-[46px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
+                            <h2 className="heading-2">
                                 Built by the agency that lived the problem.
                             </h2>
-                            <p className="mt-5 text-[16px] text-[#525252] leading-relaxed max-w-xl">
+                            <p className="text-body-dark mt-5 max-w-xl">
                                 A product of Attrock — a 12-year-old marketing agency, 100+ brands, 15+ countries. Scoreboard vs playbook: we give the why, the ranked fix, the content and the revenue proof.
                             </p>
 
@@ -65,13 +65,13 @@ export function WhyDifferentSection() {
 
 
                 <div className="mx-auto mt-7 w-full max-w-7xl border-t border-[#e8e8e8] pt-7">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                        <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                        <p className="text-body flex-1">
                             Partner with operators who’ve done it 100+ times. 
                         </p>
                         <EarlyAccessTrigger
                             label="Work with operators"
-                            className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap"
+                            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg text-button hover:bg-[#0a0a0a]/90 transition-colors w-full sm:w-auto min-h-11"
                         />
                     </div>
                 </div>

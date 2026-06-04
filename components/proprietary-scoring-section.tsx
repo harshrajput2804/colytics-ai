@@ -3,14 +3,14 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function ProprietaryScoringSection() {
     return (
-        <section id="proprietary-scoring" className="enhanced-surface py-20 px-6 bg-transparent border-t border-[#e8e8e8]">
+        <section id="proprietary-scoring" className="enhanced-surface section-spacing bg-transparent border-t border-[#e8e8e8]">
             <div className="max-w-6xl mx-auto">
                 <div id="aeo-readiness" className="max-w-3xl mb-12 scroll-mt-32">
                     <p className="section-label mb-5">THE INTELLIGENCE LAYER</p>
-                    <h2 className="font-serif text-[32px] md:text-[40px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a] max-w-3xl mb-3">
+                    <h2 className="heading-2-compact max-w-3xl mb-3">
                         Proprietary scoring as a customer benefit.
                     </h2>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-body">
                         One clear score, one predicted outcome, and one ranked next step — so customers know exactly what to do next.
                     </p>
                 </div>
@@ -19,7 +19,7 @@ export function ProprietaryScoringSection() {
                     <div className="bg-white border border-[#efefef] rounded-2xl p-7 shadow-sm">
                         <div className="flex items-center justify-between gap-4 mb-4">
                             <div>
-                                <h3 className="font-serif text-xl font-semibold text-[#0a0a0a]">AIVS™</h3>
+                                <h3 className="heading-3-lg font-semibold">AIVS™</h3>
                                 <p className="text-xs uppercase tracking-[0.2em] text-[#737373] mb-2">One number from 7 dimensions / 29 parameters</p>
                             </div>
                         </div>
@@ -41,7 +41,7 @@ export function ProprietaryScoringSection() {
                     <div className="bg-white border border-[#efefef] rounded-2xl p-7 shadow-sm">
                         <div className="flex items-center justify-between gap-4 mb-4">
                             <div>
-                                <h3 className="font-serif text-xl font-semibold text-[#0a0a0a]">LCS™</h3>
+                                <h3 className="heading-3-lg font-semibold">LCS™</h3>
                                 <p className="text-xs uppercase tracking-[0.2em] text-[#737373] mb-2">Predict citation likelihood before you publish</p>
                             </div>
                             
@@ -64,7 +64,7 @@ export function ProprietaryScoringSection() {
                     <div className="bg-white border border-[#efefef] rounded-2xl p-7 shadow-sm">
                         <div className="flex items-center justify-between gap-4 mb-4">
                             <div>
-                                <h3 className="font-serif text-xl font-semibold text-[#0a0a0a]">IEU</h3>
+                                <h3 className="heading-3-lg font-semibold">IEU</h3>
                                 <p className="text-xs uppercase tracking-[0.2em] text-[#737373] mb-2">Impact × Effort × Urgency</p>
                             </div>
                         </div>
@@ -88,12 +88,12 @@ export function ProprietaryScoringSection() {
 
                 <div className="mx-auto mt-7 w-full max-w-7xl border-t border-[#e8e8e8] pt-7">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                        <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
+                        <p className="text-body flex-1">
                             Get one clear number and the ranked next step.
                         </p>
                         <EarlyAccessTrigger
                             label="See my scores"
-                            className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap"
+                            className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg text-button hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap"
                         />
                     </div>
                 </div>

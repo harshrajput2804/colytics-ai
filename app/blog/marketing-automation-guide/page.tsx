@@ -44,7 +44,7 @@ export default function MarketingAutomationPage() {
         floatingLinkHref="/contact"
         floatingLinkLabel="Book a call"
       >
-        <div className="prose prose-lg max-w-none py-16 sm:py-20">
+        <div className="prose-content max-w-none py-16 sm:py-20">
           <section id="why" className="scroll-mt-32">
             <h2>Why Marketing Automation Matters</h2>
             <p>
@@ -53,7 +53,7 @@ export default function MarketingAutomationPage() {
           </section>
 
           <section id="benefits" className="scroll-mt-32 mt-10">
-            <h3>The Core Benefits</h3>
+            <h2>The Core Benefits</h2>
             <ul>
               <li>Save hours on repetitive tasks</li>
               <li>Deliver personalized experiences at scale</li>
@@ -64,21 +64,21 @@ export default function MarketingAutomationPage() {
           </section>
 
           <section id="start" className="scroll-mt-32 mt-10">
-            <h3>Getting Started with Automation</h3>
+            <h2>Getting Started with Automation</h2>
             <p>
               The best way to start with marketing automation is to identify your most repetitive processes. Common entry points include email nurture sequences, lead scoring, and social media posting.
             </p>
           </section>
 
           <section id="platforms" className="scroll-mt-32 mt-10">
-            <h3>Popular Platforms</h3>
+            <h2>Popular Platforms</h2>
             <p>
               Leading platforms like HubSpot, Marketo, Pardot, and ActiveCampaign offer varying levels of complexity and feature sets. Choose based on your team size, budget, and specific needs.
             </p>
           </section>
 
           <section id="best-practices" className="scroll-mt-32 mt-10">
-            <h3>Best Practices</h3>
+            <h2>Best Practices</h2>
             <ol>
               <li>Start simple—automate one process at a time</li>
               <li>Segment your audience properly</li>

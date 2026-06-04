@@ -45,7 +45,7 @@ export default function AEOvsSEOPage() {
         floatingLinkHref="/contact"
         floatingLinkLabel="Get in touch"
       >
-        <div className="prose prose-lg max-w-none py-16 sm:py-20">
+        <div className="prose-content max-w-none py-16 sm:py-20">
           <section id="shift" className="scroll-mt-32">
             <h2>The Shift from Traditional SEO to Answer Engine Optimization</h2>
             <p>
@@ -57,14 +57,14 @@ export default function AEOvsSEOPage() {
           </section>
 
           <section id="what-is-aeo" className="scroll-mt-32 mt-10">
-            <h3>What is Answer Engine Optimization?</h3>
+            <h2>What is Answer Engine Optimization?</h2>
             <p>
               AEO is the practice of optimizing content to appear in the generated answers provided by AI systems like ChatGPT, Claude, and other large language models. Instead of ranking on search result pages, your content becomes the source material for AI-generated responses.
             </p>
           </section>
 
           <section id="differences" className="scroll-mt-32 mt-10">
-            <h3>Key Differences Between AEO and SEO</h3>
+            <h2>Key Differences Between AEO and SEO</h2>
             <ul>
               <li><strong>Format:</strong> SEO targets keyword rankings; AEO targets answer accuracy</li>
               <li><strong>Content Length:</strong> SEO favors long-form content; AEO rewards concise, direct answers</li>
@@ -74,7 +74,7 @@ export default function AEOvsSEOPage() {
           </section>
 
           <section id="why-both" className="scroll-mt-32 mt-10">
-            <h3>Why Both Matter Now</h3>
+            <h2>Why Both Matter Now</h2>
             <p>
               The transition to AEO doesn't mean SEO is dead. Instead, successful digital strategies will need to embrace both approaches. Many users still use traditional search, while others increasingly rely on AI chatbots for instant answers.
             </p>
@@ -84,7 +84,7 @@ export default function AEOvsSEOPage() {
           </section>
 
           <section id="prepare" className="scroll-mt-32 mt-10">
-            <h3>How to Prepare Your Content Strategy</h3>
+            <h2>How to Prepare Your Content Strategy</h2>
             <ol>
               <li><strong>Audit Your Content:</strong> Review existing content for answer quality and directness</li>
               <li><strong>Create FAQ Sections:</strong> AI systems heavily reference well-structured FAQ content</li>
@@ -95,7 +95,7 @@ export default function AEOvsSEOPage() {
           </section>
 
           <section id="future" className="scroll-mt-32 mt-10">
-            <h3>The Future of Search</h3>
+            <h2>The Future of Search</h2>
             <p>
               Looking ahead, we expect a hybrid search landscape where traditional rankings, AI-powered answers, and conversational search all coexist. Brands that adapt early will have a significant advantage.
             </p>

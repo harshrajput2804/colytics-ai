@@ -2,15 +2,15 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function StatsSection() {
   return (
-    <section className="enhanced-surface py-20 bg-transparent border-t border-[#e8e8e8]">
-      <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
+    <section id="the-shift" className="enhanced-surface py-20 bg-transparent border-t border-[#e8e8e8]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
         <div className="grid gap-16 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:items-start">
           <div>
             <p className="section-label mb-8 text-[#d4a574]">THE SHIFT</p>
-            <h2 className="text-[36px] sm:text-[44px] md:text-[60px] font-serif font-bold text-[#0a0a0a] mb-6 leading-tight tracking-tight max-w-2xl">
+            <h2 className="heading-2 mb-6 max-w-2xl">
               Search didn't evolve. It was replaced.
             </h2>
-            <p className="text-[16px] text-[#5a5a5a] leading-relaxed max-w-2xl">
+            <p className="text-body-dark max-w-2xl">
               AI assistants now synthesize the answer directly — no ten blue links, no click. Roughly <span className="font-semibold">58% of informational queries</span> now end inside an AI answer. The question stopped being "do we rank?" — it's now <span className="font-bold text-[#5a5a5a]">"do we get cited?"</span> — and if not, "why, and what do we fix?"
             </p>
           </div>
@@ -33,11 +33,11 @@ export function StatsSection() {
 
               <div className="w-full md:col-span-5 p-5 sm:p-6 rounded-xl border bg-[#0a0a0a] border-[#0a0a0a] text-white">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-[12px] font-semibold text-white/60">NOW</span>
-                  <span className="text-[11px] px-2 py-0.5 bg-white/10 rounded-full text-white/70">Where value now lives</span>
+                  <span className="text-[12px] font-semibold text-white">NOW</span>
+                  <span className="text-[11px] px-2 py-0.5 bg-white/10 rounded-full text-white">Where value now lives</span>
                 </div>
                 <p className="text-[14px] font-semibold mb-1">AI-powered search</p>
-                <p className="text-[13px] leading-relaxed text-white/70">
+                <p className="text-[13px] leading-relaxed text-white">
                   One synthesized answer. One source gets cited. One brand wins.
                 </p>
               </div>
@@ -68,12 +68,12 @@ export function StatsSection() {
 
         <div className="mt-7 pt-7 border-t border-[#e8e8e8]">
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 sm:gap-8">
-            <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
+            <p className="text-body flex-1">
               The answer layer is being written now, with or without your brand.
             </p>
             <EarlyAccessTrigger
               label={"Get on the map →"}
-              className={"inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap w-full sm:w-auto"}
+              className={"inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg text-button hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap w-full sm:w-auto"}
             />
           </div>
         </div>

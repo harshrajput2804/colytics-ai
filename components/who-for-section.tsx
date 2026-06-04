@@ -39,14 +39,14 @@ export function WhoForSection() {
   ]
 
   return (
-    <section id="who-for" className="enhanced-surface py-28 px-6 bg-transparent border-t border-[#e8e8e8]">
+    <section id="who-for" className="enhanced-surface section-spacing bg-transparent border-t border-[#e8e8e8]">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl mb-16">
           <p className="section-label mb-5">Who It's For</p>
-          <h2 className="font-serif text-[42px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
+          <h2 className="heading-2">
             From solo consultants to enterprise brands.
           </h2>
-          <p className="mt-5 text-[15px] text-[#737373]">
+          <p className="text-body mt-5">
             Any size, 10,000+ pages, no cap.
           </p>
         </div>
@@ -54,30 +54,30 @@ export function WhoForSection() {
         <div className="grid md:grid-cols-3 gap-5">
           {personas.map((p) => (
             <div key={p.title} className="border border-[#e8e8e8] rounded-2xl p-7 flex flex-col bg-white">
-              <h3 className="text-[15px] font-semibold text-[#0a0a0a] mb-5">{p.title}</h3>
+              <h3 className="heading-3 mb-5">{p.title}</h3>
               <ul className="space-y-3 flex-1 mb-7">
                 {p.points.map((pt, j) => (
-                  <li key={j} className="flex items-start gap-2.5 text-[13px] text-[#525252]">
+                  <li key={j} className="flex items-start gap-2.5 text-ui-sm text-[#525252]">
                     <span className="w-1 h-1 rounded-full bg-[#9a9a9a] shrink-0 mt-2" />
                     {pt}
                   </li>
                 ))}
               </ul>
               <div className="pt-6 border-t border-[#f0f0f0]">
-                <p className="text-[13px] italic text-[#525252] leading-relaxed mb-3">"{p.quote}"</p>
-                <p className="text-[11px] text-[#9a9a9a] font-medium">{p.attribution}</p>
+                <p className="text-ui-sm italic text-[#525252] mb-3">&quot;{p.quote}&quot;</p>
+                <p className="text-caption font-medium">{p.attribution}</p>
               </div>
             </div>
           ))}
         </div>
         <div className="mx-auto mt-7 w-full max-w-7xl border-t border-[#e8e8e8] pt-7">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
+            <p className="text-body flex-1">
                Whatever your seat, there’s a fit.
             </p>
             <EarlyAccessTrigger
               label="Find my fit"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg text-button hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap"
             />
           </div>
         </div>

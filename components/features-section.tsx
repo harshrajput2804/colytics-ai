@@ -1,4 +1,3 @@
-import { CitationAnalysisMockup } from "@/components/citation-analysis-mockup"
 import { AIVisibilityReportMockup } from "@/components/ai-visibility-report-mockup"
 import EarlyAccessTrigger from "@/components/early-access-trigger"
 
@@ -6,14 +5,14 @@ export function FeaturesSection() {
 
   return (
     <>
-      <section id="what-colytics-is" className="enhanced-surface pt-28 pb-16 px-6 bg-transparent border-t border-[#e8e8e8]">
+      <section id="what-colytics-is" className="enhanced-surface section-spacing pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 bg-transparent border-t border-[#e8e8e8]">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-2xl">
             <p className="section-label mb-5">WHAT COLYTICS AI IS</p>
-            <h2 className="font-serif text-[42px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a] max-w-2xl">
+            <h2 className="heading-2 max-w-2xl">
               Not a monitor. An intelligence system.
             </h2>
-            <p className="mt-5 text-[16px] text-[#737373] leading-relaxed max-w-2xl">
+            <p className="text-body mt-5 max-w-2xl">
               Colytics AI closes the loop between seeing what changed, understanding why it changed, and knowing what to do next.
             </p>
           </div>
@@ -34,8 +33,8 @@ export function FeaturesSection() {
               },
             ].map((item) => (
               <div key={item.title} className="rounded-2xl border border-[#e8e8e8] bg-[#fafafa] p-6">
-                <p className="text-[14px] font-semibold text-[#0a0a0a]">{item.title}</p>
-                <p className="mt-2 text-[13px] leading-relaxed text-[#737373]">{item.body}</p>
+                <p className="heading-3 mb-0">{item.title}</p>
+                <p className="text-ui-sm mt-2">{item.body}</p>
               </div>
             ))}
           </div>
@@ -53,10 +52,10 @@ export function FeaturesSection() {
                   key={stat.label}
                   className="flex min-h-[150px] flex-col items-center justify-center bg-[#0a0a0a] px-6 py-8 text-center"
                 >
-                  <span className="text-[52px] leading-none font-semibold tracking-[-0.05em] text-white/75 md:text-[58px]">
+                  <span className="text-[52px] leading-none font-semibold tracking-[-0.05em] text-white md:text-[58px]">
                     {stat.value}
                   </span>
-                  <span className="mt-5 font-mono text-[14px] leading-none tracking-[0.02em] text-white/75 md:text-[15px]">
+                  <span className="mt-5 font-mono text-[14px] leading-none tracking-[0.02em] text-white md:text-[15px]">
                     {stat.label}
                   </span>
                 </div>
@@ -66,45 +65,45 @@ export function FeaturesSection() {
 
           <div className="mt-7 pt-7 border-t border-[#e8e8e8]">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-              <p className="text-[15px] leading-relaxed text-[#737373] flex-1">
+              <p className="text-body flex-1">
                 Give the team intelligence, not another dashboard.
               </p>
               <EarlyAccessTrigger
                 label="Start free →"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0a0a0a] px-8 py-4 text-[14px] font-medium text-white transition-colors hover:bg-[#0a0a0a]/90 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0a0a0a] px-8 py-4 text-button !text-white transition-colors hover:bg-[#0a0a0a]/90 w-full sm:w-auto min-h-11"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="ai-search-visibility" className="enhanced-surface pt-28 pb-16 px-6 bg-transparent border-t border-[#e8e8e8]">
+      <section id="ai-search-visibility" className="enhanced-surface section-spacing pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 bg-transparent border-t border-[#e8e8e8]">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-2xl mb-10">
             <p className="section-label mb-4">SAMPLE REPORT</p>
-            <h2 className="font-serif text-[32px] md:text-[38px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a]">
+            <h2 className="heading-2-md">
               See a real report — before you sign up.
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-[#737373]">
+            <p className="text-body mt-4">
               Preview shows the AIVS™ score, top citation gaps, and a ranked fix list. The full PDF stays gated behind email capture.
             </p>
           </div>
 
           <div className="max-w-7xl mx-auto">
-          <AIVisibilityReportMockup />
-        </div>
+            <AIVisibilityReportMockup />
+          </div>
 
           <div className="mt-7 pt-7 border-t border-[#e8e8e8]">
-              <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
-                  The preview is free. The full report is the lead magnet.
-                </p>
-                <EarlyAccessTrigger
-                  label="Get the sample report →"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0a0a0a] px-8 py-4 text-[14px] font-medium text-white transition-colors hover:bg-[#0a0a0a]/90 whitespace-nowrap"
-                />
-              </div>
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <p className="text-body flex-1">
+                The preview is free. The full report is the lead magnet.
+              </p>
+              <EarlyAccessTrigger
+                label="Get the sample report →"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0a0a0a] px-8 py-4 text-button text-white transition-colors hover:bg-[#0a0a0a]/90 w-full sm:w-auto min-h-11"
+              />
             </div>
+          </div>
         </div>
       </section>
     </>

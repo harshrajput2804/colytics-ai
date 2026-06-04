@@ -31,15 +31,15 @@ const faqSchema = {
 
 export function FaqSection() {
   return (
-    <section id="faq" className="enhanced-surface py-28 px-4 sm:px-6 bg-transparent border-t border-[#e8e8e8]">
+    <section id="faq" className="enhanced-surface section-spacing bg-transparent border-t border-[#e8e8e8]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[300px_1fr] gap-10 sm:gap-16">
         <div className="md:sticky md:top-32 self-start">
           <p className="section-label mb-5">FAQ</p>
-          <h2 className="font-serif text-[30px] sm:text-[36px] leading-[1.05] tracking-[-0.01em] text-[#0a0a0a] mb-4">
+          <h2 className="heading-2-compact mb-4">
             Frequently asked questions.
           </h2>
-          <p className="text-[14px] text-[#737373] leading-relaxed">
+          <p className="text-body text-sm">
             Can't find what you're looking for? Contact us at{" "}
             <a href="mailto:hello@colytics.ai" className="text-[#0a0a0a] underline underline-offset-2">
               hello@colytics.ai
@@ -49,9 +49,9 @@ export function FaqSection() {
 
         <div>
           {faqs.map((faq) => (
-            <details key={faq.q} className="group border-t border-[#e8e8e8] py-5" open>
+            <details key={faq.q} className="group border-t border-[#e8e8e8] py-5">
               <summary className="flex cursor-pointer list-none items-center justify-between text-left">
-                <span className="pr-8 text-[14px] font-medium leading-snug text-[#0a0a0a]">{faq.q}</span>
+                <h3 className="heading-5 pr-8 leading-snug">{faq.q}</h3>
                 <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#e8e8e8] transition-colors group-open:bg-[#0a0a0a] group-open:border-[#0a0a0a]">
                   <svg
                     className="h-2.5 w-2.5 text-[#737373] transition-transform group-open:rotate-45 group-open:text-white"
@@ -65,7 +65,7 @@ export function FaqSection() {
                 </div>
               </summary>
               <div className="pt-4">
-                <p className="pr-8 text-[14px] leading-relaxed text-[#737373]">{faq.a}</p>
+                <p className="text-body pr-8 text-sm">{faq.a}</p>
               </div>
             </details>
           ))}

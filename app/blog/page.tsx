@@ -89,10 +89,10 @@ export default function BlogPage() {
           <div className="absolute inset-x-0 top-0 h-96 bg-[radial-gradient(circle_at_top,rgba(21,73,240,0.12),transparent_60%)]" />
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
             <div className="text-center">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-balance reveal-heading">
+              <h1 className="heading-1-page reveal-heading">
                 Colytics AI Blog
               </h1>
-              <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-lead mt-6 max-w-3xl mx-auto text-muted-foreground">
                 In-depth articles on AI marketing, content strategy, and tools for modern marketers. Stay ahead with insights from industry experts.
               </p>
             </div>
@@ -127,16 +127,16 @@ export default function BlogPage() {
                         {featuredPost.category}
                       </span>
                     </div>
-                    <h2 id="featured-article-heading" className="mt-4 text-2xl sm:text-3xl font-semibold text-[#0a0a0a] group-hover:text-brand transition-colors">
+                    <h2 id="featured-article-heading" className="heading-3-lg mt-4 group-hover:text-brand transition-colors">
                       {featuredPost.title}
                     </h2>
-                    <p className="mt-3 text-muted-foreground leading-7">
+                    <p className="text-body mt-3">
                       {featuredPost.excerpt}
                     </p>
                   </div>
 
-                  <div className="mt-6 flex items-center justify-between">
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                  <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
 
                       <div className="flex items-center gap-1">
                         <CalendarDays className="h-4 w-4" />
@@ -153,8 +153,8 @@ export default function BlogPage() {
                         <span>{featuredPost.readTime} min read</span>
                       </div>
                     </div>
-                    <div className="inline-flex items-center gap-2 font-semibold text-brand group-hover:gap-3 transition-all">
-                      Read: {featuredPost.title}
+                    <div className="inline-flex items-center gap-2 font-semibold text-brand group-hover:gap-3 transition-all text-sm sm:text-base">
+                      <span className="line-clamp-2 sm:line-clamp-1">Read article</span>
                       <ArrowRight className="h-4 w-4" />
                     </div>
                   </div>
@@ -167,8 +167,8 @@ export default function BlogPage() {
         {/* Recent Posts Grid */}
         <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16" aria-labelledby="recent-articles-heading">
           <div className="mb-12">
-            <h2 id="recent-articles-heading" className="text-3xl font-semibold tracking-tight reveal-heading">Recent articles</h2>
-            <p className="mt-2 text-muted-foreground">
+            <h2 id="recent-articles-heading" className="heading-2-sm reveal-heading">Recent articles</h2>
+            <p className="text-body mt-2">
               Explore our latest insights and strategies for modern marketing.
             </p>
           </div>
@@ -200,7 +200,7 @@ export default function BlogPage() {
                   </div>
 
 
-                  <h3 className="mt-3 text-lg font-semibold text-[#0a0a0a] group-hover:text-brand transition-colors line-clamp-2">
+                  <h3 className="heading-3 mt-3 group-hover:text-brand transition-colors line-clamp-2">
                     {post.title}
                   </h3>
 
@@ -231,8 +231,8 @@ export default function BlogPage() {
         {/* CTA Section */}
         <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20" aria-labelledby="blog-subscribe-heading">
           <div className="rounded-3xl border bg-black bg-linear-to-r from-brand to-brand/80 p-8 sm:p-12 text-center text-white">
-            <h2 id="blog-subscribe-heading" className="text-3xl sm:text-4xl font-semibold">Stay updated with our latest insights</h2>
-            <p className="mt-4 text-white/50 text-lg max-w-2xl mx-auto">
+            <h2 id="blog-subscribe-heading" className="heading-2-sm text-white">Stay updated with our latest insights</h2>
+            <p className="text-lead mt-4 text-white/70 max-w-2xl mx-auto">
               Subscribe to get the latest articles on AI marketing, strategy, and tools delivered to your inbox.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">

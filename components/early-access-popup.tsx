@@ -126,12 +126,12 @@ export function EarlyAccessPopup({ open, onClose }: Props) {
                 border-radius: 3px;
               }
             `}</style>
-            <div style={{ padding: '32px 40px', textAlign: 'left' }}>
+            <div style={{ padding: "clamp(1.25rem, 4vw, 2rem) clamp(1rem, 4vw, 2.5rem)" }} className="text-left">
 
           {step === 1 && (
             <div>
-              <h2 className="font-semibold mb-3" style={{ fontSize: 22, lineHeight: 1.15, fontWeight: 800 }}>Get Early Access</h2>
-              <p className="text-gray-600 mb-6" style={{ fontSize: 14 }}>Join the waitlist for Colytics AI. Be the first to see your brand's AI visibility score.</p>
+              <h2 className="heading-3-lg mb-3">Get Early Access</h2>
+              <p className="text-body text-sm mb-6">Join the waitlist for Colytics AI. Be the first to see your brand's AI visibility score.</p>
 
               <label className="block font-medium text-gray-700 mb-1" style={{ fontSize: 12 }}>Full Name</label>
               <input
@@ -165,16 +165,16 @@ export function EarlyAccessPopup({ open, onClose }: Props) {
 
           {step === 2 && (
             <div>
-              <h2 className="text-xl font-semibold mb-2">Verify Your Email</h2>
-              <p className="text-sm text-gray-600 mb-4">We've sent a 6-digit code to <strong className="text-gray-900">{email}</strong></p>
+              <h2 className="heading-3-lg mb-2">Verify Your Email</h2>
+              <p className="text-body text-sm mb-4">We've sent a 6-digit code to <strong className="text-gray-900">{email}</strong></p>
 
-              <div className="flex gap-3 justify-start mb-4">
+              <div className="flex gap-2 sm:gap-3 justify-between mb-4 max-w-full">
                 {otp.map((v, i) => (
                   <input
                     key={i}
                     value={v}
                     onChange={e => onOtpInput(i, e.target.value)}
-                    className="ea-otp-box w-14 h-14 text-center rounded-xl border border-gray-200 text-lg font-semibold"
+                    className="ea-otp-box flex-1 min-w-0 max-w-14 h-12 sm:h-14 text-center rounded-xl border border-gray-200 text-base sm:text-lg font-semibold"
                     inputMode="numeric"
                   />
                 ))}
@@ -193,8 +193,8 @@ export function EarlyAccessPopup({ open, onClose }: Props) {
               <div className="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mb-4">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
               </div>
-              <h3 className="text-lg font-semibold">You're on the list!</h3>
-              <p className="text-sm text-gray-600 mt-3">We've verified your email. You're now on the early access waitlist for Colytics AI.</p>
+              <h3 className="heading-3-lg">You're on the list!</h3>
+              <p className="text-body text-sm mt-3">We've verified your email. You're now on the early access waitlist for Colytics AI.</p>
               <button className="mt-6 w-full rounded-full bg-black text-white py-3 font-medium" onClick={close}>Got it</button>
             </div>
           )}

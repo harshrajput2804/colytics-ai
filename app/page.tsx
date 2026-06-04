@@ -21,6 +21,7 @@ import { PricingSection } from "@/components/pricing-section"
 import { FaqSection } from "@/components/faq-section"
 import { CtaSection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
+import { TracingBeam } from "@/components/ui/tracing-beam"
 import { SITE_NAME, SITE_URL } from "@/lib/site-config"
 
 export const metadata: Metadata = {
@@ -139,25 +140,29 @@ export default function Home() {
         <main className="landing-page min-h-screen bg-white/20 text-[#0a0a0a] overflow-x-hidden">
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productStructuredData) }} />
-          <HeroSection />
-          <StatsSection />
-          <ProblemSection />
-          <FeaturesSection />
-          <AeoLifecycleSection />
-          <TheSolutionSection />
-          <ModulesSection />
-          <ProprietaryScoringSection />
-          <AskAiSection />
-          <ConnectToClaudeSection />
-          <WhyDifferentSection />
-          <ComparisonSection />
-          <WhoForSection />
-          <HowItWorks />
-          <RoiCalculator />
-          <TestimonialsSection />
-          <PricingSection />
-          <FaqSection />
-          <CtaSection />
+          <TracingBeam className="w-full">
+            <HeroSection />
+            <StatsSection />
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+              <ProblemSection />
+              <FeaturesSection />
+              <AeoLifecycleSection />
+              <TheSolutionSection />
+              <ModulesSection />
+              <ProprietaryScoringSection />
+              <AskAiSection />
+              <ConnectToClaudeSection />
+              <WhyDifferentSection />
+              <ComparisonSection />
+              <WhoForSection />
+              <HowItWorks />
+              <RoiCalculator />
+              <TestimonialsSection />
+              <PricingSection />
+              <FaqSection />
+            </div>
+            <CtaSection />
+          </TracingBeam>
         </main>
         <Footer />
       </div>

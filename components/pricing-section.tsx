@@ -46,7 +46,7 @@ export function PricingSection() {
   ]
 
   return (
-    <section id="pricing" className="enhanced-surface py-28 px-4 sm:px-6 bg-transparent border-t border-[#e8e8e8] relative overflow-hidden">
+    <section id="pricing" className="enhanced-surface section-spacing bg-transparent border-t border-[#e8e8e8] relative overflow-hidden">
       {/* Diagonal strips pattern */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.02]"
@@ -55,12 +55,12 @@ export function PricingSection() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header - centered */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <span className="inline-block px-4 py-1.5 text-sm border rounded-full mb-6 font-medium">Plans & Pricing</span>
-          <h2 className="font-serif text-3xl md:text-5xl text-balance text-foreground">
+          <h2 className="heading-2">
             Simple pricing for every team
           </h2>
-          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
+          <p className="text-body mt-4 max-w-xl mx-auto">
             No card to start · 14-day refund on paid plans · annual billing 20% off
           </p>
         </div>
@@ -70,20 +70,20 @@ export function PricingSection() {
             <div
               key={plan.key}
               className={`rounded-2xl p-6 sm:p-8 flex flex-col transition-colors relative ${plan.featured
-                  ? "bg-muted border-muted-foreground/20 shadow-md ring-1 ring-muted-foreground/10"
-                  : "bg-white border shadow-sm"
+                ? "bg-muted border-muted-foreground/20 shadow-md ring-1 ring-muted-foreground/10"
+                : "bg-white border shadow-sm"
                 }`}
             >
               {plan.featured && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="px-3 py-1 bg-foreground text-background text-[10px] font-bold uppercase tracking-widest rounded-full">
+                  <span className="px-3 py-1 bg-foreground text-background text-badge rounded-full">
                     Most Popular
                   </span>
                 </div>
               )}
 
-              <h3 className="text-lg font-medium mb-2">{plan.name}</h3>
-              <p className="text-sm mb-6 text-muted-foreground">
+              <h3 className="heading-3-lg font-medium mb-2">{plan.name}</h3>
+              <p className="text-body text-sm mb-6">
                 {plan.description}
               </p>
 
@@ -103,8 +103,7 @@ export function PricingSection() {
               )}
 
               <Button
-                variant={plan.featured ? "default" : "outline"}
-                className={`w-full rounded-full mb-8 ${plan.featured ? "bg-foreground text-background hover:bg-foreground/90 shadow-sm" : ""}`}
+                className={`w-full rounded-full mb-8 bg-[#0a0a0a] text-white hover:bg-[#1a1a1a] shadow-sm border-0`}
               >
                 {plan.cta}
               </Button>
@@ -123,12 +122,12 @@ export function PricingSection() {
 
         <div className="mx-auto mt-7 w-full max-w-7xl border-t border-[#e8e8e8] pt-7">
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
-            <p className="text-[15px] text-[#737373] leading-relaxed flex-1">
+            <p className="text-body flex-1">
               Get the full platform free for 60 days — no card, no risk.
             </p>
             <EarlyAccessTrigger
               label="Start Free"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg font-medium text-[14px] hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0a0a0a] text-white rounded-lg text-button hover:bg-[#0a0a0a]/90 transition-colors whitespace-nowrap w-full sm:w-auto"
             />
           </div>
         </div>

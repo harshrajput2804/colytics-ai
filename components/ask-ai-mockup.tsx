@@ -22,9 +22,9 @@ export function AskAiMockup() {
   const [selected, setSelected] = useState(models[1])
 
   return (
-    <div className="relative">
-      <div className="absolute -inset-4 rounded-4xl bg-[radial-gradient(circle_at_top,rgba(21,73,240,0.10),transparent_60%)] blur-2xl" />
-      <div className="relative overflow-hidden rounded-3xl border border-[#e8e8e8] bg-white shadow-[0_18px_60px_rgba(0,0,0,0.08)]">
+    <div className="relative min-w-0">
+      <div className="absolute -inset-2 sm:-inset-4 rounded-4xl bg-[radial-gradient(circle_at_top,rgba(21,73,240,0.10),transparent_60%)] blur-2xl" />
+      <div className="relative mockup-shell overflow-hidden rounded-2xl sm:rounded-3xl border border-[#e8e8e8] bg-white shadow-[0_18px_60px_rgba(0,0,0,0.08)]">
         <div className="flex items-center gap-2 border-b border-[#e8e8e8] bg-[#fafafa] px-4 py-3">
           <div className="flex gap-1.5">
             <div className="h-3 w-3 rounded-full bg-[#ff5f57]" />
@@ -40,7 +40,7 @@ export function AskAiMockup() {
           <div className="w-14" />
         </div>
 
-        <div className="flex flex-col gap-4 bg-white p-5 md:p-6">
+        <div className="flex flex-col gap-4 bg-white p-4 sm:p-5 md:p-6">
           <div className="mb-2">
             <div className="mb-2 text-[11px] uppercase tracking-[0.18em] text-[#9a9a9a]">Share of voice - Last 30 days</div>
             <div className="space-y-3">
@@ -66,20 +66,20 @@ export function AskAiMockup() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-[#e8e8e8] bg-[#fafafa] p-4">
-            <div className="mb-3 flex items-center justify-between gap-4">
-              <div>
+          <div className="rounded-2xl border border-[#e8e8e8] bg-[#fafafa] p-3 sm:p-4">
+            <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+              <div className="min-w-0">
                 <div className="mb-1 text-[11px] uppercase tracking-[0.18em] text-[#9a9a9a]">Question</div>
-                <p className="text-[14px] font-medium text-[#0a0a0a]">Why did {selected.label} share change?</p>
+                <p className="text-[13px] sm:text-[14px] font-medium text-[#0a0a0a]">Why did {selected.label} share change?</p>
               </div>
-              <button className="inline-flex items-center gap-2 rounded-lg border border-[#e8e8e8] bg-white px-3 py-2 text-[11px] font-medium text-[#0a0a0a]">
+              <button className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#e8e8e8] bg-white px-3 py-2.5 text-[11px] font-medium text-[#0a0a0a] shrink-0 min-h-11">
                 <Sparkles className="h-3.5 w-3.5 text-[#1549f0]" />
                 Ask AI
               </button>
             </div>
             <div className="mb-3 h-px bg-[#e8e8e8]" />
             <p className="mb-3 text-[13px] leading-relaxed text-[#525252]">{answers[selected.id]}</p>
-            <div className="grid gap-2 sm:grid-cols-3">
+            <div className="grid gap-2 grid-cols-1 sm:grid-cols-3">
               {[
                 { label: "Cause", value: "Schema gap" },
                 { label: "Effect", value: "Score -6 pts" },
