@@ -87,13 +87,14 @@ export function PricingSection() {
                 {plan.description}
               </p>
 
-              <div className="mb-2">
+              <div className="mb-2 flex items-baseline gap-2">
                 <span className="text-4xl font-serif text-foreground leading-none">
-                  {plan.price === 0 ? "Free" : `$${plan.price}`}
+                  Free
                 </span>
-                {plan.price > 0 && (
-                  <span className="text-sm text-muted-foreground ml-1">/mo</span>
-                )}
+                <span className="text-xl text-muted-foreground/60 line-through ml-1">
+                  $49
+                </span>
+                <span className="text-sm text-muted-foreground">/mo</span>
               </div>
 
               {/* {plan.promo && (

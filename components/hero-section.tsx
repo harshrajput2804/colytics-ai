@@ -28,7 +28,7 @@ export function HeroSection() {
         <div className="text-center max-w-4xl mx-auto relative">
           {/* Spotlight Glow (Premium silver/gray, made brighter/more visible) */}
           <div className="absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md sm:max-w-lg h-32 sm:h-45 bg-sky-200/40 blur-[45px] rounded-full pointer-events-none -z-10" />
-          
+
           <h1 className="heading-1">
             Get cited.
             <br />
@@ -41,10 +41,10 @@ export function HeroSection() {
           {/* Feature chips */}
           <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5 mt-8 max-w-170 mx-auto px-1">
             {[
-              { icon: <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="2.5" fill="currentColor" opacity="0.6"/><circle cx="6" cy="6" r="5" stroke="currentColor" strokeWidth="1" opacity="0.2"/></svg>, label: "Citation Gap Analysis" },
-              { icon: <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 9L5 5L7 7L10 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" opacity="0.7"/></svg>, label: "Share of Voice Tracking" },
-              { icon: <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1.5" y="3" width="9" height="1" rx="0.5" fill="currentColor" opacity="0.6"/><rect x="1.5" y="5.5" width="6" height="1" rx="0.5" fill="currentColor" opacity="0.4"/><rect x="1.5" y="8" width="7.5" height="1" rx="0.5" fill="currentColor" opacity="0.3"/></svg>, label: "9 AI Engines Tracked" },
-              { icon: <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1L7.5 4.5H11L8.25 6.75L9.25 10.5L6 8.25L2.75 10.5L3.75 6.75L1 4.5H4.5L6 1Z" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.6"/></svg>, label: "Prioritized AEO Roadmap" },
+              { icon: <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="2.5" fill="currentColor" opacity="0.6" /><circle cx="6" cy="6" r="5" stroke="currentColor" strokeWidth="1" opacity="0.2" /></svg>, label: "Citation Gap Analysis" },
+              { icon: <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 9L5 5L7 7L10 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" /></svg>, label: "Share of Voice Tracking" },
+              { icon: <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1.5" y="3" width="9" height="1" rx="0.5" fill="currentColor" opacity="0.6" /><rect x="1.5" y="5.5" width="6" height="1" rx="0.5" fill="currentColor" opacity="0.4" /><rect x="1.5" y="8" width="7.5" height="1" rx="0.5" fill="currentColor" opacity="0.3" /></svg>, label: "9 AI Engines Tracked" },
+              { icon: <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1L7.5 4.5H11L8.25 6.75L9.25 10.5L6 8.25L2.75 10.5L3.75 6.75L1 4.5H4.5L6 1Z" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.6" /></svg>, label: "Prioritized AEO Roadmap" },
             ].map((chip, i) => (
               <div key={i} className="flex items-center gap-1.75 px-3 py-2 bg-white border border-border rounded-full shadow-sm text-ui-sm text-foreground font-medium font-sans leading-snug max-w-full">
                 <span className="flex items-center justify-center">{chip.icon}</span>
@@ -75,6 +75,20 @@ export function HeroSection() {
         {/* Dashboard mockup — flush to bottom */}
         <div className="mt-10 sm:mt-12 md:mt-16 relative motion-float -mx-1 sm:mx-0">
           <DashboardMockup />
+
+          {/* <div
+            className="relative mx-auto w-full"
+            style={{ maxWidth: 720 }}
+          >
+            <img
+              src="/dashboard_mockup.png"
+              alt="The AEO Lifecycle (Circular Loop)"
+              width={720}
+              height={720}
+              loading="lazy"
+              className="w-full h-auto block"
+            />
+          </div> */}
         </div>
       </div>
     </section>

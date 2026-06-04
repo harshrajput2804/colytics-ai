@@ -92,7 +92,7 @@ export function HowItWorks() {
     <section
       ref={sectionRef}
       id="solutions"
-      className="section-spacing bg-[#fafafa] border-t border-[#e8e8e8]"
+      className="section-spacing bg-white border-t border-[#e8e8e8]"
     >
       <div className="max-w-3xl mx-auto min-w-0">
         {/* Header */}
@@ -112,10 +112,10 @@ export function HowItWorks() {
 
           {/* Animated fill line */}
           <div
-            className="absolute left-[19px] top-0 w-[2px] bg-[#2563eb] hidden sm:block transition-none pointer-events-none"
+            className="absolute left-[19px] top-0 w-[2px] bg-[#b7973073] hidden sm:block transition-none pointer-events-none"
             style={{
               height: `${fillPercent}%`,
-              boxShadow: "0 0 8px rgba(37,99,235,0.4)",
+              boxShadow: "0 0 8px #b7973073",
             }}
           />
 
@@ -129,7 +129,7 @@ export function HowItWorks() {
                   <div className="relative z-10 shrink-0 hidden sm:flex items-start pt-1">
                     <div
                       className={`w-10 h-10 rounded-full border-2 flex items-center justify-center text-xs font-bold transition-all duration-500 ${isActive
-                          ? "border-[#2563eb] bg-[#2563eb] text-white shadow-[0_0_16px_rgba(37,99,235,0.35)]"
+                          ? "border-[#D4AF37] bg-[#D4AF37] text-white shadow-[0_0_16px_rgba(37,99,235,0.35)]"
                           : "border-[#d4d4d4] bg-white text-[#a3a3a3]"
                         }`}
                     >
@@ -151,7 +151,7 @@ export function HowItWorks() {
                     <div className="flex items-center gap-3 mb-3 sm:hidden">
                       <div
                         className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-xs font-bold transition-all duration-500 ${isActive
-                            ? "border-[#2563eb] bg-[#2563eb] text-white"
+                            ? "border-[#D4AF37] bg-[#D4AF37] text-white"
                             : "border-[#d4d4d4] bg-white text-[#a3a3a3]"
                           }`}
                       >

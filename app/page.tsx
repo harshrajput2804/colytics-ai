@@ -136,11 +136,11 @@ export default function Home() {
     <>
       <GlobalSurfaceAnimation />
       <div className="relative z-10">
-        <Header />
-        <main className="landing-page min-h-screen bg-white/20 text-[#0a0a0a] overflow-x-hidden">
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }} />
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productStructuredData) }} />
-          <TracingBeam className="w-full">
+        <TracingBeam className="w-full h-full">
+          <Header />
+          <main className="landing-page h-full min-h-screen bg-white/20 text-[#0a0a0a] overflow-x-hidden">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productStructuredData) }} />
             <HeroSection />
             <StatsSection />
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -162,9 +162,9 @@ export default function Home() {
               <FaqSection />
             </div>
             <CtaSection />
-          </TracingBeam>
-        </main>
-        <Footer />
+          </main>
+          <Footer />
+        </TracingBeam>
       </div>
     </>
   )

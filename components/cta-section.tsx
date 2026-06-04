@@ -1,133 +1,182 @@
 "use client"
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { ComplianceSnippet } from "@/components/compliance-snippet"
+import { useEffect, useRef, useState } from "react"
+import EarlyAccessTrigger from "./early-access-trigger"
 
 export function CtaSection() {
-  const [email, setEmail] = useState("")
-  const [url, setUrl] = useState("")
-  const [question, setQuestion] = useState("")
-  const [submitted, setSubmitted] = useState(false)
+  const cardRef = useRef<HTMLDivElement>(null)
+  const [inView, setInView] = useState(false)
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    if (email && url) setSubmitted(true)
-  }
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setInView(entry.isIntersecting)
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -10% 0px"
+      }
+    )
+    if (cardRef.current) {
+      observer.observe(cardRef.current)
+    }
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <section id="cta" className="enhanced-surface py-28 px-6 bg-[#0a0a0a] relative overflow-hidden">
-      <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
-        {/* Left: messaging */}
-        <div>
-          <div className="flex items-center gap-2 mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#1549f0]" />
-            <span className="text-[11px] font-semibold uppercase tracking-widest text-white/40">Early Access Open</span>
-          </div>
-          <h2 className="font-serif text-[48px] md:text-[64px] leading-none tracking-[-0.02em] text-white mb-6">
-            Your competitors are already being cited.
-          </h2>
-          <div className="bg-white/5 border border-white/10 rounded-xl p-5 mb-10">
-            <p className="text-[16px] text-white/50 font-semibold mb-2">✓ Full Pro free for 60 days</p>
-            <p className="text-[14px] text-white/70 leading-relaxed">Then $49/mo, or stay on Free Forever with essential features. No credit card required.</p>
+    <section id="cta" className="py-24 px-6 bg-white relative overflow-hidden border-t border-neutral-100">
+      {/* Background glowing effects to match the premium design */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#D4AF37]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-[#BF953F]/3 blur-[120px] pointer-events-none" />
+
+      {/* Outer container */}
+      <div className="max-w-5xl mx-auto">
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              .cta-black-card {
+                position: relative;
+                background:
+                  radial-gradient(
+                    circle at 85% 50%,
+                    rgba(212,175,55,0.28) 0%,
+                    rgba(212,175,55,0.12) 18%,
+                    rgba(18,18,18,0.96) 55%,
+                    #050505 100%
+                  );
+                background-color: #050505;
+
+                box-shadow:
+                  0 35px 80px rgba(0,0,0,0.45),
+                  0 8px 30px rgba(212,175,55,0.06);
+
+                border: 1px solid rgba(212,175,55,0.18);
+
+                transform: perspective(1200px) rotateX(15deg) scale(0.93) translateY(50px);
+                opacity: 0.6;
+
+                transition:
+                  transform 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity 1.1s ease-out,
+                  border-color 0.5s ease;
+
+                will-change: transform, opacity;
+              }
+
+              .cta-black-card::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+
+                background-image:
+                  linear-gradient(
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                  ),
+                  linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                  );
+
+                background-size: 36px 36px;
+                pointer-events: none;
+              }
+
+              .cta-black-card::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+
+                background:
+                  radial-gradient(
+                    circle at 80% 70%,
+                    rgba(212,175,55,0.15),
+                    transparent 40%
+                  );
+
+                pointer-events: none;
+              }
+
+              .cta-black-card.in-view {
+                transform:
+                  perspective(1200px)
+                  rotateX(0deg)
+                  scale(1)
+                  translateY(0);
+
+                opacity: 1;
+                border-color: rgba(212,175,55,0.32);
+              }
+            `,
+          }}
+        />
+
+        {/* The Card itself */}
+        <div
+          ref={cardRef}
+          className={`cta-black-card rounded-[32px] p-8 md:p-14 relative overflow-hidden text-left ${inView ? 'in-view' : ''}`}
+        >
+          {/* Background Wordmark */}
+          <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none select-none z-0">
+            <p
+              className="hidden sm:block text-center font-serif leading-none text-[#D4AF37]/[0.05] select-none whitespace-nowrap"
+              style={{ fontSize: "clamp(80px, 15vw, 200px)" }}
+            >
+              Colytics AI
+            </p>
+
+            <img
+              src="/logo/notext.png"
+              alt="logo"
+              className="w-[280px] sm:w-[480px] md:w-[600px] h-auto block opacity-[0.08]"
+            />
           </div>
 
-          <div className="space-y-3">
-            {[
-              "Discover AI citations your competitors already have",
-              "See exactly which LLMs are citing your site",
-              "Optimize for AEO and claim your AI visibility",
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full bg-[#1549f0]/20 flex items-center justify-center shrink-0">
-                  <svg className="w-2.5 h-2.5 text-[#1549f0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                  </svg>
+          {/* Inner details to match the original content */}
+          <div className="relative z-10 max-w-3xl">
+            <div className="flex items-center gap-2 mb-8">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse" />
+              <span className="text-[11px] font-semibold uppercase tracking-widest text-[#D4AF37]">Early Access Open</span>
+            </div>
+
+            <h2 className="font-serif text-[42px] md:text-[56px] leading-[1.08] tracking-[-0.03em] text-[#FAFAF8] mb-8">
+              Your competitors are already being cited.
+            </h2>
+
+            <div className="space-y-4 mb-10">
+              {[
+                "Discover AI citations your competitors already have",
+                "See exactly which LLMs are citing your site",
+                "Optimize for AEO and claim your AI visibility",
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[#D4AF37]/10 flex items-center justify-center shrink-0">
+                    <svg className="w-2.5 h-2.5 text-[#D4AF37]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                  </div>
+                  <span className="text-[15px] text-[#E8E8E8] font-medium">{item}</span>
                 </div>
-                <span className="text-[13px] text-white/70">{item}</span>
+              ))}
+            </div>
+
+            <div className="border-t border-[#D4AF37]/15 pt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-6">
+              <div>
+                <p className="text-[11px] text-[#D4AF37] uppercase tracking-widest font-semibold mb-3">Enterprise Ready</p>
+                <div className="flex flex-wrap gap-x-5 gap-y-2 text-[13px] text-white/60">
+                  <span>No credit card needed</span>
+                  <span>Bank-level encryption</span>
+                  <span>GDPR & CCPA compliant</span>
+                </div>
               </div>
-            ))}
-          </div>
 
-          <div className="mt-10 pt-10 border-t border-white/10">
-            <p className="text-[11px] text-white/30 uppercase tracking-widest font-medium mb-4">Enterprise Ready</p>
-            <div className="flex flex-wrap gap-5 text-[12px] text-white/40">
-              <span>No credit card needed</span>
-              <span>Bank-level encryption</span>
-              <span>GDPR & CCPA compliant</span>
+              <EarlyAccessTrigger
+                label="Ask your first question"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 !bg-[#E0B84D] hover:!bg-[#E8C15A] !text-[#0a0a0a] rounded-lg text-button transition-all duration-300 w-full sm:w-auto min-h-11 font-bold shadow-[0_10px_35px_rgba(224,184,77,0.28)] hover:shadow-[0_15px_45px_rgba(224,184,77,0.4)] border border-[#D4AF37]/20 hover:scale-[1.02]"
+              />
             </div>
           </div>
-        </div>
-
-        {/* Right: form */}
-        <div>
-          {!submitted ? (
-            <div className="bg-white rounded-2xl p-8">
-              <h3 className="text-[18px] font-semibold text-[#0a0a0a] mb-1">Get 60 days free</h3>
-              <p className="text-[13px] text-[#737373] mb-7">Start today. Cancel anytime. No credit card required.</p>
-
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-[12px] font-semibold text-[#525252] mb-2">
-                    Email address <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="you@company.com"
-                    className="w-full px-4 py-3 text-[14px] border border-[#e8e8e8] rounded-xl bg-[#fafafa] focus:outline-none focus:ring-2 focus:ring-[#0a0a0a]/10 focus:border-[#0a0a0a] transition-colors placeholder:text-[#c0c0c0]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-[12px] font-semibold text-[#525252] mb-2">
-                    Website URL <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="url"
-                    required
-                    value={url}
-                    onChange={(e) => setUrl(e.target.value)}
-                    placeholder="https://yourwebsite.com"
-                    className="w-full px-4 py-3 text-[14px] border border-[#e8e8e8] rounded-xl bg-[#fafafa] focus:outline-none focus:ring-2 focus:ring-[#0a0a0a]/10 focus:border-[#0a0a0a] transition-colors placeholder:text-[#c0c0c0]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-[12px] font-semibold text-[#525252] mb-2">
-                    Your biggest AI visibility question{" "}
-                    <span className="text-[#9a9a9a] font-normal">(optional)</span>
-                  </label>
-                  <textarea
-                    value={question}
-                    onChange={(e) => setQuestion(e.target.value)}
-                    placeholder="e.g. Why is my competitor getting cited in ChatGPT and I'm not?"
-                    rows={3}
-                    className="w-full px-4 py-3 text-[14px] border border-[#e8e8e8] rounded-xl bg-[#fafafa] focus:outline-none focus:ring-2 focus:ring-[#0a0a0a]/10 focus:border-[#0a0a0a] transition-colors resize-none placeholder:text-[#c0c0c0]"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  className="w-full h-12 rounded-xl bg-[#0a0a0a] text-white hover:bg-[#1a1a1a] text-[14px] font-semibold border-0 mt-2"
-                >
-                  Claim Your Spot →
-                </Button>
-              </form>
-            </div>
-          ) : (
-            <div className="bg-white rounded-2xl p-10 text-center">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mx-auto mb-5">
-                <svg className="w-5 h-5 text-[#16a34a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                </svg>
-              </div>
-              <h3 className="font-serif text-[28px] text-[#0a0a0a] mb-2">You're in.</h3>
-              <p className="text-[14px] text-[#737373] leading-relaxed">
-                Check your inbox — your early access details will arrive shortly. We'll be in touch with your onboarding link within 24 hours.
-              </p>
-            </div>
-          )}
         </div>
       </div>
     </section>
