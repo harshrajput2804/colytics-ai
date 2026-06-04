@@ -85,7 +85,7 @@ export const TracingBeam = ({
 
             {/* The Tracing Beam (Left Side) — positioned relative to the centered max-w-7xl content column */}
             {showLeftBeam && (
-                <div className="absolute top-0 pointer-events-none z-20 left-0 w-[var(--beam-width)] h-[var(--beam-height)]"
+                <div className="hidden sm:block absolute top-0 pointer-events-none z-20 left-0 w-[var(--beam-width)] h-[var(--beam-height)]"
                 >
                     {/* Hatched Background Area — aligned to the left of the line */}
                     <div
