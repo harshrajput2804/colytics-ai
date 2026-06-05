@@ -145,14 +145,14 @@ export function AIVisibilityReportMockup() {
             <div className="col-span-1 xl:col-span-6">
               <div className="bg-white border border-[#e8e8e8] rounded-xl p-4 h-full">
                 <div className="text-[11px] sm:text-[12px] font-medium text-[#0a0a0a] mb-3">Module Score Overview</div>
-                <div className="flex items-end gap-2 sm:gap-3 h-24 sm:h-28">
+                <div className="flex items-end justify-between gap-4 sm:gap-6 h-48 sm:h-52">
                   {moduleScores.map((m, idx) => (
                     <div key={m.label} className="flex-1 flex flex-col items-center min-w-0">
                       <div
-                        className="motion-bar w-full rounded-sm mb-2 transition-all"
+                        className="motion-bar w-[80px] rounded-sm mb-2 transition-all"
                         style={{
                           background: m.color,
-                          height: `${(m.value / 100) * 88}px`,
+                          height: `${(m.value / 100) * 200}px`,
                           minHeight: 8,
                           animationDelay: `${idx * 0.22}s`,
                         }}

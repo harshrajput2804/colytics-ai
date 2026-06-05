@@ -32,7 +32,7 @@ export function HeroSection() {
           <h1 className="heading-1">
             Get cited.
             <br />
-            <span className="text-[#737373]">Everywhere your buyers ask.</span>
+            <span className="text-[#99903c]">Everywhere your buyers ask.</span>
           </h1>
           <p className="text-lead mt-6 sm:mt-7 max-w-2xl mx-auto px-1 sm:px-0">
             One closed loop for AI visibility and AEO — audit, diagnose, fix, generate and track citations across every major AI model, built by a 12-year-old agency that lived the problem.
