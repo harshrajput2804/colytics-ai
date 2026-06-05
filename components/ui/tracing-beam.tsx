@@ -132,7 +132,7 @@ export const TracingBeam = ({
 
             {/* Content Area */}
             <div className={cn(
-                "relative transition-all duration-300 pl-[var(--content-pl)]",
+                "relative transition-all duration-300 pl-0 sm:pl-[var(--content-pl)]",
                 showRightBeam && "pr-0 sm:pr-[var(--content-pl)]"
             )}>
                 {children}
