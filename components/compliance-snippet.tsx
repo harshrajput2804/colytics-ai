@@ -31,7 +31,12 @@ const complianceStyles = `
   }
 `
 
-export function ComplianceSnippet() {
+type ComplianceSnippetProps = {
+  checked: boolean
+  onCheckedChange: (checked: boolean) => void
+}
+
+export function ComplianceSnippet({ checked, onCheckedChange }: ComplianceSnippetProps) {
   return (
     <>
       <style>{complianceStyles}</style>
@@ -68,6 +73,8 @@ export function ComplianceSnippet() {
             name="marketing_consent"
             id="marketing_consent"
             required
+            checked={checked}
+            onChange={(event) => onCheckedChange(event.target.checked)}
             aria-required="true"
             aria-describedby="marketing_consent_desc"
             style={{
@@ -141,58 +148,6 @@ export function ComplianceSnippet() {
           .
         </p>
 
-        {/* ========== UNSUBSCRIBE & CONTACT INFORMATION ========== */}
-        <p
-          style={{
-            fontSize: "13px",
-            marginBottom: "10px",
-            padding: "0 2px",
-          }}
-        >
-          You can unsubscribe from marketing emails at any time by clicking the "Unsubscribe"
-          link in any email or by contacting us at
-          {" "}
-          <a
-            href="mailto:help@colytics.ai"
-            className="colytics-compliance__link"
-          >
-            help@colytics.ai
-          </a>
-          .
-        </p>
-
-        <hr
-          aria-hidden="true"
-          style={{
-            border: "none",
-            borderTop: "1px solid #e5e7eb",
-            margin: "12px 0",
-          }}
-        />
-
-        {/* ========== DPDP INDIA COMPLIANCE DISCLOSURE ========== */}
-        <div
-          style={{
-            fontSize: "13px",
-            padding: "10px 14px",
-            background: "#fffbeb",
-            border: "1px solid #fde68a",
-            borderRadius: "8px",
-            color: "#92400e",
-          }}
-        >
-          <strong>India residents (DPDP Act 2023):</strong>
-          {" "}You have the right to withdraw consent and lodge a grievance with our Grievance
-          Officer, <strong>Ankit Jain</strong>, Advocate, High Court of Rajasthan, Jaipur, at
-          {" "}
-          <a
-            href="mailto:help@colytics.ai"
-            className="colytics-compliance__dpdp-link"
-          >
-            help@colytics.ai
-          </a>
-          .
-        </div>
       </div>
     </>
   )

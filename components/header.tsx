@@ -12,45 +12,15 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet"
-import { ProductMegaMenu, SolutionsDropdown, UseCasesDropdown, ResourcesMegaMenu } from "@/components/header-dropdowns"
 
-const mobileNavSections = [
-  {
-    title: "Product",
-    links: [
-      { label: "What is Colytics AI?", href: "/#what-colytics-is" },
-      { label: "AI Search Visibility", href: "/#ai-search-visibility" },
-      { label: "Proprietary scoring", href: "/#proprietary-scoring" },
-      // { label: "Reporting & Automation", href: "/#the-solution" },
-    ],
-  },
-  {
-    title: "Solutions",
-    links: [
-      { label: "AI Search Visibility Platform", href: "/#ai-citation-visibility" },
-      { label: "AEO Software", href: "/#aeo-readiness" },
-      { label: "Website Audit Tool", href: "/#the-solution" },
-      { label: "Technical SEO Audit Software", href: "/#the-solution" },
-    ],
-  },
-  {
-    title: "Use Cases",
-    links: [
-      { label: "For Agencies", href: "/#who-for" },
-      { label: "For In-house SEO Teams", href: "/#who-for" },
-      { label: "For Solopreneurs", href: "/#who-for" },
-      { label: "For SaaS Companies", href: "/#who-for" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { label: "Blog", href: "/blog" },
-      { label: "AI SEO Guide", href: "/blog/aeo-vs-seo" },
-      { label: "Comparison Pages", href: "/#comparison" },
-      { label: "ROI Calculator", href: "/#roi-calculator" },
-    ],
-  },
+const navLinks = [
+  { label: "Overview", href: "/#what-colytics-is" },
+  { label: "AI Visibility", href: "/#ai-search-visibility" },
+  { label: "Scoring", href: "/#proprietary-scoring" },
+  { label: "Ask AI", href: "/#ask-ai" },
+  { label: "ROI", href: "/#roi-calculator" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Blog", href: "/blog" },
 ]
 
 export function Header() {
@@ -64,33 +34,20 @@ export function Header() {
           <img src="/logo/colytics-logo-side.svg" alt="Colytics AI" className="h-8 sm:h-10 w-auto -my-4 sm:-my-6" />
         </Link>
         <nav className="hidden md:flex items-center gap-7">
-          <ProductMegaMenu />
-          <SolutionsDropdown />
-          <UseCasesDropdown />
-          <ResourcesMegaMenu />
-          <Link
-            href="/#pricing"
-            className="text-ui-md text-muted-foreground hover:text-foreground transition-colors"
-            onClick={(e) => {
-              if (typeof window !== "undefined" && window.location.pathname === "/") {
-                e.preventDefault()
-                document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })
-              }
-            }}
-          >
-            Pricing
-          </Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-ui-md text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
         <div className="hidden sm:flex items-center gap-3">
-          <Button variant="ghost" size="sm" asChild>
-            <Link href="/">Login</Link>
-          </Button>
           <EarlyAccessTrigger label="Get early access →" />
         </div>
         <div className="flex items-center gap-2 sm:hidden">
-          <Button variant="ghost" size="icon-sm" asChild>
-            <Link href="/">Login</Link>
-          </Button>
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon-sm" className="rounded-full bg-white">
@@ -103,27 +60,17 @@ export function Header() {
                 <SheetTitle className="heading-3-lg text-left">Menu</SheetTitle>
               </SheetHeader>
               <div className="space-y-6 pb-6 pt-2">
-                {mobileNavSections.map((section) => (
-                  <div key={section.title} className="space-y-3">
-                    <p className="section-label">{section.title}</p>
-                    <div className="grid gap-2">
-                      {section.links.map((link) => (
-                        <SheetClose asChild key={link.href}>
-                          <Link href={link.href} className="rounded-lg border border-border px-3 py-2 text-ui-md text-foreground transition-colors hover:bg-muted">
-                            {link.label}
-                          </Link>
-                        </SheetClose>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+                <div className="grid gap-2">
+                  {navLinks.map((link) => (
+                    <SheetClose asChild key={link.href}>
+                      <Link href={link.href} className="rounded-lg border border-border px-3 py-2 text-ui-md text-foreground transition-colors hover:bg-muted">
+                        {link.label}
+                      </Link>
+                    </SheetClose>
+                  ))}
+                </div>
                 <div className="grid gap-2 pt-2">
                   <EarlyAccessTrigger label="Get early access →" className="w-full" />
-                  <SheetClose asChild>
-                    <Link href="/#pricing" className="rounded-full bg-[#0a0a0a] px-4 py-3 text-center text-ui-md font-medium text-white transition-colors hover:bg-[#1a1a1a]">
-                      View Pricing
-                    </Link>
-                  </SheetClose>
                 </div>
               </div>
             </SheetContent>

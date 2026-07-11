@@ -27,19 +27,21 @@ export function PricingSection() {
       description: "Everything to compete in AI search.",
       cta: "Get Started →",
       features: [
-        "Up to 2 projects",
-        "Tracking across all 9 AI engines",
-        "Full citation gap analysis + Share of Voice",
-        "AIVS™ + per-page LCS™",
-        "Website & content audit",
+        "Up to 5 projects",
+        "Tracking across all 5 AI engines",
+        "Full Citation Gap Analysis + Share of Voice",
+        "AIVS + per-page LCS",
+        "Website Audit (up to 500 pages)",
+        "Content Audit (up to 100 pages)",
         "Structured data & AI files (schema, llms.txt, facts.json)",
-        "Keyword → prompt intelligence",
-        "Competitor AI intelligence",
-        "Prompt tracking (prompt → answer → cited-URL)",
-        "Content generation (humanized + AI detection)",
+        "Keyword → Prompt Intelligence (up to 100 prompts)",
+        "Competitor AI Intelligence (5 competitors)",
+        "Prompt tracking (prompt → answer → cited-URL), (up to 50 prompts)",
+        "Content generation (humanized + AI detection), (up to 50 generations)",
         "Reports, alerts & weekly summaries",
         "GA4 impact attribution",
-        "Ask AI + Claude (MCP)",
+        "Ask AI",
+        "Claude MCP integration",
       ],
       featured: true,
     },
@@ -113,7 +115,14 @@ export function PricingSection() {
                 {plan.features.map((feature, i) => (
                   <div key={i} className="flex items-start gap-3 text-sm">
                     <Check className="w-4 h-4 shrink-0 mt-0.5 text-green-500" />
-                    <span className="text-muted-foreground">{feature}</span>
+                    <span className="text-muted-foreground">
+                      {feature}
+                      {feature === "Claude MCP integration" && (
+                        <sup className="ml-1 font-bold">
+                          ( Coming soon )
+                        </sup>
+                      )}
+                    </span>
                   </div>
                 ))}
               </div>

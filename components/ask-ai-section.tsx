@@ -1,4 +1,4 @@
-import { Check } from "lucide-react"
+import { Check, Sparkles } from "lucide-react"
 import { AskAiMockup } from "@/components/ask-ai-mockup"
 import EarlyAccessTrigger from "@/components/early-access-trigger"
 
@@ -8,12 +8,22 @@ export function AskAiSection() {
       <div className="mx-auto max-w-6xl min-w-0">
         <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2">
           <div className="max-w-xl order-1">
-            <p className="section-label mb-5">ASK AI</p>
+            <p className="section-label mb-5 inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3 py-1.5 text-[#A87C1B]">
+              <Sparkles className="h-3.5 w-3.5" />
+              ASK AI
+            </p>
             <h2 className="heading-2-compact mb-4">
-              Don&apos;t read the dashboard. Ask it.
+              Don&apos;t read the dashboard.{" "}
+              <span className="font-semibold text-[#A87C1B]">
+                Ask It
+              </span>{" "}
             </h2>
             <p className="text-body mb-6">
-              Every chart, score and alert has an Ask AI button. It explains what you are seeing, why it changed, and the best next move, in plain language.
+              Every chart, score and alert has an{" "}
+              <span className="rounded-md bg-[#D4AF37]/10 px-1.5 py-0.5 font-bold text-[#A87C1B]">
+                Ask AI
+              </span>{" "}
+              button. It explains what you are seeing, why it changed, and the best next move, in plain language.
             </p>
 
             <ul className="mb-8 space-y-3">

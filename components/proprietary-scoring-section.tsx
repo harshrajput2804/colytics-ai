@@ -19,7 +19,7 @@ export function ProprietaryScoringSection() {
                     <div className="bg-white border border-[#efefef] rounded-2xl p-7 shadow-sm">
                         <div className="flex items-center justify-between gap-4 mb-4">
                             <div>
-                                <h3 className="heading-3-lg font-semibold">AIVS™</h3>
+                                <h3 className="heading-3-lg font-semibold">AIVS</h3>
                                 <p className="text-xs uppercase tracking-[0.2em] text-[#737373] mb-2">One number from 7 dimensions / 29 parameters</p>
                             </div>
                         </div>
@@ -41,7 +41,7 @@ export function ProprietaryScoringSection() {
                     <div className="bg-white border border-[#efefef] rounded-2xl p-7 shadow-sm">
                         <div className="flex items-center justify-between gap-4 mb-4">
                             <div>
-                                <h3 className="heading-3-lg font-semibold">LCS™</h3>
+                                <h3 className="heading-3-lg font-semibold">LCS</h3>
                                 <p className="text-xs uppercase tracking-[0.2em] text-[#737373] mb-2">Predict citation likelihood before you publish</p>
                             </div>
                             

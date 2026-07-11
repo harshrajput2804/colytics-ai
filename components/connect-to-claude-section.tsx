@@ -86,6 +86,9 @@ export function ConnectToClaudeSection({ reverseLayout = false }: ConnectToClaud
                         <p className="section-label mb-5">Connect to Claude - MCP</p>
                         <h2 className="heading-2-compact mb-4">
                             Bring Colytics into Claude.
+                            <span className="ml-3 inline-flex -translate-y-2 items-center rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/15 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-[#8A650F] shadow-[0_6px_18px_rgba(212,175,55,0.16)]">
+                                Upcoming feature
+                            </span>
                         </h2>
                         <p className="text-body mb-6">
                             CMOs and managers don't log in - connect Colytics to Claude via MCP and ask how the brand/team is performing, then pull a report in the chat.

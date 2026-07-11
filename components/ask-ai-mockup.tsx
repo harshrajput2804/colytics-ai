@@ -32,7 +32,7 @@ export function AskAiMockup() {
             <div className="h-3 w-3 rounded-full bg-[#28c840]" />
           </div>
           <div className="flex flex-1 justify-center">
-            <div className="flex items-center gap-2 rounded-md border border-[#e8e8e8] bg-white px-3 py-1 text-[11px] font-medium text-[#737373]">
+            <div className="flex items-center gap-2 rounded-md border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3 py-1 text-[11px] font-bold text-[#000000] shadow-[0_0_0_3px_rgba(212,175,55,0.06)]">
               <MessageSquareText className="h-3 w-3" />
               Ask AI
             </div>
@@ -72,8 +72,8 @@ export function AskAiMockup() {
                 <div className="mb-1 text-[11px] uppercase tracking-[0.18em] text-[#9a9a9a]">Question</div>
                 <p className="text-[13px] sm:text-[14px] font-medium text-[#0a0a0a]">Why did {selected.label} share change?</p>
               </div>
-              <button className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#e8e8e8] bg-white px-3 py-2.5 text-[11px] font-medium text-[#0a0a0a] shrink-0 min-h-11">
-                <Sparkles className="h-3.5 w-3.5 text-[#1549f0]" />
+              <button className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg border border-[#1549f0]/20 bg-[#1549f0] px-3 py-2.5 text-[11px] font-semibold text-white shadow-[0_10px_24px_rgba(21,73,240,0.20)] transition-colors hover:bg-[#0f3fd0]">
+                <Sparkles className="h-3.5 w-3.5 text-white" />
                 Ask AI
               </button>
             </div>

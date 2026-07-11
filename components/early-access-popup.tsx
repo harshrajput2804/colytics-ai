@@ -14,7 +14,7 @@ export function EarlyAccessPopup({ open, onClose }: Props) {
   const [step, setStep] = useState<number>(1)
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
-  const [consent, setConsent] = useState(false)
+  const [consent, setConsent] = useState(true)
   const [otp, setOtp] = useState<string[]>(["", "", "", "", "", ""])
   const [error, setError] = useState("")
   const [visible, setVisible] = useState(false)
@@ -24,7 +24,7 @@ export function EarlyAccessPopup({ open, onClose }: Props) {
       setStep(1)
       setName("")
       setEmail("")
-      setConsent(false)
+      setConsent(true)
       setOtp(["", "", "", "", "", ""])
       setVisible(false)
       setTimeout(() => {
@@ -153,7 +153,7 @@ export function EarlyAccessPopup({ open, onClose }: Props) {
                 className="mt-1 mb-5 w-full rounded-lg border border-gray-200 px-4 placeholder:text-gray-400 text-gray-900 bg-white focus:outline-none focus:ring-0 focus:border-gray-300"
               />
 
-              <ComplianceSnippet />
+              <ComplianceSnippet checked={consent} onCheckedChange={setConsent} />
 
               {error && <div className="text-sm text-red-600 mt-3">{error}</div>}
 

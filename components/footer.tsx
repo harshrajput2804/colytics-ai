@@ -3,6 +3,8 @@ import EarlyAccessTrigger from "@/components/early-access-trigger"
 import { CcpaOptOutButton } from "@/components/footer-ccpa-handler"
 
 export function Footer() {
+  const comingSoonColumns = new Set(["Product", "Solutions", "Use Cases", "Resources", "Company"])
+
   const columns = [
     {
       title: "Product",
@@ -117,7 +119,14 @@ export function Footer() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 sm:gap-8 mb-14">
             {columns.map((col) => (
               <div key={col.title}>
-                <h3 className="heading-6 mb-4">{col.title}</h3>
+                <h3 className="heading-6 mb-4">
+                  {col.title}
+                  {comingSoonColumns.has(col.title) && (
+                    <sup className="ml-1 font-bold">
+                      ( Coming soon )
+                    </sup>
+                  )}
+                </h3>
                 <div className="flex flex-col gap-2.5">
                   {col.links.map((link) => (
                     link.isButton ? (

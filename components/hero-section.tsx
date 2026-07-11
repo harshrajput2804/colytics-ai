@@ -1,6 +1,6 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { DashboardMockup } from "@/components/dashboard-mockup"
 import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function HeroSection() {
@@ -35,7 +35,7 @@ export function HeroSection() {
             <span className="text-[#99903c]">Everywhere your buyers ask.</span>
           </h1>
           <p className="text-lead mt-6 sm:mt-7 max-w-2xl mx-auto px-1 sm:px-0">
-            One closed loop for AI visibility and AEO — audit, diagnose, fix, generate and track citations across every major AI model, built by a 12-year-old agency that lived the problem.
+            One closed loop for AI visibility and AEO — audit, diagnose, fix, generate and track citations across every major AI model, built by a 12-year-old Marketing agency that lived the problem.
           </p>
 
           {/* Feature chips */}
@@ -66,7 +66,7 @@ export function HeroSection() {
 
           {/* Trust signals */}
           <div className="mt-7 flex flex-wrap justify-center items-center gap-3 text-caption">
-            <span>Built by a 12-year-old agency</span>
+            <span>Built by a 12-year-old Marketing agency</span>
             <span className="w-px h-3 bg-border" />
             <span>Free during early access</span>
           </div>
@@ -74,21 +74,19 @@ export function HeroSection() {
 
         {/* Dashboard mockup — flush to bottom */}
         <div className="mt-10 sm:mt-12 md:mt-16 relative motion-float -mx-1 sm:mx-0">
-          <DashboardMockup />
-
-          {/* <div
-            className="relative mx-auto w-full"
-            style={{ maxWidth: 720 }}
+          <div
+            id="ai-citation-visibility"
+            className="relative mx-auto w-full overflow-hidden rounded-t-2xl border border-b-0 border-[#e8e8e8] shadow-[0_-4px_60px_rgba(0,0,0,0.08)]"
           >
-            <img
-              src="/dashboard_mockup.png"
-              alt="The AEO Lifecycle (Circular Loop)"
-              width={720}
-              height={720}
-              loading="lazy"
-              className="w-full h-auto block"
+            <Image
+              src="/dashboard_mockup-new.png"
+              alt="Colytics AI citation analysis dashboard"
+              width={1415}
+              height={1111}
+              priority
+              className="block h-auto w-full"
             />
-          </div> */}
+          </div>
         </div>
       </div>
     </section>

@@ -40,6 +40,7 @@ export const metadata: Metadata = {
   },
 }
 const baseUrl = SITE_URL
+const SHOW_TESTIMONIALS = false
 
 const softwareAppSchema = {
   "@context": "https://schema.org",
@@ -157,7 +158,7 @@ export default function Home() {
               <WhoForSection />
               <HowItWorks />
               <RoiCalculator />
-              <TestimonialsSection />
+              {SHOW_TESTIMONIALS && <TestimonialsSection />}
               <PricingSection />
               <FaqSection />
             </div>

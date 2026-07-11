@@ -1,4 +1,4 @@
-import { AIVisibilityReportMockup } from "@/components/ai-visibility-report-mockup"
+import Image from "next/image"
 import EarlyAccessTrigger from "@/components/early-access-trigger"
 
 export function FeaturesSection() {
@@ -42,10 +42,10 @@ export function FeaturesSection() {
           <div className="mt-8 overflow-hidden rounded-2xl border border-[#141414] bg-[#0a0a0a]">
             <div className="grid grid-cols-1 divide-y divide-[#eadfcf] md:grid-cols-5 md:divide-x md:divide-y-0">
               {[
-                { value: "9", label: "AI engines tracked" },
+                { value: "5", label: "AI engines tracked" },
                 { value: "9", label: "core modules" },
                 { value: "10", label: "lifecycle stages" },
-                { value: "29", label: "AIVS™ parameters" },
+                { value: "29", label: "AIVS parameters" },
                 { value: "1", label: "closed loop" },
               ].map((stat) => (
                 <div
@@ -85,18 +85,26 @@ export function FeaturesSection() {
               See a real report — before you sign up.
             </h2>
             <p className="text-body mt-4">
-              Preview shows the AIVS™ score, top citation gaps, and a ranked fix list. The full PDF stays gated behind email capture.
+              Preview shows the AIVS score, top citation gaps, and a ranked fix list. The full PDF stays gated behind email capture.
             </p>
           </div>
 
           <div className="max-w-7xl mx-auto">
-            <AIVisibilityReportMockup />
+            <div className="relative overflow-hidden rounded-2xl border border-[#e8e8e8] bg-white shadow-[0_18px_60px_rgba(0,0,0,0.08)]">
+              <Image
+                src="/AI-visibiliti.png"
+                alt="Colytics AI visibility scorecards dashboard"
+                width={1693}
+                height={929}
+                className="block h-auto w-full"
+              />
+            </div>
           </div>
 
           <div className="mt-7 pt-7 border-t border-[#e8e8e8]">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <p className="text-body flex-1">
-                The preview is free. The full report is the lead magnet.
+                The preview is free.
               </p>
               <EarlyAccessTrigger
                 label="Get the sample report →"

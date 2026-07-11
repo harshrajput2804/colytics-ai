@@ -6,10 +6,10 @@ const aiEngines = [
   { name: "Anthropic Claude", logo: "/llm-logo/claude.svg" },
   { name: "Perplexity", logo: "/llm-logo/perplexity.svg" },
   { name: "xAI Grok", logo: "/llm-logo/grok.svg" },
-  { name: "DeepSeek", logo: "/llm-logo/deepseek.svg" },
-  { name: "Microsoft Copilot", logo: "/llm-logo/copilot.svg" },
-  { name: "Google AI Overviews", logo: "/llm-logo/google-aio.svg" },
-  { name: "Meta AI", logo: "/llm-logo/meta.svg" },
+  // { name: "DeepSeek", logo: "/llm-logo/deepseek.svg" },
+  // { name: "Microsoft Copilot", logo: "/llm-logo/copilot.svg" },
+  // { name: "Google AI Overviews", logo: "/llm-logo/google-aio.svg" },
+  // { name: "Meta AI", logo: "/llm-logo/meta.svg" },
 ]
 
 export function StatsSection() {
