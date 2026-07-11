@@ -156,6 +156,7 @@ proxy/storage/
 *~
 
 fix*
+!scripts/fix-static-export-paths.mjs
 
 # OS generated files
 .DS_Store
